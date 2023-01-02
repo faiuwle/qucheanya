@@ -1,0 +1,671 @@
+\documentclass{article}
+\title{The QuCheanya Language}
+\usepackage{tipa}
+\usepackage{tikz}
+\usetikzlibrary{tikzmark}
+
+\begin{document}
+\maketitle
+\tableofcontents \newpage
+
+\part{Historical Context}
+QuCheanya, though the name means ``the language of the Cheanya'' was only used by the priesthood of the Goddess Sapfita, and generally not known or used by other Cheanya people.  It was artificially constructed around the year 0 in the Era of the Gift for the purpose of allowing the priestesses to communicate with other priestesses in other time periods and timelines where native languages may have changed through natural processes.  A secondary goal was to make it easier for the priestesses to talk to each other about time travel, and about events that happen as a result of it.  Knowledge of the language was one of the many things the priesthood was secretive about and generally did not share with outsiders.  The stated purpose of the secrecy was to counterbalance the power of the patriarchal Cheanya Empire with a set of powers that belonged only to the all-female priesthood.  The basis for much of the design of the language was the native language of the Cheanya people at the time of QuCheanya's creation, however, the native languages of Cheanya people changed and multiplied over the 2300-year existence of the priesthood and quickly became very different from QuCheanya.
+
+Worship of Sapfita and the existence of priestesses predates the year 0, during which time there would simply be one or two priestesses in each town who would provide medicine and oversee religious celebrations, births, deaths, and marriages, but the year 0 marked the reformulation of the priestesses into an institution of a priesthood, with a central governing council and new tenets of secrecy to protect the knowledge of time travel, said to have been given to the priestesses by Sapfita in the year 0 to prevent the Cheanya people from distruction at the hands of their enemies.
+
+We are grateful to our to our wise leaders who have lifted the ban on researching the priesthood of Sapfita and their use of time travel so that we may educate others about the history of our people, and we hope to be able to continue our studies in the future.
+
+\newpage
+
+\part{Grammar}
+\section{Phonology}
+\subsection{Phonemes}
+QuCheanya had five series' of obstruents in four places of articulation (bilabial, alveolar, velar, and uvular), bilabial, alveolar and palatal nasals, alveolar and palatal lateral approximants, an alveolar trill, and a palatal glide.  The chart below displays the phoneme in regular type on the left and the romanization used in this document in bold on the right.
+
+\begin{table}[h]
+\begin{tabular}{l| c c | c c | c c | c c | c c}
+& \multicolumn{2}{c}{Bilabial} & \multicolumn{2}{c}{Alveolar} & \multicolumn{2}{c}{Palatal} & \multicolumn{2}{c}{Velar} & \multicolumn{2}{c}{Uvular} \\
+\hline
+Stop & p & \textbf{p} & t & \textbf{t} & & & k & \textbf{c} & q & \textbf{q} \\
+Fricative & \textphi & \textbf{f} & s & \textbf{s} & & & x & \textbf{ch} & \textchi & \textbf{qh} \\
+Affricate & \texttoptiebar{p\textphi} & \textbf{pf} & \texttslig & \textbf{ts} & & & \texttoptiebar{kx} & \textbf{cch} & \texttoptiebar{q\textchi} & \textbf{qqh} \\
+Palatalized Stop & p\textsuperscript{j} & \textbf{py} & t\textsuperscript{j} & \textbf{ty} & & & k\textsuperscript{j} & \textbf{cy} & & \\
+Palatalized Fricative & \textphi\textsuperscript{j} & \textbf{fy} & s\textsuperscript{j} & \textbf{sy} & & & x\textsuperscript{j} & \textbf{chy} & & \\
+Nasal & m & \textbf{m} & n & \textbf{n} & \textltailn & \textbf{ny} & & & & \\
+Lateral Approximant & & & l & \textbf{l} & \textlambda & \textbf{ly} & & & & \\
+Trill & & & r & \textbf{r} & & & & & & \\
+Glide & & & & & j & \textbf{y} & & & & \\
+\hline
+\end{tabular}
+\end{table}
+
+For vowels, QuCheanya had six basic monopthongs, four diphthongs ending in a schwa, and four diphthongs ending in /i/.
+
+\begin{table}[h]
+\begin{tabular}{l| c c | c c | c c}
+& \multicolumn{2}{c}{Front} & \multicolumn{2}{c}{Mid} & \multicolumn{2}{c}{Back} \\
+\hline
+High & i & \textbf{i} & & & u & \textbf{u} \\
+Mid & e & \textbf{e} & \textschwa & \textbf{a} & o & \textbf{o} \\
+Low & & & a & \textbf{\"a} & & \\
+\end{tabular}
+\end{table}
+
+\begin{table}[h]
+\Huge
+\begin{tabular}{c c c c c c c c c c c c}
+i\tikzmark{i} & & & & \tikzmark{u}u & & & \tikzmark{ib}i\tikzmark{ii} & & & & \tikzmark{uu}u \\
+e\tikzmark{e} & & \tikzmark{ab}\textschwa\tikzmark{aa} & & \tikzmark{o}o & & & \tikzmark{ee}e & & \textschwa & & \tikzmark{oo}o \\
+& & a & & & & & & & \tikzmark{a}a & & \\
+\end{tabular}
+\begin{tikzpicture}[overlay, remember picture, shorten >=.5pt, shorten <=.5pt, transform canvas={yshift=.25\baselineskip}]
+  \draw [->, thick] ({pic cs:i}) [bend left] to ([yshift=2pt, xshift=1pt]{pic cs:ab});
+  \draw [->, thick] ({pic cs:u}) [bend right] to ([yshift=2pt, xshift=-1pt]{pic cs:aa});
+  \draw [->, thick] ([yshift=-7pt]{pic cs:e}) [bend right] to ([yshift=-7pt]{pic cs:ab});
+  \draw [->, thick] ([yshift=-7pt]{pic cs:o}) [bend left] to ([yshift=-7pt]{pic cs:aa});
+  \draw [->, thick] ({pic cs:uu}) [bend right] to ([yshift=4pt]{pic cs:ii});
+  \draw [->, thick] ({pic cs:a}) -- ({pic cs:ii});
+  \draw [->, thick] ({pic cs:ee}) [bend left] to ({pic cs:ib});
+  \draw [->, thick] ({pic cs:oo}) [bend right] to ([yshift=1.5pt]{pic cs:ii});
+\end{tikzpicture}
+\end{table}
+
+The diphthongs are all romanized here as sequences of the romanized monopthongs, except for /ai/, which is romanized as \textbf{ai} rather than \textbf{\"ai}.
+
+\subsection{Allophony}
+According to its original specification, there was no canonical allophony for QuCheanya - the sounds were to be pronounced exactly as-is.  Different speakers of course applied different allophonic rules based on their native languages, giving distinct accents in speech, which, over the span of millennia, were too many to list here.
+
+\subsection{Stress}
+QuCheanya words always had the primary stress on the penult, and a secondary stress on the preantepenult if the word was four syllables long or longer, with single-syllable words and particles being unstressed and somewhat deemphasized in sentences.
+
+\section{Morphology}
+\subsection{Nominal Morphology}
+QuCheanya nouns were marked for case, number, and tense.  There was no gender or noun class in the language, and only singular and plural numbers.  There were eight cases, including the case used to mark the topic, and five tenses.
+
+\subsubsection{Tense}
+
+If the noun was topicalized, it appeared at the beginning of the sentence marked with the ``topic'' case ending, which obligatorily included a tense.  The ending was formed from a consonant indicating tense and \textbf{-ei} (indicating singular) or \textbf{-eya} (indicating plural).  If the noun was not topicalized, tense was marked with a tense syllable, which was the tense consonant followed by \textbf{-a}.
+
+\begin{table}[h]
+\begin{tabular}{l|c c}
+Tense & With Topic & With Non-Topic \\
+\hline
+Present & \textbf{-c-} & \textbf{-ca-} \\
+Past & \textbf{-q-} & \textbf{-qa-} \\
+Future & \textbf{-p-} & \textbf{-pa-} \\
+Past Displaced & \textbf{-qqh-} & \textbf{-qqha-} \\
+Future Displaced & \textbf{-pf-} & \textbf{-pfa-} \\
+\end{tabular}
+\end{table}
+
+The past displaced and future displaced tenses were used in cases of time travel.  Each object or person has its own personal timeline, which indicates the order in which it experiences the world.  The world also has a global timeline, in which things earlier in the global timeline are regarded to have happened before things that come later in the timeline.  Ordinarily these two different timelines are sync, things experienced by each object or person at an earlier point in their personal timeline also happened at an earlier point in the global timeline.  With time travel involved, this is not necessarily the case, something that happens to a person earlier along their personal timeline may happen in the global future of something they experienced later.  Since tenses affix to nouns, this indicates where along the noun's personal timeline it is/was/will be in the sentence, relative to the speaker, who usually has a subjective determination about what point in the noun's timeline is the ``present''.  When referring to something that happened to a noun in its personal past/present/future, which is also in the global past/present/future, it is proper to use the regular past/present/future tenses.  When referring to something that happened to the noun in its personal past or future which is \emph{not} in the global past or future respectively, then the past displaced (for actions in the noun's personal past) or future displaced (for actions in the noun's personal future) tenses would be used.  It is also acceptable to use past displaced and future displaced tenses if the noun in the context of the sentence is considered to be in the ``wrong'' global time due to time travel, even if the action of the sentence happened in past of both the noun's personal timeline and the global timeline, for example.  This is somewhat subjective.  A person who permanently moved to another time frame would not be considered displaced, for example.  The position of the event of the sentence in the global timeline was typically indicated using nouns for ``places'' in time (yesterday, last week, 1629, etc.) in the locative case.
+
+Tenses were not required for non-topicalized nouns.  If a noun lacked a tense marking, it was assumed to be in the same tense as the topic noun.  The exception was in sentences in the imperative mood, which could not mark tense on any noun and did not have topics.
+
+\subsubsection{Case and Number}
+
+One of the following case and number markings came after the tense marking on the noun:
+
+\begin{table}[h]
+\begin{tabular}{l| c c}
+Case & Singular & Plural \\
+\hline
+Nominative & \emph{unmarked} & \textbf{-a} \\
+Accusative & \textbf{-sui} & \textbf{-sua} \\
+Dative & \textbf{-re} & \textbf{-rea} \\
+Alienable Genitive & \textbf{-lye} & \textbf{-lya} \\
+Inalienable Genitive & \textbf{-tye} & \textbf{-tya} \\
+Oblique & \textbf{-cy\"a} & \textbf{-cya} \\
+Locative & \textbf{-nu} & \textbf{-nua} \\
+Topic & \textbf{-ei} & \textbf{-eya} \\
+\end{tabular}
+\end{table}
+
+\newpage
+
+The nominative plural ending \textbf{-a} was applied to words ending in different vowels in the following way:
+
+\begin{table}[h]
+\begin{tabular}{l|l}
+Singular Ending & Plural Ending \\
+\hline
+\textbf{-\"a} & \textbf{-a} \\
+\textbf{-e} & \textbf{-ea} \\
+\textbf{-i} & \textbf{-ia} \\
+\textbf{-o} & \textbf{-oa} \\
+\textbf{-u} & \textbf{-ua} \\
+\textbf{-a} (or any diphthong ending in \textbf{-a}) & \emph{no change} \\
+\textbf{-ai} & \textbf{-\"aya} \\
+\textbf{-ei} & \textbf{-eya} \\
+\textbf{-oi} & \textbf{-oya} \\
+\textbf{-ui} & \textbf{-uya} \\
+\end{tabular}
+\end{table}
+
+Marking a noun with the topic marker indicated that it was the old, or established information in the sentence, and that other nouns were new information.  Any word in the main clause could be topicalized.  Any case marking the noun would otherwise have had would then be replaced with the topic marking and its noun phrase would be moved to the front of the sentence.
+
+Nominative case was used to mark subjects of verbs, accusative direct objects of verbs, and dative indirect objects of verbs.  The genitives were used to mark possession; the genitive case marking would be applied to the possessor noun, which preceded the possessed noun, which itself would be marked for some other case depending on its role in the sentence.  If a noun that would ordinarily be in a genitive case was topicalized, a pronoun marked for the genitive case would have to appear in its original place in the sentence, preceding the possessed noun.  The alienable genitive case was used for things which were considered to be possessed alienably, such as belongings, and intangible things such as thoughts, feelings, knowledge or ideas, while the inalienable genitive was used for things possessed inalienably, such as body parts, physical components of an object, or family members.  The locative case was used generally on its own to mean ``in/at/on'', or sometimes ``during'', and also with objects of postpositions of time or place.  The oblique case was used with the objects of all other postpositions.
+
+\newpage
+
+\subsubsection{Pronouns}
+
+Pronouns were marked somewhat idiosyncratically for case and number:
+
+\begin{table}[h]
+\begin{tabular}{l | l l | l l | l l}
+Type & \multicolumn{2}{|l|}{Nominative} & \multicolumn{2}{|l|}{Accusative} & \multicolumn{2}{|l}{Dative} \\
+& Singular & Plural & Singular & Plural & Singular & Plural \\
+\hline
+1st & \textbf{noi} & \textbf{mua} & \textbf{nosu} & \textbf{mosua} & \textbf{nore} & \textbf{morea} \\
+2nd & \textbf{pfe} & \textbf{fea} & \textbf{pfesu} & \textbf{fesua} & \textbf{pfere} & \textbf{ferea} \\
+3rd & \textbf{che} & \textbf{cea} & \textbf{chesu} & \textbf{cesua} & \textbf{chare} & \textbf{carea} \\
+Topic-Reflexive & \textbf{ri} & \textbf{ria} & \textbf{risu} & \textbf{risua} & \textbf{re} & \textbf{rea} \\
+\end{tabular} \\[0.5cm]
+
+\begin{tabular}{l | l l | l l | l l}
+Type & \multicolumn{2}{|l|}{Alienable Genitive} & \multicolumn{2}{|l|}{Inalienable Genitive} & \multicolumn{2}{|l}{Oblique} \\
+& Singular & Plural & Singular & Plural & Singular & Plural \\
+\hline
+1st & \textbf{nolye} & \textbf{molua} & \textbf{notye} & \textbf{motya} & \textbf{nocy\"a} & \textbf{mocya} \\
+2nd & \textbf{pfelye} & \textbf{felya} & \textbf{pfetye} & \textbf{fetya} & \textbf{pfecy\"a} & \textbf{fecya} \\
+3rd & \textbf{chalye} & \textbf{celya} & \textbf{chatye} & \textbf{cetya} & \textbf{checy\"a} & \textbf{cecya} \\
+Topic-Reflexive & \textbf{relye} & \textbf{relya} & \textbf{retye} & \textbf{retya} & \textbf{ricy\"a} & \textbf{ricya} \\
+\end{tabular} \\[0.5cm]
+
+\begin{tabular}{l | l l | l l}
+Type & \multicolumn{2}{|l|}{Locative} & \multicolumn{2}{|l}{Topic} \\
+& Singular & Plural & Singular & Plural \\
+\hline
+1st & \textbf{nuinu} & \textbf{monua} & \textbf{nonei} & \textbf{munea} \\
+2nd & \textbf{pfenu} & \textbf{fenua} & \textbf{pfei} & \textbf{feya} \\
+3rd & \textbf{chenu} & \textbf{cenua} & \textbf{chetsei} & \textbf{cetsa} \\
+Topic-Reflexive & \textbf{rinu} & \textbf{rinua} & -- & -- \\
+\end{tabular}
+\end{table}
+
+The topic-reflexive pronoun was a special pronoun used to refer to the topic noun of the sentence in other positions.
+
+If a pronoun needed to mark a tense (for example, if it was topicalized, or if it was a different tense than the topic), then the tense syllable ending in \textbf{-a} would precede the pronoun, e.g. \textbf{qa phei}, \textbf{ca mua}, etc.
+
+\subsubsection{Compounds}
+
+There were a small number of nominal compounds formed with a limited set of head nouns, but as a general rule the language formed noun phrases from two nouns by deriving one into an adjective, rather than by creating a compound.  Words surrounding language, culture, and nationality could generally be formed with compounds using e.g. \textbf{qu} (meaning ``language''), \textbf{nora} (meaning ``country'') and \textbf{soye} (meaning ``food''), so \textbf{NoraCheanya} was the common name for the Empire, later the Republic, and \textbf{SoyeCheanya} referred generally to Cheanya cuisine.  In later eras, as chemical elements were discovered, the QuCheanya names for them were created using compounds headed with \textbf{tsai}, or ``stuff''.  All compounds were head-first and consisted of only two morphemes each, and here we represent them in the romanization by capitalizing the first letter of each morpheme.
+
+\subsection{Verbal Morphology}
+
+Verbs in QuCheanya frequently formed compounds by attaching to a postposition as a prefix, creating a related but different verb.  For example, \textbf{paityapa}, ``up-jump'' meant ``jump up'', \textbf{cyochai}, ``out-say'' meant ``shout'', etc.  This was very productive, and new forms continued to pop up and percolate back into the past via communications between the priestesses in different time frames.  Although the standard for the language was supposed to be unchanging, the priestesses were not opposed to adding more words to the official dictionary if they thought it was merited, which was necessary just to keep up with new inventions and ideas.
+
+Aside from this compounding, there was no other verbal morphology of note in the language.
+
+\subsection{Adjectives and Adverbs}
+
+Adjectives and adverbs were invariant in QuCheanya, not agreeing with any case, number, or tense, and were also not distinguished from each other (a feature QuCheanya shares with most of the natural Cheanya languages as well).  If the word modified a noun, it was an adjective, if it modified a verb it was an adverb.
+
+\subsection{Other Morphology}
+
+Some closed-class words in QuCheanya displayed some partial reduplication, typically reduplicating either the first syllable of a longer word, or the consonant and first vowel of a syllable ending in a diphthong.  Syllables that began with a palatal or palatalized consonant were often reduplicated as the non-palatal/ized version of the consonant followed by -i, regardless of what the actual vowel of the syllable was.  Reduplication had a somewhat idiosyncratic meaning.  It is glossed as \textsc{rdpl} in the examples.
+
+\section{Syntax}
+\subsection{Noun Phrase}
+
+Noun phrases were head-last, consisting of an optional number or quantifier, followed by optionally one or more adjectives, postpositional phrases, or genitive noun phrases, followed a single noun.  
+
+\subsection{Verb Phrase}
+
+Verb phrases were also head-last, consisting of optionally one or more adverbs, followed by a single verb, followed optionally by one or two post-verbal particles.
+
+\subsubsection{Post-Verbal Particles}
+
+Post-verbal particles were used to mark aspect and mood.  There were two aspect-marking particles, \textbf{c\"a}, which marked perfective aspect, and \textbf{sei}, which marked habitual aspect.  The imperative mood particle, \textbf{tyua}, could be used instead of an aspect marking-particle - in this mood, the sentence could have no topic or tense markings, however, any noun or pronoun could be the subject of the sentence, and thus \textbf{tyua} also served to mark hortatives and jussives.  Sentences ending with none of these particles were by default in the progressive aspect and indicative mood.
+
+There was also a special post-verbal particle which came after the aspect- and mood-marking particles, which was important in conversation and narrative.  This particle, \textbf{rui}, glossed here as \textsc{FUTREL}, indicated that the sentence had relevance to some time in the future of the nouns involved, the way that ``I have eaten'' is about a past event that has present relevance, or ``it will stop raining soon'' has relevance to a further future time than the tense of the sentence.  This was an important particle for recording stories or events as they happened in order.  \textbf{rui} was also a postposition meaning ``from'', and these usages were related.
+
+\subsection{Clauses}
+
+Clauses in QuCheanya consisted of one or more noun phrases or postpositional phrases followed by a verb phrase.  The usual order of the noun phrases was subject followed by indirect object followed by direct object, although other orders could be used for poetic purposes.  Any noun in the sentence could be topicalized, which resulted its phrase being moved to the front of the sentence and it being marked with the topic ``case'' marking in place of whatever case it would have been marked for otherwise.  If a noun that would have been marked in a genitive case was topicalized, the noun phrase of the noun it modified was not moved and a topic-reflexive pronoun marked for the relevant genitive case appeared in its original position in the sentence.  If the object of a postpositional phrase was topicalized, the entire postpositional phrase would move to the front of the sentence.  The language was not pro-drop, and thus always required at least a subject noun phrase.  A topic was generally required in all sentences as well, except for those in the imperative mood.
+
+\subsubsection{Complement Clauses}
+
+Clauses could be complementized in QuCheanya by appearing in the direct object position of a verb like ``say'', ``think'', ``know'', or ``want''.  These clauses could not end with any post-verbal particles, but were instead followed by the complementizer \textbf{qqhoa}.  If the main verb of the original clause was \textbf{yai}, meaning ``be''/``exist''/``do''/``happen'', \textbf{yai} was deleted from the complement clause.
+
+Nouns could be topicalized from within a complement clause, but in this case a topic-reflexive pronoun always appeared in their original place and with their original case marking within the complement clause.
+
+\part{Vocabulary}
+
+\subsubsection{P}
+
+\begin{description}
+\item [pai] \emph{postposition} Up, or above.
+\item [poica] \emph{noun} Ball.
+\end{description}
+
+\subsubsection{T}
+
+\begin{description}
+\item [tityu] \emph{adverb} Again.  This had the form of a partially reduplicated form of \textbf{tyu}, but \textbf{tyu} did not actually exist as a word in QuCheanya.
+\item [tile] \emph{adjective} Near, spacially.  Partially reduplicated form \textbf{titile} was a noun that meant ``here''.
+\item [tira] \emph{adjective} Near, temporally.  Depending on the tense of the nouns, this could mean ``soon'', ``recent'', or ``right now''.
+\item [tal\"a] \emph{number} Five.
+\end{description}
+
+\subsubsection{C}
+
+\begin{description}
+\item [ci] \emph{verb} Look, see.  This was the more agentive counterpart to \textbf{qera}, which sometimes meant ``see'', but more often ``notice''.
+\end{description}
+
+\begin{description}
+\item [c\"a] \emph{particle} Perfective marker.
+\end{description}
+
+\subsubsection{Q}
+
+\begin{description}
+\item [q\"atya] \emph{verb} Work.
+\item [q\"aro] \emph{noun} Yesterday.  This is the relative form of ``yesterday'', equivalent to \textbf{tsoa}.  This would be used unless the relative yesterday and the global yesterday were different, and the speaker wished to refer to the global yesterday specifically, in which case \textbf{chyure} would be used.
+\item [qera] \emph{verb} See, notice.  Less agentive counterpart to \emph{ci}.
+\end{description}
+
+\subsubsection{F}
+
+\begin{description}
+\item [f\"a] \emph{verb} Go.  This had many combinations with postpositions: \textbf{meaf\"a}, ``come'', \textbf{ruif\"a}, ``go away'', \textbf{chuf\"a} ``fall''/``go/come down'', and \textbf{paif\"a}, ``rise''/``go/come up''.
+\item [fiq\"a] \emph{noun} Animal.
+\item [foase] \emph{adjective} Slow.
+\item [fuqhe] \emph{noun} Table.
+\end{description}
+
+\subsubsection{S}
+
+\begin{description}
+\item [sepui] \emph{adjective} Wild, untamed.
+\item [sei] \emph{particle} Habitual aspect marker.
+\item [siane] \emph{quantifier} Some.  The partial reduplication \textbf{sisiane} meant ``many''.
+\item [solye] \emph{noun} Rain.
+\item [susua] \emph{verb} Roll.
+\item [suyu] \emph{adverb} Often, frequently.
+\item [suapfi] \emph{verb} Play.
+\item [suano] \emph{number} Ten.
+\end{description}
+
+\subsubsection{CH}
+
+\begin{description}
+\item [chai] \emph{verb} Speak, say.  \textbf{cyochai} was ``shout''.
+\item [cheanya] \emph{noun} Person, people, or the Cheanya as an ethnic group.
+\item [choi] \emph{number} Three.
+\item [chu] \emph{postposition} Down, or below.
+\end{description}
+
+\subsubsection{QH}
+
+\begin{description}
+\item [qh\"alya] \emph{number} Nine.
+\item [qhoi] \emph{verb} Stop.  This could take either a noun that described an action as the subject, or a full complement clause headed with textbf{qqhoa}.
+\end{description}
+
+\subsubsection{PF}
+
+\begin{description}
+\item [pfona] \emph{number} Four.
+\end{description}
+
+\subsubsection{TS}
+
+\begin{description}
+\item [tsime] \emph{verb} Shine, glow, or emit light.
+\item [tsoa] \emph{noun} Tomorrow.  This was the relative form of tomorrow, meaning roughly,``the period of a day that I will next experience''.  This might, of course, be different than the immediately following day on the global timeline.  In the case that those were in fact the same day, \textbf{tsoa} would be used; if they were different and one wanted to refer to the global tomorrow, the word \textbf{pyea} would be used instead.
+\end{description}
+
+\subsubsection{CCH}
+
+\begin{description}
+\item [cchiy\"a] \emph{adjective} Intense, extreme.
+\end{description}
+
+\subsubsection{QQH}
+
+\begin{description}
+\item [qqhea] \emph{noun} The past, in a global sense, not a relative sense.
+\item [qqhoa] \emph{particle} Complementizer, roughly equivalent to ``that'' when used as a complementizer.
+\end{description}
+
+\subsubsection{PY}
+
+\begin{description}
+\item [pyech\"a] \emph{verb} Start.  Like \textbf{qhoi}, this could take either a noun referring to an action or a complement clause as the subject.
+\item [pyea] \emph{noun} Tomorrow.  This referred only to the following day on the global timeline, and was only used when that following day was different than the day the speaker expected to experience next.
+\end{description}
+
+\subsubsection{TY}
+
+\begin{description}
+\item [tyapa] \emph{verb} Hop, or jump.  \textbf{paityapa}, ``jump up'', or \textbf{chutyapa}, ``jump down''.
+\item [tyua] \emph{particle} Imperative marker.
+\end{description}
+
+\subsubsection{CY}
+
+\begin{description}
+\item [cyo] \emph{postposition} Out, or around.  Often affixed to verbs to make the meaning ``bigger''.
+\end{description}
+
+\subsubsection{FY}
+
+\begin{description}
+\item [fyoanyo] \emph{verb} Hope.  Took a complement clause as its direct object.
+\end{description}
+
+\subsubsection{SY}
+
+\begin{description}
+\item [syene] \emph{number} Two.
+\item [syipfi] \emph{noun} Baby.
+\end{description}
+
+\subsubsection{CHY}
+
+\begin{description}
+\item [chyetea] \emph{verb} Arrive.
+\item [chyure] \emph{noun} Yesterday.  This was the global ``yesterday'', equivalent to \textbf{pyea}, which would be used when the global yesterday was different than the relative yesterday.
+\end{description}
+
+\subsubsection{M}
+
+\begin{description}
+\item [mai] \emph{number} Six.
+\item [mea] \emph{postposition} To, towards.
+\item [-mo] \emph{affix} Affixed to a number to mean ``X times''.
+\end{description}
+
+\subsubsection{N}
+
+\begin{description}
+\item [nitsi] \emph{verb} Walk.
+\item [nulo] \emph{quantifier} All/all of.
+\end{description}
+
+\subsubsection{NY}
+
+\begin{description}
+\item [ny\"area] \emph{verb} Need.  This could take either a noun or a complement clause as the direct object.
+\item [nyu-] \emph{affix} Affixed to nouns as a diminutive.  Often used the form the names of baby animals.  Could be partially reduplicated to \textbf{ninyu-} to mean something extra small.
+\end{description}
+
+\subsubsection{L}
+
+\begin{description}
+\item [leya] \emph{number} Eight.
+\item [lei] \emph{postposition} With, or together with.  Often affixed onto verbs to mean that the plural subject NP were doing something ``together''.
+\end{description}
+
+\subsubsection{LY}
+
+\begin{description}
+\item [lyeina] \emph{adjective} Happy.
+\item [lyoa] \emph{noun} The sun.
+\end{description}
+
+\subsubsection{R}
+
+\begin{description}
+\item [r\"ara] \emph{quantifier} None, no.
+\item [roate] \emph{number} Seven.
+\item [rui] \emph{particle} Future relvance marker.
+\item [rui] \emph{postposition} From, or away.
+\item [rapui] \emph{verb} Ought, should. Took a complement clause as its subject.
+\end{description}
+
+\subsubsection{Y}
+
+\begin{description}
+\item [yai] \emph{verb} Do, be, exist, or happen.  A filler verb often used when all of the semantic content of an action was in the noun.
+\item [yeqqhi] \emph{noun} Cat.
+\item [yeli] \emph{noun} Boy.
+\item [yu] \emph{number} One.
+\end{description}
+
+\part{Example Sentences}
+
+\begin{tabular}{l l l}
+\multicolumn{3}{l}{\emph{Lyoacei tsime sei.}} \\
+\textbf{lyoa-c-ei} & \textbf{tsime} & \textbf{sei} \\
+sun-\textsc{pres}-\textsc{top} & shine & \textsc{hab} \\
+\multicolumn{3}{l}{The sun shines.} \\
+\end{tabular}
+\\[0.5cm]
+\begin{tabular}{l l}
+\multicolumn{2}{l}{\emph{Lyoacei tsime.}} \\
+\textbf{lyoa-c-ei} & \textbf{tsime} \\
+sun-\textsc{pres-top} & shine \\
+\multicolumn{2}{l}{The sun is shining.} \\
+\end{tabular}
+\\[0.5cm]
+\begin{tabular}{l l l}
+\multicolumn{3}{l}{\emph{Lyoaqei tsime sei.}} \\
+\textbf{lyoa-q-ei} & \textbf{tsime} & \textbf{sei} \\
+sun-\textsc{past-top} & shine & \textsc{hab} \\
+\multicolumn{3}{l}{The sun shone.} \\
+\end{tabular}
+\\[0.5cm]
+\begin{tabular}{l l l}
+\multicolumn{3}{l}{\emph{Lyoapei tsime sei.}} \\
+\textbf{lyoa-p-ei} & \textbf{tsime} & \textbf{sei} \\
+sun-\textsc{fut-top} & shine & \textsc{hab} \\
+\multicolumn{3}{l}{The sun will shine.} \\
+\end{tabular}
+\\[0.5cm]
+\begin{tabular}{l l l}
+\multicolumn{3}{l}{\emph{Lyoaqei tsime rui.}} \\
+\textbf{lyoa-q-ei} & \textbf{tsime} & \textbf{rui} \\
+sun-\textsc{past-top} & shine & \textsc{futrel} \\
+\multicolumn{3}{l}{The sun has been shining.} \\
+\end{tabular}
+\\[0.5cm]
+\begin{tabular}{l l l}
+\multicolumn{3}{l}{\emph{Lyoacei tityu tsime.}} \\
+\textbf{lyoa-c-ei} & \textbf{tityu} & \textbf{tsime} \\
+sun-\textsc{pres-top} & again & shine \\
+\multicolumn{3}{l}{The sun is shining again.} \\
+\end{tabular}
+\\[0.5cm]
+\begin{tabular}{l l l l}
+\multicolumn{4}{l}{\emph{Lyoapei tsoanu tsime sei.}} \\
+\textbf{lyoa-p-ei} & \textbf{tsoa-nu} & \textbf{tsime} & \textbf{sei} \\
+sun-\textsc{fut-top} & tomorrow-\textsc{loc} & shine & \textsc{hab} \\
+\multicolumn{4}{l}{The sun will shine tomorrow.} \\
+\end{tabular}
+\\
+
+Notes: \textbf{tsoa}, ``tomorrow'' was a noun and thus could theoretically be marked with an arbitrary tense, however, nouns like ``tomorrow'', ``yesterday'', ``today'', etc. that denote relative points in time were considered inherently tensed and only needed to be marked as such if they were topicalized, but not if they differed from the topic noun in tense.  \textbf{tsoa} could, of course, be marked for a non-future tense, e.g. \textbf{tsoaca}, but this would only be used in contexts where the contradictory meaning conveyed something humorous or poetic.
+
+This sentence could also be written with \textbf{tsoa} topicalized (\emph{Tsoapei lyoa tsime sei.}), which would be more idiomatically translated as ``Tomorrow, the sun will shine.''.
+\\[0.5cm]
+\begin{tabular}{l l l l}
+\multicolumn{4}{l}{\emph{Lyoacei cchiy\"a tsime sei.}} \\
+\textbf{lyoa-c-ei} & \textbf{cchiy\"a} & \textbf{tsime} & \textbf{sei} \\
+sun-\textsc{pres-top} & intense & shine & \textsc{hab} \\
+\multicolumn{4}{l}{The sun shines brightly.} \\
+\end{tabular}
+\\[0.5cm]
+\begin{tabular}{l l l l}
+\multicolumn{4}{l}{\emph{Cchiy\"a lyoacei tsime sei.}} \\
+\textbf{cchiy\"a} & \textbf{lyoa-c-ei} & \textbf{tsime} & \textbf{sei} \\
+intense & sun-\textsc{pres-top} & shine & \textsc{hab} \\
+\multicolumn{4}{l}{The bright sun shines.} \\
+\end{tabular}
+\\[0.5cm]
+\begin{tabular}{l l l}
+\multicolumn{3}{l}{\emph{Lyoacei tira paif\"a.}} \\
+\textbf{lyoa-c-ei} & \textbf{tira} & \textbf{pai-f\"a} \\
+sun-\textsc{pres-top} & near.temp & up-go \\
+\multicolumn{3}{l}{The sun is rising now.} \\
+\end{tabular}
+\\[0.5cm]
+\begin{tabular}{l l l l}
+\multicolumn{4}{l}{\emph{Nulo cheanyaqeya cyochai c\"a.}} \\
+\textbf{nulo} & \textbf{cheanya-q-eya} & \textbf{cyo-chai} & \textbf{c\"a} \\
+all & people-\textsc{past-top.pl} & out-speak & \textsc{perf} \\
+\multicolumn{4}{l}{All the people shouted.} \\
+\end{tabular}
+\\[0.5cm]
+\begin{tabular}{l l l l}
+\multicolumn{4}{l}{\emph{Siane cheanyaqeya cyochai c\"a.}} \\
+\textbf{siane} & \textbf{cheanya-q-eya} & \textbf{cyo-chai} & \textbf{c\"a} \\
+some & people-\textsc{past-top.pl} & out-speak & \textsc{perf} \\
+\multicolumn{4}{l}{Some of the people shouted.} \\
+\end{tabular}
+\\[0.5cm]
+\begin{tabular}{l l l l l}
+\multicolumn{5}{l}{\emph{Sisiane cheanyaqeya syenemo cyochai c\"a.}} \\
+\textbf{si-siane} & \textbf{cheanya-q-eya} & \textbf{syene-mo} & \textbf{cyo-chai} & \textbf{c\"a} \\
+\textsc{rdpl}-some & people-\textsc{past-top.pl} & two-times & out-speak & \textsc{perf} \\
+\multicolumn{5}{l}{Many of the people shouted twice.} \\
+\end{tabular}
+\\[0.5cm]
+\begin{tabular}{l l l l l}
+\multicolumn{5}{l}{\emph{Lyeina cheanyaceya suyu cyochai c\"a.}} \\
+\textbf{lyeina} & \textbf{cheanya-c-eya} & \textbf{suyu} & \textbf{cyo-chai} & \textbf{c\"a} \\
+happy & people-\textsc{pres-top.pl} & often & out-speak & \textsc{hab} \\
+\multicolumn{5}{l}{Happy people often shout.} \\
+\end{tabular}
+\\[0.5cm]
+\begin{tabular}{l l l}
+\multicolumn{3}{l}{\emph{Nyuyeqqhiqei paityapa c\"a.}} \\
+\textbf{nyu-yeqqhi-q-ei} & \textbf{pai-tyapa} & \textbf{c\"a} \\
+\textsc{dim}-cat-\textsc{past-top} & up-jump & \textsc{perf} \\
+\multicolumn{3}{l}{The kitten jumped up.} \\
+\end{tabular}
+\\[0.5cm]
+\begin{tabular}{l l l l l}
+\multicolumn{5}{l}{\emph{Nyuyeqqhiqei fuqhenu mea paityapa c\"a.}} \\
+\textbf{nyu-yeqqhi-q-ei} & \textbf{fuqhe-nu} & \textbf{mea} & \textbf{pai-tyapa} & \textbf{c\"a} \\
+\textsc{dim}-cat-\textsc{past-top} & table-\textsc{loc} & to & up-jump & \textsc{perf} \\
+\multicolumn{5}{l}{The kitten jumped onto the table.} \\
+\end{tabular}
+\\[0.5cm]
+\begin{tabular}{l l l l}
+\multicolumn{4}{l}{\emph{Nolye ninyuyeqqhiqei ruinitsi c\"a.}} \\
+\textbf{nolye} & \textbf{ni-nyu-yeqqhi-q-ei} & \textbf{rui-nitsi} & \textbf{c\"a} \\
+\textsc{1s.gena} & \textsc{rdpl-dim}-cat-\textsc{past-top} & from-walk & \textsc{perf} \\
+\multicolumn{4}{l}{My little kitten walked away.} \\
+\end{tabular}
+\\[0.5cm]
+\begin{tabular}{l l}
+\multicolumn{2}{l}{\emph{Solyecei yai.}} \\
+\textbf{solye-c-ei} & \textbf{yai} \\
+rain-\textsc{pres-top} & happen \\
+\multicolumn{2}{l}{It's raining.} \\
+\end{tabular}
+\\[0.5cm]
+\begin{tabular}{l l l}
+\multicolumn{3}{l}{\emph{Solyeqei chuf\"a c\"a.}} \\
+\textbf{solye-q-ei} & \textbf{chu-f\"a} & \textbf{c\"a} \\
+rain-\textsc{past-top} & down-go & \textsc{perf} \\
+\multicolumn{3}{l}{The rain came down.} \\
+\end{tabular}
+\\[0.5cm]
+\begin{tabular}{l l l}
+\multicolumn{3}{l}{\emph{Nyuyeqqhicei solyenu suapfi.}} \\
+\textbf{nyu-yeqqhi-c-ei} & \textbf{solye-nu} & \textbf{suapfi} \\
+\textsc{dim}-cat-\textsc{pres-top} & rain-\textsc{loc} & play \\
+\multicolumn{3}{l}{The kitten is playing in the rain.} \\
+\end{tabular}
+\\[0.5cm]
+\begin{tabular}{l l l l}
+\multicolumn{4}{l}{\emph{Solyeqei qhoi c\"a rui.}} \\
+\textbf{solye-q-ei} & \textbf{qhoi} & \textbf{c\"a} & \textbf{rui} \\
+rain-\textsc{past-top} & stop & \textsc{perf} & \textsc{futrel} \\
+\multicolumn{4}{l}{The rain has stopped.} \\
+\end{tabular}
+\\[0.5cm]
+\begin{tabular}{l l l l l}
+\multicolumn{5}{l}{\emph{Solyepei tira qhoi c\"a rui.}} \\
+\textbf{solye-p-ei} & \textbf{tira} & \textbf{qhoi} & \textbf{c\"a} & \textbf{rui} \\
+rain-\textsc{fut-top} & near.temp & stop & \textsc{perf} & \textsc{futrel} \\
+\multicolumn{5}{l}{Soon the rain will stop.} \\
+\end{tabular}
+\\[0.5cm]
+\begin{tabular}{l l l l l l l}
+\multicolumn{7}{l}{\emph{Ca nonei solyepa tira qhoi qqhoa fyoanyo.}} \\
+\textbf{ca} & \textbf{nonei} & \textbf{solye-pa} & \textbf{tira} & \textbf{qhoi} & \textbf{qqhoa} & \textbf{fyoanyo} \\
+\textsc{pres} & \textsc{1s.top} & rain-\textsc{fut} & near.temp & stop & \textsc{comp} & hope \\
+\multicolumn{7}{l}{I hope the rain stops soon.} \\
+\end{tabular}
+\\
+
+With the rain topicalized, this sentence would read \emph{Solyepei ca noi ri tira qhoi qqhoa fyoanyo}, with the topic-reflexive pronoun \textbf{ri} filling in for \textbf{solye} in the complement clause, and the pronoun in the nominative case.
+\\[0.5cm]
+\begin{tabular}{l l l l l l}
+\multicolumn{6}{l}{\emph{Titileqei sepui fiqa qqheanu yai sei.}} \\
+\textbf{ti-tile-q-ei} & \textbf{sepui} & \textbf{fiqa} & \textbf{qqhea-nu} & \textbf{yai} & \textbf{sei} \\
+\textsc{rdpl}-near.spac-\textsc{past-top} & wild & animal.\textsc{nom.pl} & past-\textsc{loc} & exist & \textsc{hab} \\
+\multicolumn{6}{l}{Once wild animals lived here.} \\
+\end{tabular}
+\\
+
+\textbf{titile} is a noun meaning ``here'' that is a partial reduplication of the adjective \textbf{tile} meaning ``near, spacially''.
+\\[0.5cm]
+\begin{tabular}{l l l l l}
+\multicolumn{5}{l}{\emph{Qa chetsei foase cyoci c\"a.}} \\
+\textbf{qa} & \textbf{chetsei} & \textbf{foase} & \textbf{cyo-ci} & \textbf{c\"a} \\
+\textsc{past} & \textsc{3s.top} & slow & out-look & \textsc{perf} \\
+\multicolumn{5}{l}{Slowly s/he looked around.} \\
+\end{tabular}
+\\[0.5cm]
+\begin{tabular}{l l l}
+\multicolumn{3}{l}{\emph{Pfe ruif\"a tyua!}} \\
+\textbf{pfe} & \textbf{rui-f\"a} & \textbf{tyua} \\
+\textsc{2s.nom} & from-go & \textsc{imp} \\
+\multicolumn{3}{l}{Go away!} \\
+\end{tabular}
+\\
+
+This could alternatively be \emph{Fea ruif\"a tyua!} to mean a group of people instead of just one.
+\\[0.5cm]
+\begin{tabular}{l l l}
+\multicolumn{3}{l}{\emph{Mua f\"a tyua!}} \\
+\textbf{mua} & \textbf{f\"a} & \textbf{tyua} \\
+\textsc{1p.nom} & go & \textsc{imp} \\
+\multicolumn{3}{l}{Let's go!} \\
+\end{tabular}
+\\[0.5cm]
+\begin{tabular}{l l l l l l}
+\multicolumn{5}{l}{\emph{Ca pfei ri f\"a qqhoa rapui.}}\\
+\textbf{ca} & \textbf{phei} & \textbf{ri} & \textbf{f\"a} & \textbf{qqhoa} & \textbf{rapui} \\
+\textsc{pres} & \textsc{2s.top} & \textsc{top-refl.s.nom} & go & \textsc{comp} & ought \\
+\multicolumn{5}{l}{You should go.} \\
+\end{tabular}
+\\[0.5cm]
+\begin{tabular}{l l l l l}
+\multicolumn{5}{l}{\emph{Pa nonei lyeina f\"a c\"a.}} \\
+\textbf{pa} & \textbf{nonei} & \textbf{lyeina} & \textbf{f\"a} & \textbf{c\"a} \\
+\textsc{fut} & \textsc{1s.top} & happy & go & \textsc{perf} \\
+\multicolumn{5}{l}{I will be happy to go./I will go happily.} \\
+\end{tabular}
+\\[0.5cm]
+\begin{tabular}{l l l l l l}
+\multicolumn{6}{l}{\emph{Pa chetsei tira chyetea c\"a rui.}} \\
+\textbf{pa} & \textbf{chetsei} & \textbf{tira} & \textbf{chyetea} & \textbf{c\"a} & \textbf{rui} \\
+\textsc{fut} & \textsc{3s.top} & near.temp & arrive & \textsc{perf} & \textsc{futrel} \\
+\multicolumn{6}{l}{S/he will arrive soon.}
+\end{tabular}
+\\[0.5cm]
+\begin{tabular}{l l l l l}
+\multicolumn{5}{l}{\emph{Syipfilye poicaqei ruisusua c\"a rui.}} \\
+\textbf{syipfi-lye} & \textbf{poica-q-ei} & \textbf{rui-susua} & \textbf{c\"a} & \textbf{rui} \\
+baby-\textsc{gena} & ball-\textsc{past-top} & from-roll & \textsc{perf} & \textsc{futrel} \\
+\multicolumn{5}{l}{The baby's ball has rolled away.} \\
+\end{tabular}
+\\
+
+Topicalizing the baby instead of the ball in this sentence would result in \emph{Syipfiqei relye poica ruisusua c\"a rui}.
+\\[0.5cm]
+\begin{tabular}{l l l}
+\multicolumn{3}{l}{\emph{Syene yeliceya leiq\"atya.}} \\
+\textbf{syene} & \textbf{yeli-c-eya} & \textbf{lei-q\"atya} \\
+two & boy-\textsc{pres-top.pl} & with-work \\
+\multicolumn{3}{l}{Two boys are working together.} \\
+\end{tabular}
+\end{document}

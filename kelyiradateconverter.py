@@ -184,7 +184,7 @@ def format_earth_date(month, day, hour, minute):
     
 def format_kelyira_date(month, week, day, hour, minute):
     hour_number = f"{hour + 1 if hour < 6 else hour - 5 if hour < 12 else hour - 11}"
-    hour_set = f"{'Qä' if hour < 6 else 'Sua' if hour < 12 else 'Fo'}Chai"
+    hour_set = f"{'Qä' if hour < 6 else 'Sua' if hour < 12 else 'Fo'}Qhai"
     time = f"{hour_number}:{minute:03} {hour_set} on " if hour >= 0 else ""
 
     return f"{time}{month} Yeari, {week} Soine, {day}"

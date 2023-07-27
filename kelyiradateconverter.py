@@ -187,7 +187,7 @@ def format_kelyira_date(month, week, day, hour, minute):
     hour_set = f"{'Qä' if hour < 6 else 'Sua' if hour < 12 else 'Fo'}Qhai"
     time = f"{hour_number}:{minute:03} {hour_set} on " if hour >= 0 else ""
 
-    return f"{time}{month} Yeari, {week} Soine, {day}"
+    return f"{time}{month} Yeari, {week} Soine {day}"
 
 def main():
     leap = False

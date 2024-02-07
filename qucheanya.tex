@@ -1,20 +1,24 @@
 \documentclass{article}
 \title{The QuCheanya Language}
-\date{198, 5 Yeari, 4 Soine 2}
+\date{{\quch d1d9d8, d5 yeari, d4 soine d2}}
 \author{Published at Lyutseino Temple}
 \usepackage{tikz}
 \usetikzlibrary{tikzmark}
 \usepackage{expex}
 \usepackage{amssymb}
 \usepackage{fontspec,relsize}
+\newfontface\qucheanya{Qucheanya_Regular}[RawFeature=+svg]  
 \setmainfont{DejaVuSerif}
 
 \begin{document}
-\definelingstyle{QuCheanya}{everyglpreamble=\it,everygla=\bf}
-\newcommand{\entry}[3]{\textbf{#1}\ \textit{#2}\ $\bullet$\ {#3}}
+\definelingstyle{QuCheanya}{everyglpreamble=\quch,everygla=\bf}
+\newcommand{\entry}[3]{{\quch #1}\ \textit{#2}\ $\bullet$\ {#3}}
 \newcommand{\scap}[1]{{\smaller #1}}
-\newcommand{\scapp}[2]{{\smaller #1}.{\smaller #2}}
-\newcommand{\scappp}[3]{{\smaller #1}.{\smaller #2}.{\smaller #3}}
+\newcommand{\scaptwo}[2]{{\smaller #1}.{\smaller #2}}
+\newcommand{\scapthree}[3]{{\smaller #1}.{\smaller #2}.{\smaller #3}}
+\newlanguage\quchlanguage
+\newcommand{\quch}[1]{\huge\language\quchlanguage\qucheanya #1}
+\newcommand{\quchspace}{\phantom{\quch t}}
 
 \maketitle
 \tableofcontents \newpage
@@ -40,19 +44,21 @@ In practice, most of the lay people do not know this language. We offer classes,
 
 \newpage
 
-\part{Phonology}
+\part{Phonology and Orthography}
 \subsection{Phonemes}
-QuCheanya has five series' of obstruents in the four places of articulation common to most Cheanya languages (bilabial, alveolar, velar, and uvular), bilabial, alveolar and palatal nasals, alveolar and palatal lateral approximants, an alveolar trill, and a palatal glide.  The chart below displays the phoneme in regular type on the left and the romanization used in this document in bold on the right.
+QuCheanya has five series' of obstruents in the four places of articulation common to most Cheanya languages (bilabial, alveolar, velar, and uvular), bilabial, alveolar and palatal nasals, alveolar and palatal lateral approximants, an alveolar trill, and a palatal glide.  Table~\ref{table:consonants} displays the phoneme in regular type on the left and the romanization used in this document in bold on the right.
 
 \begin{table}[h]
+\caption{Consonant Phonemes of QuCheanya}
+\label{table:consonants}
 \begin{tabular}{l| c c | c c | c c | c c | c c}
 & \multicolumn{2}{c}{Bilabial} & \multicolumn{2}{c}{Alveolar} & \multicolumn{2}{c}{Palatal} & \multicolumn{2}{c}{Velar} & \multicolumn{2}{c}{Uvular} \\
 \hline
 Stop & p & \textbf{p} & t & \textbf{t} & & & k & \textbf{c} & q & \textbf{q} \\
-Fricative & ɸ & \textbf{f} & s & \textbf{s} & & & x & \textbf{ch} & χ & \textbf{qh} \\
-Affricate & p͡ɸ & \textbf{pf} & ʦ & \textbf{ts} & & & k͡x & \textbf{cch} & q͡χ & \textbf{qqh} \\
 Palatalized Stop & pʲ & \textbf{py} & tʲ & \textbf{ty} & & & kʲ & \textbf{cy} & & \\
+Fricative & ɸ & \textbf{f} & s & \textbf{s} & & & x & \textbf{ch} & χ & \textbf{qh} \\
 Palatalized Fricative & ɸʲ & \textbf{fy} & sʲ & \textbf{sy} & & & xʲ & \textbf{chy} & & \\
+Affricate & p͡ɸ & \textbf{pf} & ʦ & \textbf{ts} & & & k͡x & \textbf{cch} & q͡χ & \textbf{qqh} \\
 Nasal & m & \textbf{m} & n & \textbf{n} & ɲ & \textbf{ny} & & & & \\
 Lateral Approximant & & & l & \textbf{l} & ʎ & \textbf{ly} & & & & \\
 Trill & & & r & \textbf{r} & & & & & & \\
@@ -64,6 +70,8 @@ Glide & & & & & j & \textbf{y} & & & & \\
 For vowels, QuCheanya has six basic monopthongs, four centering diphthongs ending in a schwa, and four rising diphthongs ending in /i/.
 
 \begin{table}[h]
+\caption{Vowel Phonemes of QuCheanya}
+\label{table:vowels}
 \begin{tabular}{l| c c | c c | c c}
 & \multicolumn{2}{c}{Front} & \multicolumn{2}{c}{Mid} & \multicolumn{2}{c}{Back} \\
 \hline
@@ -110,6 +118,74 @@ As QuCheanya is an auxiliary language meant to be usable by a variety of people 
 \subsection{Stress}
 QuCheanya words are preferentially stressed on the antepenult, with reducing secondary stresses appearing to the left every other syllable, although personal names and place names may be stressed differently if that would cause better conformation to the original pronunciation.  Two-syllable words are stressed on the first syllable, and one-syllable words and particles are unstressed and a bit depemphasized in intonation. Stress placement is not based on any kind of syllable length metric (whether a syllable contains a diphthong or a monopthong, for example) and any type of syllable may be stressed. Stressed syllables are pronounced more loudly and with a higher pitch than syllables with less stress, but the vowel is not lengthened.
 
+\subsection{Orthography}
+QuCheanya is written using a featurial syllabary, with each character being formed from a frame representing the consonant, and a center representing the vowel.  The frames themselves are made up of features indicating the place and manner of articulation, and the centers that represent diphthongs are combinations of the shapes from the centers for the monopthongs.  When printed, the frames are printed in red ink to help distinguish them from the centers - with the printing press, this is done by creating a plate with the frames only and inking it in red, followed by a plate with centers only, and inking it in black.  When handwritten, it is usually written monochrome.  The frames and centers are shown in Table~\ref{table:frames} and Table~\ref{table:centers}.
+
+\begin{table}[h]
+\caption{Consonant Frames}
+\label{table:frames}
+\begin{tabular}{c c | c c | c c | c c | c c}
+\multicolumn{2}{c}{Bilabial} & \multicolumn{2}{c}{Alveolar} & \multicolumn{2}{c}{Palatal} & \multicolumn{2}{c}{Velar} & \multicolumn{2}{c}{Uvular} \\
+\hline
+\textbf{p} & {\quch p} & \textbf{t} & {\quch t} & & & \textbf{c} & {\quch c} & \textbf{q} & {\quch q} \\
+\textbf{py} & {\quch py} & \textbf{ty} & {\quch ty} & & & \textbf{cy} & {\quch cy} & & \\
+\textbf{f} & {\quch f} & \textbf{s} & {\quch s} & & & \textbf{ch} & {\quch ch} & \textbf{qh} & {\quch qh} \\
+\textbf{fy} & {\quch fy} & \textbf{sy} & {\quch sy} & & & \textbf{chy} & {\quch chy} & & \\
+\textbf{pf} & {\quch pf} & \textbf{ts} & {\quch ts} & & & \textbf{cch} & {\quch cch} & \textbf{qqh} & {\quch qqh} \\
+\textbf{m} & {\quch m} & \textbf{n} & {\quch n} & \textbf{ny} & {\quch ny} & & & & \\
+& & \textbf{l} & {\quch l} & \textbf{ly} & {\quch ly} & & & & \\
+& & \textbf{r} & {\quch r} & & & & & & \\
+& & & & \textbf{y} & {\quch y} & & & & \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[h]
+\caption{Vowel Centers}
+\label{table:centers}
+\begin{tabular}{c c | c c | c c}
+\multicolumn{2}{c}{Monopthong} & \multicolumn{2}{c}{i-Diphthong} & \multicolumn{2}{c}{a-Diphthong} \\
+\hline
+\textbf{\"a} & {\quch A} & \textbf{ai} & {\quch ai} & & \\
+\textbf{e} & {\quch e} & \textbf{ei} & {\quch ei} & \textbf{ea} & {\quch ea} \\
+\textbf{i} & {\quch i} & & & \textbf{ia} & {\quch ia} \\
+\textbf{o} & {\quch o} & \textbf{oi} & {\quch oi} & \textbf{oa} & {\quch oa} \\
+\textbf{u} & {\quch u} & \textbf{ui} & {\quch ui} & \textbf{ua} & {\quch ua} \\
+\textbf{a} & {\quch a} & & & & \\
+\hline
+\end{tabular}
+\end{table}
+
+So, for example, the word \textbf{noi} would combine \textbf{n} ({\quch n}) and \textbf{oi} (\quchspace{\quch oi}) into the syllabic character {\quch noi}, \textbf{pyea} would be {\quch pyea}, \textbf{yu} would be {\quch yu}.  Altogether, there are 350 possible syllables.
+
+Depending on the press, the 25 consonant frames could be represented using as few as 8 unique pieces of rotateable or flippable type: one piece for the overall shape of the non-palatal frames, which can be rotated to produce any of the four possible; one piece for the palatal shape; one piece for the stop diacritic, which can be flipped to go on either side; one piece for the fricative diacritic, which can likewise be flipped, and can be combined with the stop diacritic to produce the affricate diacritic; one piece for the nasal diacritic; one piece for the lateral diacritic; one piece for the trill diacritic; and one piece for the palatalization diacritic, which can be flipped to go on the top or the bottom.  The vowel centers are less composable due to spacing considerations.
+
+Numerals are also written using red frames and black centers, in this case the frame indicates the base and the center indicates the value.  As is the case in your current language, counting and math are sometimes done in base 6 or base 12, and thus the representation of number base is important for the language.  The centers themselves contain a hexagon element in three stages of completion that represent 3, 6, and 9, and a central shape with two stages of completion that represent 1 and 2.  These are combined with each other to form numbers 0-11, as shown in Table~\ref{table:numerals}.
+
+\begin{table}[h]
+\caption{Numerals}
+\label{table:numerals}
+\begin{tabular}{c | c | c | c}
+Numeral & Base 10 & Base 12 & Base 6 \\
+\hline
+0 & {\quch d} & {\quch D} & {\quch x} \\
+1 & {\quch d1} & {\quch D1} & {\quch x1} \\
+2 & {\quch d2} & {\quch D2} & {\quch x2} \\
+3 & {\quch d3} & {\quch D3} & {\quch x3} \\
+4 & {\quch d4} & {\quch D4} & {\quch x4} \\
+5 & {\quch d5} & {\quch D5} & {\quch x5} \\
+6 & {\quch d6} & {\quch D6} & \\
+7 & {\quch d7} & {\quch D7} & \\
+8 & {\quch d8} & {\quch D8} & \\
+9 & {\quch d9} & {\quch D9} & \\
+10 & & {\quch D0} & \\
+11 & & {\quch Db} & \\
+\hline
+\end{tabular}
+\end{table}
+
+There are a few standard punctuation marks, which are all smaller black characters at mid height. {\quch .} marks the end of a sentence, while {\quch ,} marks a place where one would pause for breath, and is occasionally used as a visual boundary between clauses if one is needed for ease of comprehension.  {\quch (} and {\quch )} are used as brackets, and are used in this document to indicate optional words or syllables.  {\quch ‘} and {\quch ’} are quotation marks. {\quch :} is a the number separator mark, which is used for writing short forms of times and dates, and also as the decimal separator in mathematics contexts.
+
 \newpage
 
 \part{Grammar}
@@ -119,18 +195,20 @@ QuCheanya nouns are marked for case, number, and tense.  There is no gender or n
 
 \subsubsection{Tense}
 
-If the noun is topicalized, it appears at the beginning of the sentence marked with the ``topic'' case ending, which obligatorily includes a tense.  This ending is formed from a consonant indicating tense and either \textbf{-ei} (indicating singular topic) or \textbf{-eya} (indicating plural topic).  If the noun is not topicalized, tense is marked with a tense syllable, which is the tense consonant followed by \textbf{-a}. The tense syllable is then followed by any case marking.
+If the noun is topicalized, it appears at the beginning of the sentence marked with the ``topic'' case ending, which obligatorily includes a tense.  This ending is formed from a consonant indicating tense and either \quchspace{\quch ei} (indicating singular topic) or \quchspace{\quch eya} (indicating plural topic).  If the noun is not topicalized, tense is marked with a tense syllable, which is the tense consonant followed by \quchspace{\quch a}. The tense syllable is then followed by any case marking.
 
 \begin{table}[h]
+\caption{Tenses}
+\label{table:tenses}
 \begin{tabular}{l|c c}
 Tense & Consonant, with Topic & Syllable, with Non-Topic Case \\
 \hline
-Present & \textbf{-c-} & \textbf{-ca-} \\
-Past & \textbf{-q-} & \textbf{-qa-} \\
-Future & \textbf{-p-} & \textbf{-pa-} \\
-Past Displaced & \textbf{-qqh-} & \textbf{-qqha-} \\
-Future Displaced & \textbf{-pf-} & \textbf{-pfa-} \\
-Sideways & \textbf{-ts-} & \textbf{-tsa-} \\
+Present & {\quch c} & {\quch ca} \\
+Past & {\quch q} & {\quch qa} \\
+Future & {\quch p} & {\quch pa} \\
+Past Displaced & {\quch qqh} & {\quch qqha} \\
+Future Displaced & {\quch pf} & {\quch pfa} \\
+Sideways & {\quch ts} & {\quch tsa} \\
 \end{tabular}
 \end{table}
 
@@ -138,30 +216,30 @@ The past displaced and future displaced tenses are used in cases of time travel.
 
 Explicit tenses are not required for non-topicalized nouns.  If a noun lacks a tense marking, it is assumed to be in the same tense as the topic noun.  The exception is in sentences in the imperative mood, which do not have topics, and in which nouns that are not marked for tense are assumed to be in the present tense.
 
-Pronouns do not use this morphology for tense; instead, they are preceded by the tense syllable ending in \textbf{-a} as a separate word regardless of case. As with common nouns, pronouns do not need to be tensed unless they are the topic of the sentence or they differ in tense from the topic.
+Pronouns do not use this morphology for tense; instead, they are preceded by the tense syllable ending in \quchspace{\quch a} as a separate word regardless of case. As with common nouns, pronouns do not need to be tensed unless they are the topic of the sentence or they differ in tense from the topic.
 
 In many sentences, tense is not used much differently than it is in other languages:
 
 \pex[lingstyle=QuCheanya] 
 \a
 \begingl
-\glpreamble Tyoreiqei$_i$ noi rinu$_i$ mea q\"aronu f\"a c\"a. //
+\glpreamble tyoreiqei$_i$ noi rinu$_i$ mea qAronu fA cA.//
 \gla tyorei$_i$ @ -q @ -ei noi rinu$_i$ mea q\"aro @ -nu f\"a c\"a //
-\glb store$_i$ -\scap{PST} -\scap{TOP} \scapp{1S}{NOM} \scapp{RFL}{LOC}$_i$ to yesterday -\scap{LOC} go \scap{PRF} //
+\glb store$_i$ -\scap{PST} -\scap{TOP} \scaptwo{1S}{NOM} \scaptwo{RFL}{LOC}$_i$ to yesterday -\scap{LOC} go \scap{PRF} //
 \glft ``I went to the store yesterday.'' //
 \endgl
 \a
 \begingl
-\glpreamble Tyoreicei$_i$ noi rinu$_i$ mea tira f\"a. //
+\glpreamble tyoreicei$_i$ noi rinu$_i$ mea tira fA.//
 \gla tyorei$_i$ @ -c @ -ei noi rinu$_i$ mea ti- @ ra f\"a //
-\glb store$_i$ -\scap{PRS} -\scap{TOP} \scapp{1S}{NOM} \scapp{RFL}{LOC}$_i$ to near- time go //
+\glb store$_i$ -\scap{PRS} -\scap{TOP} \scaptwo{1S}{NOM} \scaptwo{RFL}{LOC}$_i$ to near- time go //
 \glft ``I am going to the store now.'' //
 \endgl
 \a
 \begingl
-\glpreamble Tyoreipei$_i$ noi rinu$_i$ mea tsoanu f\"a c\"a. //
+\glpreamble tyoreipei$_i$ noi rinu$_i$ mea tsoanu fA cA.//
 \gla tyorei$_i$ @ -p @ -ei noi rinu$_i$ mea tsoa @ -nu f\"a c\"a //
-\glb store$_i$ -\scap{FUT} -\scap{TOP} \scapp{1S}{NOM} \scapp{RFL}{LOC}$_i$ to tomorrow -\scap{LOC} go \scap{PRF} //
+\glb store$_i$ -\scap{FUT} -\scap{TOP} \scaptwo{1S}{NOM} \scaptwo{RFL}{LOC}$_i$ to tomorrow -\scap{LOC} go \scap{PRF} //
 \glft ``I will go to the store tomorrow.'' //
 \endgl
 \xe
@@ -169,18 +247,18 @@ In many sentences, tense is not used much differently than it is in other langua
 However, the extra tenses allow us to say other types of things as well:
 
 \ex[lingstyle=QuCheanya] \begingl
-\glpreamble L\"anyepfei$_i$ noi risu$_i$ NeaSapfitame Yesoraqare qqheanu pfaire c\"a.//
+\glpreamble lAnyepfei$_i$ noi risu$_i$ neasapfitame yesoraqare qqheanu pfaire cA.//
 \gla l\"anye$_i$ @ -pf @ -ei noi risu$_i$ nea- @ sapfita @ -me yesora @ -qa @ -re qqhea @ -nu pfaire c\"a //
-\glb book$_i$ -\scap{FUTD} -\scap{TOP} \scapp{1S}{NOM} \scapp{RFL}{ACC}$_i$ person- Sapfita -title Yesora -\scap{PST} -\scap{DAT} past -\scap{LOC} give \scap{PRF} //
+\glb book$_i$ -\scap{FUTD} -\scap{TOP} \scaptwo{1S}{NOM} \scaptwo{RFL}{ACC}$_i$ person- Sapfita -title Yesora -\scap{PST} -\scap{DAT} past -\scap{LOC} give \scap{PRF} //
 \glft ``I will give the book to Priestess Yesora in the [global] past [but in the personal future of myself and the book].'' //
 \endgl \xe
 
 It is not only sentences about time travel events that benefit from being able to mark different nouns in different tenses. Consider the following sentence, which in many languages would have the two verbs marked for different tenses, but in QuCheanya we instead mark the nouns differently:
 
 \ex[lingstyle=QuCheanya,tag=hope] \begingl
-\glpreamble Ca nonei neaSapfitapa ceyai qqhoasui fyoanyo. //
+\glpreamble ca nonei neasapfitapa ceyai qqhoasui fyoanyo.//
 \gla ca nonei nea- @ sapfita @ -pa @ -$\varnothing$ ceyai qqhoa @ -sui fyoanyo //
-\glb \scap{PRS} \scapp{1S}{TOP} person- Sapfita -\scap{FUT} -\scap{NOM} become \scap{CMP} -\scap{ACC} hope //
+\glb \scap{PRS} \scaptwo{1S}{TOP} person- Sapfita -\scap{FUT} -\scap{NOM} become \scap{CMP} -\scap{ACC} hope //
 \glft ``I hope I will become a priestess.'' //
 \endgl \xe
 
@@ -189,76 +267,80 @@ And finally consider these examples, in which most languages would have to do wi
 \pex[lingstyle=QuCheanya]
 \a
 \begingl
-\glpreamble Ca pfei nosu syelo r\"a. //
+\glpreamble ca pfei nosu syelo rA.//
 \gla ca pfei nosu syelo r\"a //
-\glb \scap{PRS} \scapp{2S}{TOP} \scapp{1S}{ACC} please \scap{NEG} //
+\glb \scap{PRS} \scaptwo{2S}{TOP} \scaptwo{1S}{ACC} please \scap{NEG} //
 \glft ``I don't like you.'' [You don't please me.] //
 \endgl
 \a
 \begingl
-\glpreamble Qa pfei ca nosu syelo r\"a. //
+\glpreamble qa pfei ca nosu syelo rA.//
 \gla qa pfei ca nosu syelo r\"a //
-\glb \scap{PST} \scapp{2S}{TOP} \scap{PRS} \scapp{1S}{ACC} please \scap{NEG} //
+\glb \scap{PST} \scaptwo{2S}{TOP} \scap{PRS} \scaptwo{1S}{ACC} please \scap{NEG} //
 \glft ``I don't like the way you used to be.'' //
 \endgl
 \a
 \begingl
-\glpreamble Pa pfei ca nosu syelo r\"a. //
+\glpreamble pa pfei ca nosu syelo rA.//
 \gla pa pfei ca nosu syelo r\"a //
-\glb \scap{FUT} \scapp{2S}{TOP} \scap{PRS} \scapp{1S}{ACC} please \scap{NEG} //
+\glb \scap{FUT} \scaptwo{2S}{TOP} \scap{PRS} \scaptwo{1S}{ACC} please \scap{NEG} //
 \glft ``I don't like what you will become.'' //
 \endgl
 \a
 \begingl
-\glpreamble Ca pfei qa nosu syelo r\"a. //
+\glpreamble ca pfei qa nosu syelo rA.//
 \gla ca pfei qa nosu syelo r\"a //
-\glb \scap{PRS} \scapp{2S}{TOP} \scap{PST} \scapp{1S}{ACC} please \scap{NEG} //
+\glb \scap{PRS} \scaptwo{2S}{TOP} \scap{PST} \scaptwo{1S}{ACC} please \scap{NEG} //
 \glft ``Back then I wouldn't have liked the way you are now.'' //
 \endgl
 \a
 \begingl
-\glpreamble Tsa pfei ca nosu syelo r\"a. //
+\glpreamble tsa pfei ca nosu syelo rA.//
 \gla tsa pfei ca nosu syelo r\"a //
-\glb \scap{SDW} \scapp{2S}{TOP} \scap{PRS} \scapp{1S}{ACC} please \scap{NEG} //
+\glb \scap{SDW} \scaptwo{2S}{TOP} \scap{PRS} \scaptwo{1S}{ACC} please \scap{NEG} //
 \glft ``I don't like how you are in the other timeline.'' //
 \endgl
 \xe
 
 \subsubsection{Case and Number}
 
-One of the following case and number markings comes after the tense marking on the noun, or simply after the root if tense is unmarked:
+One of the case and number markings in the following table comes after the tense marking on the noun, or simply after the root if tense is unmarked.
 
 \begin{table}[h]
+\caption{Cases and Numbers}
+\label{table:cases}
 \begin{tabular}{l| c c}
 Case & Singular & Plural \\
 \hline
-Nominative & \emph{unmarked} & \textbf{-a} \\
-Accusative & \textbf{-sui} & \textbf{-sua} \\
-Dative & \textbf{-re} & \textbf{-rea} \\
-Alienable Genitive & \textbf{-lye} & \textbf{-lya} \\
-Inalienable Genitive & \textbf{-tye} & \textbf{-tya} \\
-Oblique & \textbf{-cy\"a} & \textbf{-cya} \\
-Locative & \textbf{-nu} & \textbf{-nua} \\
-Topic & \textbf{-ei} & \textbf{-eya} \\
+Nominative & \emph{unmarked} & \quchspace{\quch a} \\
+Accusative & {\quch sui} & {\quch sua} \\
+Dative & {\quch re} & {\quch rea} \\
+Alienable Genitive & {\quch lye} & {\quch lya} \\
+Inalienable Genitive & {\quch tye} & {\quch tya} \\
+Oblique & {\quch cyA} & {\quch cya} \\
+Locative & {\quch nu} & {\quch nua} \\
+Topic & \quchspace{\quch ei} & \quchspace{\quch eya} \\
 \end{tabular}
 \end{table}
 
-The nominative plural ending \textbf{-a} is applied to words ending in different vowels in the nominative singular in the following way:
+The nominative plural ending \quchspace{\quch a} is applied to words ending in different vowels in the nominative singular as shown in Table~\ref{table:plurals}
 
 \begin{table}[h]
+\caption{Nominative Plural Endings}
+\label{table:plurals}
 \begin{tabular}{l|l}
 Nominative Singular Ending & Nominative Plural Ending \\
 \hline
-\textbf{-\"a} & \textbf{-a} \\
-\textbf{-e} & \textbf{-ea} \\
-\textbf{-i} & \textbf{-ia} \\
-\textbf{-o} & \textbf{-oa} \\
-\textbf{-u} & \textbf{-ua} \\
-\textbf{-a} (or any diphthong ending in \textbf{-a}) & \emph{no change} \\
-\textbf{-ai} & \textbf{-\"aya} \\
-\textbf{-ei} & \textbf{-eya} \\
-\textbf{-oi} & \textbf{-oya} \\
-\textbf{-ui} & \textbf{-uya} \\
+\quchspace{\quch A} & \quchspace{\quch a} \\
+\quchspace{\quch e} & \quchspace{\quch ea} \\
+\quchspace{\quch i} & \quchspace{\quch ia} \\
+\quchspace{\quch o} & \quchspace{\quch oa} \\
+\quchspace{\quch u} & \quchspace{\quch ua} \\
+\quchspace{\quch a}, \quchspace{\quch ea}, \quchspace{\quch ia}, \quchspace{\quch oa}, \quchspace{\quch ua} & \emph{no change} \\
+\quchspace{\quch ai} & \quchspace{\quch Aya} \\
+\quchspace{\quch ei} & \quchspace{\quch eya} \\
+\quchspace{\quch oi} & \quchspace{\quch oya} \\
+\quchspace{\quch ui} & \quchspace{\quch uya} \\
 \end{tabular}
 \end{table}
 
@@ -266,65 +348,67 @@ Marking a noun with the topic marker indicates that it is the old, or establishe
 
 Nominative case is used to mark subjects of verbs, and an explicitly stated nominative subject is also necessary for every sentence, although in some cases the nominative subject may also be the topic, and will thus be marked with the topic ``case''. Accusative marks direct objects of transitive verbs, and dative marks indirect objects of verbs. The dative may also be used to mean ``for the benefit of'' or ``for the sake of'' or ``on behalf of'' the noun, with verbs where a dative indirect object is not normally required.  The genitives are used to mark possession; the genitive case marking would be applied to the possessor noun, which precedes the possessed noun, which itself may be marked for some other case depending on its role in the sentence. The alienable genitive case is used for things which are considered to be possessed alienably, such as belongings, and intangible but ephemeral things such as thoughts, feelings, knowledge or ideas, while the inalienable genitive is used for things possessed inalienably, such as body parts, physical components of an object, family members, or intangible things which are not ephemeral, such a person's voice or a person's beauty.  The locative case is used generally on its own to mean ``in/at/on'', or sometimes ``during'', and also with objects of postpositions of time or place.  The oblique case is used with the objects of all other postpositions (see section \ref{postpositions} for a full list of postpositions, how they are used, and which cases they take).
 
-The dative may also be used to indicate possession with the copula \textbf{yai}, in lieu of a specific verb meaning ``have'':
+The dative may also be used to indicate possession with the copula {\quch yai}, in lieu of a specific verb meaning ``have'':
 
 \ex[lingstyle=QuCheanya] \begingl
-\glpreamble Yeqqhicei nore yai. //
+\glpreamble yeqqhicei nore yai.//
 \gla yeqqhi @ -c @ -ei nore yai //
-\glb cat -\scap{PRS} -\scap{TOP} \scapp{1S}{DAT} be //
+\glb cat -\scap{PRS} -\scap{TOP} \scaptwo{1S}{DAT} be //
 \glft ``I have a cat.'' [Lit. ``For me there is a cat''] //
 \endgl \xe
 
 \subsubsection{Pronouns}
 
-Pronouns have somewhat idiosyncratic forms for the case and number combinations, displayed in the chart below.
+Pronouns have somewhat idiosyncratic forms for the case and number combinations, displayed in Table~\ref{table:pronouns}.
 
-\begin{table}[h]
+\begin{table}[h!]
+\caption{Pronouns}
+\label{table:pronouns}
 \begin{tabular}{l | l l | l l | l l}
 Type & \multicolumn{2}{|l|}{Nominative} & \multicolumn{2}{|l|}{Accusative} & \multicolumn{2}{|l}{Dative} \\
 & Singular & Plural & Singular & Plural & Singular & Plural \\
 \hline
-1st & \textbf{noi} & \textbf{mua} & \textbf{nosu} & \textbf{mosua} & \textbf{nore} & \textbf{morea} \\
-2nd & \textbf{pfe} & \textbf{fea} & \textbf{pfesu} & \textbf{fesua} & \textbf{pfare} & \textbf{farea} \\
-3rd & \textbf{che} & \textbf{cea} & \textbf{chesu} & \textbf{cesua} & \textbf{chare} & \textbf{carea} \\
-Topic-Reflexive & \textbf{ri} & \textbf{ria} & \textbf{risu} & \textbf{risua} & \textbf{re} & \textbf{rea} \\
-Relative & \textbf{tsi} & \textbf{sia} & \textbf{tsisu} & \textbf{sisua} & \textbf{tse} & \textbf{sea} \\
+1st & {\quch noi} & {\quch mua} & {\quch nosu} & {\quch mosua} & {\quch nore} & {\quch morea} \\
+2nd & {\quch pfe} & {\quch fea} & {\quch pfesu} & {\quch fesua} & {\quch pfare} & {\quch farea} \\
+3rd & {\quch che} & {\quch cea} & {\quch chesu} & {\quch cesua} & {\quch chare} & {\quch carea} \\
+Topic-Reflexive & {\quch ri} & {\quch ria} & {\quch risu} & {\quch risua} & {\quch re} & {\quch rea} \\
+Relative & {\quch tsi} & {\quch sia} & {\quch tsisu} & {\quch sisua} & {\quch tse} & {\quch sea} \\
 \end{tabular} \\[0.5cm]
 
 \begin{tabular}{l | l l | l l | l l}
 Type & \multicolumn{2}{|l|}{Alienable Genitive} & \multicolumn{2}{|l|}{Inalienable Genitive} & \multicolumn{2}{|l}{Oblique} \\
 & Singular & Plural & Singular & Plural & Singular & Plural \\
 \hline
-1st & \textbf{nolye} & \textbf{molua} & \textbf{notye} & \textbf{motya} & \textbf{nocy\"a} & \textbf{mocya} \\
-2nd & \textbf{pfalye} & \textbf{felya} & \textbf{pfatye} & \textbf{fetya} & \textbf{pfecy\"a} & \textbf{fecya} \\
-3rd & \textbf{chalye} & \textbf{celya} & \textbf{chatye} & \textbf{cetya} & \textbf{checy\"a} & \textbf{cecya} \\
-Topic-Reflexive & \textbf{relye} & \textbf{relya} & \textbf{retye} & \textbf{retya} & \textbf{ricy\"a} & \textbf{ricya} \\
-Relative & \textbf{tselye} & \textbf{selya} & \textbf{tsetye} & \textbf{setya} & \textbf{tsicy\"a} & \textbf{sicya} \\
+1st & {\quch nolye} & {\quch molua} & {\quch notye} & {\quch motya} & {\quch nocyA} & {\quch mocya} \\
+2nd & {\quch pfalye} & {\quch felya} & {\quch pfatye} & {\quch fetya} & {\quch pfecyA} & {\quch fecya} \\
+3rd & {\quch chalye} & {\quch celya} & {\quch chatye} & {\quch cetya} & {\quch checyA} & {\quch cecya} \\
+Topic-Reflexive & {\quch relye} & {\quch relya} & {\quch retye} & {\quch retya} & {\quch ricyA} & {\quch ricya} \\
+Relative & {\quch tselye} & {\quch selya} & {\quch tsetye} & {\quch setya} & {\quch tsicyA} & {\quch sicya} \\
 \end{tabular} \\[0.5cm]
 
 \begin{tabular}{l | l l | l l}
 Type & \multicolumn{2}{|l|}{Locative} & \multicolumn{2}{|l}{Topic} \\
 & Singular & Plural & Singular & Plural \\
 \hline
-1st & \textbf{nuinu} & \textbf{monua} & \textbf{nonei} & \textbf{munea} \\
-2nd & \textbf{pfenu} & \textbf{fenua} & \textbf{pfei} & \textbf{feya} \\
-3rd & \textbf{chenu} & \textbf{cenua} & \textbf{chetsei} & \textbf{cetsa} \\
-Topic-Reflexive & \textbf{rinu} & \textbf{rinua} & -- & -- \\
-Relative & \textbf{tsinu} & \textbf{sinua} & -- & -- \\
+1st & {\quch nuinu} & {\quch monua} & {\quch nonei} & {\quch munea} \\
+2nd & {\quch pfenu} & {\quch fenua} & {\quch pfei} & {\quch feya} \\
+3rd & {\quch chenu} & {\quch cenua} & {\quch chetsei} & {\quch cetsa} \\
+Topic-Reflexive & {\quch rinu} & {\quch rinua} & -- & -- \\
+Relative & {\quch tsinu} & {\quch sinua} & -- & -- \\
 \end{tabular}
 \end{table}
 
 The topic-reflexive pronoun is a special pronoun used to refer back to the topic of the sentence in other positions.  The relative pronoun is used in relative clauses to refer to the modified noun.
 
-If a pronoun needs to mark a tense (for example, if it is topicalized, or if it is a different tense than the topic), then the tense syllable ending in \textbf{-a} precedes the pronoun, e.g. \textbf{qa pfei}, \textbf{ca mua}, etc.
+If a pronoun needs to mark a tense (for example, if it is topicalized, or if it is a different tense than the topic), then the tense syllable ending in \quchspace{\quch a} precedes the pronoun, e.g. {\quch qa pfei}, {\quch ca mua}, etc.
 
 \subsubsection{Compounds}
 
-There are a small number of mostly one-syllable nouns that can be the heads of nominal compounds, but as a general rule the language forms noun phrases from two nouns by deriving one into an adjective using the derivational affix \textbf{-fye}, rather than by creating a compound.  Words surrounding language, culture, and nationality can generally be formed with compounds using e.g. \textbf{qu} (meaning ``language''), \textbf{nora} (meaning ``country'') and \textbf{soye} (meaning ``food''), so \textbf{NoraCheanya} is the common name for the Empire (or the Kingdom, or the Republic, depending on what time period you are in, but the name does not change in QuCheanya), and \textbf{soyeCheanya} referred generally to Cheanya cuisine.  Names for professions can generally be formed as compounds headed by \textbf{nea}, ``person'', as in \textbf{neaSapfita} (literally ``Sapfita-person'') for ``priestess'', and nationalities can also be formed with \textbf{nea}, e.g. \textbf{neaT\"arasa} for someone from T'arse.  In general, \textbf{nea} does not appear on its own outside of compounds and if one wants to speak of ``people'' in general, the word \textbf{cheanya} is used, even for people who are not ethnically Cheanya nor citizens of NoraCheanya.  In later eras, as chemical elements are discovered and named, the QuCheanya names for them are created using compounds headed with \textbf{tsai}, or ``stuff''.  All compounds are head-first and consist of only two morphemes each, and here we represent them in the romanization by capitalizing the first letter of the second morpheme.
+There are a small number of mostly one-syllable nouns that can be the heads of nominal compounds, but as a general rule the language forms noun phrases from two nouns by deriving one into an adjective using the derivational suffix {\quch fye}, rather than by creating a compound.  Words surrounding language, culture, and nationality can generally be formed with compounds using e.g. {\quch qu} (meaning ``language''), {\quch nora} (meaning ``country'') and {\quch soye} (meaning ``food''), so {\quch noracheanya} is the common name for the Empire (or the Kingdom, or the Republic, depending on what time period you are in, but the name does not change in QuCheanya), and {\quch soyecheanya} referred generally to Cheanya cuisine.  Names for professions can generally be formed as compounds headed by {\quch nea}, ``person'', as in {\quch neasapfita} (literally ``Sapfita-person'') for ``priestess'', and nationalities can also be formed with {\quch nea}, e.g. {\quch neatArasa} for someone from T'arse.  In general, {\quch nea} does not appear on its own outside of compounds and if one wants to speak of ``people'' in general, the word {\quch cheanya} is used, even for people who are not ethnically Cheanya nor citizens of NoraCheanya.  In later eras, as chemical elements are discovered and named, the QuCheanya names for them are created using compounds headed with {\quch tsai}, or ``stuff''.  All compounds are head-first and consist of only two morphemes each, and here we represent them in the romanization by capitalizing the first letter of the second morpheme.
 
 \subsection{Verbal Morphology}
 
-Verbs in QuCheanya frequently form compounds by attaching to a postposition as a prefix, creating a related but different verb.  For example, \textbf{paityapa}, literally ``up-jump'' means ``jump up'', \textbf{cyoquyu}, literally ``out-say'' meant ``shout'', etc.  This is very productive, and new forms continue to pop up and percolate back into the past via communications between the priestesses in different time frames.  Although the standard for the language is supposed to be unchanging, we are not opposed to adding new words to the dictionary in this way, as long as they are words that all speakers could be expected to understand without an explanation. See section \ref{postpositions} for a complete list of postpositions and the general rules for how they can be used to modify verbs.
+Verbs in QuCheanya frequently form compounds by attaching to a postposition as a prefix, creating a related but different verb.  For example, {\quch paityapa}, literally ``up-jump'' means ``jump up'', {\quch cyoquyu}, literally ``out-say'' meant ``shout'', etc.  This is very productive, and new forms continue to pop up and percolate back into the past via communications between the priestesses in different time frames.  Although the standard for the language is supposed to be unchanging, we are not opposed to adding new words to the dictionary in this way, as long as they are words that all speakers could be expected to understand without an explanation. See section \ref{postpositions} for a complete list of postpositions and the general rules for how they can be used to modify verbs.
 
 Aside from this compounding, there is no other verbal morphology of note in the language.
 
@@ -334,24 +418,24 @@ Adjectives do not carry any agreement in QuCheanya, and thus they must always ap
 
 \subsubsection{Partial Reduplication}
 
-Adjectives may be partially reduplicated to create forms that mean ``very <adjective>'', as in \textbf{susuyu} ``very often/frequent'' from the adjective \textbf{suyu}, ``frequent/often''.  The formation of the reduplicated form follows these rules: first, if the consonant of the first syllable is palatal or palatalized, the reduplicated syllable is formed from the non-palatal/ized consonant followed by \textbf{i}. So for example, the adjective \textbf{cyaisa}, ``early'', is reduplicated to \textbf{cicyaisa}, ``very early''. Next, if the consonant is neither palatal nor palatalized, if the vowel is a diphthong, the reduplicated syllable contains only the first vowel of the diphthong. So, he adjective \textbf{foase}, ``slow'', can be reduplicated to \textbf{fofoase}, ``very slow''.  Otherwise, the first syllable of the adjective is simply duplicated at the beginning of the word.
+Adjectives may be partially reduplicated to create forms that mean ``very <adjective>'', as in {\quch susuyu} ``very often/frequent'' from the adjective {\quch suyu}, ``frequent/often''.  The formation of the reduplicated form follows these rules: first, if the consonant of the first syllable is palatal or palatalized, the reduplicated syllable is formed from the non-palatal/ized consonant followed by \quchspace{\quch i}. So for example, the adjective {\quch cyaisa}, ``early'', is reduplicated to {\quch cicyaisa}, ``very early''. Next, if the consonant is neither palatal nor palatalized, if the vowel is a diphthong, the reduplicated syllable contains only the first vowel of the diphthong. So, he adjective {\quch foase}, ``slow'', can be reduplicated to {\quch fofoase}, ``very slow''.  Otherwise, the first syllable of the adjective is simply duplicated at the beginning of the word.
 
 \subsubsection{Adverbs}
 
 Adverbs are words that only modify adjectives, and are generally a closed class. Adjectives cannot generally be formed into adverbs, or be used to modify other adjectives, although similar effects can be achieved by having both adjectives modify the same noun or verb.
 
-Comparative adjectives are formed with the adverb \textbf{tsomo}, and superlatives are formed with its partial reduplication \textbf{tsotsomo}, e.g. \textbf{tsomo foase}, ``slower'', and \textbf{tsotsomo foase}, ``slowest''.
+Comparative adjectives are formed with the adverb {\quch tsomo}, and superlatives are formed with its partial reduplication {\quch tsotsomo}, e.g. {\quch tsomo foase}, ``slower'', and {\quch tsotsomo foase}, ``slowest''.
 
-``Enough'' or ``sufficiently'' is expressed as \textbf{syea}, e.g. \textbf{syea foase} ``slow enough'', ``not enough'' is \textbf{syear\"a} with the negator \textbf{r\"a} attached, e.g. \textbf{syear\"a foase} ``not slow enough'', and ``too much'' is reduplicated \textbf{sisyea}, e.g. \textbf{sisyea foase} ``too slow''.
+``Enough'' or ``sufficiently'' is expressed as {\quch syea}, e.g. {\quch syea foase} ``slow enough'', ``not enough'' is {\quch syearA} with the negator {\quch rA} attached, e.g. {\quch syearA foase} ``not slow enough'', and ``too much'' is reduplicated {\quch sisyea}, e.g. {\quch sisyea foase} ``too slow''.
 
 \subsection{Other Morphology}
 \subsubsection{Other Partial Reduplication}
 
-Some other closed-class words in QuCheanya also display some partial reduplication, for example, the diminutive prefix \textbf{nyu-} and the augmentative prefix \textbf{choa-} can be reduplicated to \textbf{ninyu-}, ``extra small'' and \textbf{chochoa-}, ``extra large''.
+Some other closed-class words in QuCheanya also display some partial reduplication, for example, the diminutive prefix {\quch nyu} and the augmentative prefix {\quch choa} can be reduplicated to {\quch ninyu}, ``extra small'' and {\quch chochoa}, ``extra large''.
 
 \subsubsection{Derivational Affixes}
 
-The affix \textbf{-fye} is used for converting nouns into adjectives, and \textbf{-yu}, itself a verb meaning ``do'' or ``happen'' can turn nouns into verbs. \textbf{-ccho} is a nominalizer that turns adjectives into nouns. The action nominalizer for verbs is \textbf{-ro}, however, this nominalization cannot include any arguments that would normally appear on the verb, such as the accusative object or postpositional phrases.  Agent nominalizations are generally formed by applying \textbf{-ro} and then compounding with \textbf{nea} or \textbf{tsai} depending on if the agent is animate.  There is also a nominalizer for fully formed finite clauses including all verbal arguments, \textbf{qqhoa}, which is actually not an affix, but the complementizer used for subordinate clauses. However, it is essentially a nominalizer for a clause, can be marked for case, and takes the \textbf{-fye} suffix when being used for relative clauses.
+The suffix {\quch fye} is used for converting nouns into adjectives, and {\quch yu}, itself a verb meaning ``do'' or ``happen'' can turn nouns into verbs. {\quch ccho} is a nominalizer that turns adjectives into nouns. The action nominalizer for verbs is {\quch ro}, however, this nominalization cannot include any arguments that would normally appear on the verb, such as the accusative object or postpositional phrases.  Agent nominalizations are generally formed by applying {\quch ro} and then compounding with {\quch nea} or {\quch tsai} depending on if the agent is animate.  There is also a nominalizer for fully formed finite clauses including all verbal arguments, {\quch qqhoa}, which is actually not an affix, but the complementizer used for subordinate clauses. However, it is essentially a nominalizer for a clause, can be marked for case, and takes the {\quch fye} suffix when being used for relative clauses.
 
 \section{Syntax}
 
@@ -359,7 +443,7 @@ QuCheanya has mostly-fixed SOV word order, although OSV can be used for poetic p
 
 \subsection{Noun Phrase}
 
-Noun phrases are head-last, consisting of an optional number or quantifier, followed optionally by one or more postpositional phrases or locative noun phrases, relative clauses headed with \textbf{qqhoafye}, genitive noun phrases, adjectives, or nouns with the \textbf{-fye} derivational suffix, in that order, followed by a single noun.  There can be at most one relative clause, at most one genitive noun phrase, and at most one noun with the \textbf{-fye} suffix, but relative clauses can modify the same noun as a postpositional phrase, locative, genitive, adjective, or noun ending with \textbf{-fye}.  Adjectives relating to time or place appear first, and adjectives describing physical properties such as appearance, tactile quality, or weight appear last, but aside from those rules the adjectives may appear in any order.
+Noun phrases are head-last, consisting of an optional number or quantifier, followed optionally by one or more postpositional phrases or locative noun phrases, relative clauses headed with {\quch qqhoafye}, genitive noun phrases, adjectives, or nouns with the {\quch fye} derivational suffix, in that order, followed by a single noun.  There can be at most one relative clause, at most one genitive noun phrase, and at most one noun with the {\quch fye} suffix, but relative clauses can modify the same noun as a postpositional phrase, locative, genitive, adjective, or noun ending with {\quch fye}.  Adjectives relating to time or place appear first, and adjectives describing physical properties such as appearance, tactile quality, or weight appear last, but aside from those rules the adjectives may appear in any order.
 
 \subsection{Postpositional Phrase}
 
@@ -370,109 +454,111 @@ Postpositional phrases consist of a noun phrase in either the locative or obliqu
 
 Verb phrases are also head-last, consisting of at least one noun phrase, followed optionally by one or more postpositional phrases, simple locative noun phrases, or adjectives, followed by a single verb, followed optionally by one or more post-verbal particles (see section \ref{postverbalparts}). Nominative, accusative and dative noun phrases always precede postpositional phrases, which precede locative noun phrases, which precede adjectives of time or place, which precede other adjectives. Postpositional phrases may occur in any order, although in some cases it may be ambiguous whether a preceding postpositional phrase modifies the noun in a followed postpositional phrase or the verb.  Usually the nominative noun phrase precedes the accusative, which precedes the dative, but the order of these can be changed for poetic purposes.
 
-Some verbs can take complement clauses headed by \textbf{qqhoa} in place of a nominative noun phrase, or complement clauses headed by \textbf{qqhoasui} in place of an accusative noun phrase, but these clauses appear in the same place in the sentence as the nominative or accusative noun phrase would normally occur. Copulas, which include \textbf{yai} and all other verbs that end in \textbf{-yai} take either one nominative noun phrase and one complement adjective, postpositional phrase or locative noun phrase, or two nominative noun phrases. In the case of two noun phrases, the second one is always the complement.
+Some verbs can take complement clauses headed by {\quch qqhoa} in place of a nominative noun phrase, or complement clauses headed by {\quch qqhoasui} in place of an accusative noun phrase, but these clauses appear in the same place in the sentence as the nominative or accusative noun phrase would normally occur. Copulas, which include {\quch yai} and all other verbs that end in {\quch yai} take either one nominative noun phrase and one complement adjective, postpositional phrase or locative noun phrase, or two nominative noun phrases. In the case of two noun phrases, the second one is always the complement.
 
 Any noun phrase (but at most one per sentence) can be topicalized, in which case it moves to the front of the sentence as a whole (not just its own verb phrase), and is usually replaced in its original verb phrase with the topic-reflexive pronoun in the appropriate case, number, and location in the sentence. The only case when the topic-reflexive pronoun is not necessary is when the pronoun is in the nominative case and directly follows the topic in the sentence. For example, it can be omitted in this case:
 
 \ex[lingstyle=QuCheanya] \begingl
-\glpreamble Qa nonei$_i$ [ri$_i$] fuqhenu mufoi. //
-\gla qa nonei$_i$ ri$_i$ fuqhe @ -nu mufoi //
-\glb \scap{PST} \scapp{1S}{TOP}$_i$ \scapp{RFL}{NOM}$_i$ table -\scap{LOC} eat //
+\glpreamble qa nonei$_i$ (ri$_i$) fuqhenu mufoi.//
+\gla qa nonei$_i$ [ri$_i$] fuqhe @ -nu mufoi //
+\glb \scap{PST} \scaptwo{1S}{TOP}$_i$ \scaptwo{RFL}{NOM}$_i$ table -\scap{LOC} eat //
 \glft ``I was eating at the table.'' //
 \endgl \xe
 
 It cannot be omitted when the topic reflexive pronoun does not directly follow the topic, even if it is in the nominative case:
 
 \ex[lingstyle=QuCheanya] \begingl
-\glpreamble NeaSapfitacei$_i$ noi ri$_i$ yai. //
+\glpreamble neasapfitacei$_i$ noi ri$_i$ yai.//
 \gla nea- @ sapfita$_i$ @ -c @ -ei noi ri$_i$ yai //
-\glb person- Sapfita$_i$ -\scap{PRS} -\scap{TOP} \scapp{1S}{NOM} \scapp{RFL}{NOM}$_i$ be //
+\glb person- Sapfita$_i$ -\scap{PRS} -\scap{TOP} \scaptwo{1S}{NOM} \scaptwo{RFL}{NOM}$_i$ be //
 \glft ``I am a priestess.'' //
 \endgl \xe
 
 It also cannot be omitted when the topic reflexive pronoun directly follows the topic, but in a non-nominative case:
 
 \ex[lingstyle=QuCheanya] \begingl
-\glpreamble Ca nonei$_i$ retye$_i$ feisy\"a Firel\"anu yai sei. //
+\glpreamble ca nonei$_i$ retye$_i$ feisyA firelAnu yai sei.//
 \gla ca nonei$_i$ retye$_i$ feisy\"a firel\"a @ -nu yai sei //
-\glb \scap{PRS} \scapp{1S}{TOP}$_i$ \scapp{RFL}{GENI}$_i$ sister.\scap{NOM} Vrel -\scap{LOC} be \scap{HAB} //
+\glb \scap{PRS} \scaptwo{1S}{TOP}$_i$ \scaptwo{RFL}{GENI}$_i$ sister.\scap{NOM} Vrel -\scap{LOC} be \scap{HAB} //
 \glft ``As for me, my sister lives in Vrel.'' //
 \endgl \xe
+
+Every sentence must have a topic, either explicitly stated in the current sentence, or implied to be the same as the most recently stated topic.  The only exception to this is sentences in the imperative mood marked with {\quch tyua}, which must have at least a non-topic nominative subject (see the next section).  Sentences that semantically have no participants, e.g. ``it's raining'', are usually formed using a semantically contentful topic noun phrase, which may be a nominalization, and the verb {\quch yu} which means ``happen'' or ``exist''.  In this case ``it's raining'' would be {\quch solyecei yu}, literally ``rain is happening''.  In these cases, the topic-reflexive pronoun may not be used.
 
 \subsubsection{Post-Verbal Particles}
 \label{postverbalparts}
 
-Post-verbal particles are particles that follow the verb and are used to mark aspect and mood.  There are two aspect-marking particles, \textbf{c\"a}, which marks perfective aspect, and \textbf{sei}, which marks habitual aspect.  The imperative mood particle, \textbf{tyua}, can be used instead of an aspect-marking particle - in this mood, the sentence can have no topic, and nouns are by default in the present tense, although they can still be marked for other tenses if necessary.  Any noun or pronoun can be the subject of the sentence, and thus \textbf{tyua} also serves to mark hortatives and jussives.  Copulas generally cannot take \textbf{c\"a} or \textbf{sei}, except for in the common use of \textbf{yai sei} to mean ``live''.
+Post-verbal particles are particles that follow the verb and are used to mark aspect and mood.  There are two aspect-marking particles, {\quch cA}, which marks perfective aspect, and {\quch sei}, which marks habitual aspect.  The imperative mood particle, {\quch tyua}, can be used instead of an aspect-marking particle - in this mood, the sentence can have no topic, and nouns are by default in the present tense, although they can still be marked for other tenses if necessary.  Any noun or pronoun can be the subject of the sentence, and thus {\quch tyua} also serves to mark hortatives and jussives.  Copulas generally cannot take {\quch cA} or {\quch sei}, except for in the common use of {\quch yai sei} to mean ``live''.
 
 \pex[lingstyle=QuCheanya] 
 \a
 \begingl
-\glpreamble Pfe ruif\"a tyua! //
+\glpreamble pfe ruifA tyua.//
 \gla pfe rui- @ f\"a tyua //
-\glb \scapp{2S}{NOM} from- go \scap{IMP} //
+\glb \scaptwo{2S}{NOM} from- go \scap{IMP} //
 \glft ``Go away!'' //
 \endgl
 \a
 \begingl
-\glpreamble Mua f\"a tyua! //
+\glpreamble mua fA tyua.//
 \gla mua f\"a tyua //
-\glb \scapp{1P}{NOM} go \scap{IMP} //
+\glb \scaptwo{1P}{NOM} go \scap{IMP} //
 \glft ``Let's go!'' //
 \endgl
 \a
 \begingl
-\glpreamble Cea meaf\"a tyua. //
+\glpreamble cea meafA tyua.//
 \gla cea mea- @ f\"a tyua //
-\glb \scapp{3P}{NOM} to- go \scap{IMP} //
+\glb \scaptwo{3P}{NOM} to- go \scap{IMP} //
 \glft ``Let them come.'' //
 \endgl
 \xe
 
 Sentences ending with none of these particles are by default in the progressive aspect and indicative mood.
 
-Negation and evidentiality are also marked with another set of post-verbal particles, appearing after the aspect and mood particles.  Negation is marked with the particle \textbf{r\"a}, related to the word \textbf{r\"ara}, ``no, none''.  \textbf{r\"a} can optionally be replaced with an evidentiality particle, either \textbf{lu} or \textbf{te}.  \textbf{lu} indicates that the sentence is likely to be true, but that it was not directly experienced (or has not yet been experienced but is expected to happen), or was heard through hearsay, or is otherwise likely, but not certain.  \textbf{te} is used to mean that the truth of the sentence is much more doubtful or uncertain, or was heard from an untrustworthy source.  Both of these can be negated with \textbf{r\"a}, which can combine with them into a single word: \textbf{lur\"a} means that it was probable that the action did \emph{not} happen, while \textbf{ter\"a} simply means that it was uncertain whether the action of the sentence did \emph{not} happen, rather than uncertain that it did, or that the sentence is uncertain, but more likely to be false than true.
+Negation and evidentiality are also marked with another set of post-verbal particles, appearing after the aspect and mood particles.  Negation is marked with the particle {\quch rA}, related to the word {\quch rAra}, ``no, none''.  {\quch rA} can optionally be replaced with an evidentiality particle, either {\quch lu} or {\quch te}.  {\quch lu} indicates that the sentence is likely to be true, but that it was not directly experienced (or has not yet been experienced but is expected to happen), or was heard through hearsay, or is otherwise likely, but not certain.  {\quch te} is used to mean that the truth of the sentence is much more doubtful or uncertain, or was heard from an untrustworthy source.  Both of these can be negated with {\quch rA}, which can combine with them into a single word: {\quch lurA} means that it was probable that the action did \emph{not} happen, while {\quch terA} simply means that it was uncertain whether the action of the sentence did \emph{not} happen, rather than uncertain that it did, or that the sentence is uncertain, but more likely to be false than true.
 
-There is also a special post-verbal particle which comes after the negation and evidentiality particles, which is important in conversation and narrative.  This particle, \textbf{rui}, glossed here as \scap{FTRL}, indicates that the sentence has relevance to some time in the future of one or more of the nouns involved, the way that ``I already ate'' is about a past event that has specific relevance to the present (``...so don't make me lunch''), or ``we will arrive soon'' has relevance to a further future time than the tense of the sentence, due to implying that something will happen after the arrival.  It generally forms a causal link between sentences, similar to how ``so'', or ``therefore'' are often used.  This is an important particle for recording stories or events as they happened in order, and tracing chains of causality.  \textbf{rui} is also a postposition meaning ``from'', which when attached to verbs provides the meaning of ``motion away from'', and these usages are related.
+There is also a special post-verbal particle which comes after the negation and evidentiality particles, which is important in conversation and narrative.  This particle, {\quch rui}, glossed here as \scap{FTRL}, indicates that the sentence has relevance to some time in the future of one or more of the nouns involved, the way that ``I already ate'' is about a past event that has specific relevance to the present (``...so don't make me lunch''), or ``we will arrive soon'' has relevance to a further future time than the tense of the sentence, due to implying that something will happen after the arrival.  It generally forms a causal link between sentences, similar to how ``so'', or ``therefore'' are often used.  This is an important particle for recording stories or events as they happened in order, and tracing chains of causality.  {\quch rui} is also a postposition meaning ``from'', which when attached to verbs provides the meaning of ``motion away from'', and these usages are related.
 
 \subsection{Subordinate and Relative Clauses}
 
-Clauses can be complementized in QuCheanya with the complementizer word \textbf{qqhoa}.  \textbf{Qqhoa} is actually a nominalizer for clauses, and can take some noun morphology such as the accusative case marker \textbf{-sui} and the derivational suffix \textbf{-fye}.  Verbs that require subordinate clauses, with meanings like ``think'', ``know'', ``want'', ``say'', etc. specify whether the clause is the subject, headed by \textbf{qqhoa} or the object, headed by \textbf{qqhoasui}.  For example, \textbf{rapui}, ``ought'', takes a subordinate clause as its subject (and only argument), whereas \textbf{fyoanyo}, ``hope'', has a regular subject noun phrase and takes a subordinate clause as its object, as in example (\getref{hope}).
+Clauses can be complementized in QuCheanya with the complementizer word {\quch qqhoa}.  {\quch qqhoa} is actually a nominalizer for clauses, and can take some noun morphology such as the accusative case marker {\quch sui} and the derivational suffix {\quch fye}.  Verbs that require subordinate clauses, with meanings like ``think'', ``know'', ``want'', ``say'', etc. specify whether the clause is the subject, headed by {\quch qqhoa} or the object, headed by {\quch qqhoasui}.  For example, {\quch rapui}, ``ought'', takes a subordinate clause as its subject (and only argument), whereas {\quch fyoanyo}, ``hope'', has a regular subject noun phrase and takes a subordinate clause as its object, as in example (\getref{hope}).
 
 \ex[lingstyle=QuCheanya,tag=ought] \begingl
-\glpreamble Ca munea$_i$ [[[ria$_i$] tsomo foase mufoi] qqhoa] rapui. //
+\glpreamble ca munea$_i$ (ria$_i$) tsomo foase mufoi qqhoa rapui.//
 \gla ca munea$_i$ [[ria$_i$ tsomo foase mufoi] qqhoa] rapui //
-\glb \scap{PRS} \scapp{1P}{TOP}$_i$ [[\scappp{RFL}{NOM}{PL}$_i$ more slow eat] \scapp{CMP}{NOM}] ought //
+\glb \scap{PRS} \scaptwo{1P}{TOP}$_i$ [[\scapthree{RFL}{NOM}{PL}$_i$ more slow eat] \scaptwo{CMP}{NOM}] ought //
 \glft ``We should eat more slowly.'' //
 \endgl \xe
 
 \ex[lingstyle=QuCheanya,tag=hopeyou] \begingl
-\glpreamble Pa pfei$_i$ ca noi [[ri neaSapfita ceyai] qqhoasui] fyoanyo. //
+\glpreamble pa pfei$_i$ ca noi ri$_i$ neasapfita ceyai qqhoasui fyoanyo.//
 \gla pa pfei$_i$ ca noi [[ri$_i$ nea- @ sapfita ceyai] qqhoa @ -sui] fyoanyo //
-\glb \scap{FUT} \scapp{2S}{TOP}$_i$ \scap{PRS} \scapp{1S}{NOM} [[\scapp{RFL}{NOM}$_i$ person- Sapfita.\scap{NOM} become] \scap{CMP} -\scap{ACC}] hope //
+\glb \scap{FUT} \scaptwo{2S}{TOP}$_i$ \scap{PRS} \scaptwo{1S}{NOM} [[\scaptwo{RFL}{NOM}$_i$ person- Sapfita.\scap{NOM} become] \scap{CMP} -\scap{ACC}] hope //
 \glft ``I hope you will become a priestess.'' //
 \endgl \xe
 
-In (\getref{ought}), \textbf{ca munea} is the subject of the subordinate clause, topicalized and replaced in the clause with the topic-reflexive pronoun.  In (\getref{hopeyou}), a variation on example (\getref{hope}), it can be seen that \textbf{ca noi} is the subject of \textbf{fyoanyo}, while the subject of the subordinate clause is \textbf{pa pfei}.
+In (\getref{ought}), {\quch ca munea} is the subject of the subordinate clause, topicalized and replaced in the clause with the topic-reflexive pronoun.  In (\getref{hopeyou}), a variation on example (\getref{hope}), it can be seen that {\quch ca noi} is the subject of {\quch fyoanyo}, while the subject of the subordinate clause is {\quch pa pfei}.
 
-Relative clauses are headed by \textbf{qqhoafye}, using the derivational affix \textbf{-fye} that turns a noun into a modifier.  The relative clause precedes the noun it modifies, and the position of that noun within in the clause is marked by the relative pronoun \textbf{tsi}.
+Relative clauses are headed by {\quch qqhoafye}, using the derivational affix {\quch fye} that turns a noun into a modifier.  The relative clause precedes the noun it modifies, and the position of that noun within in the clause is marked by the relative pronoun {\quch tsi}.
 
 \ex[lingstyle=QuCheanya] \begingl
-\glpreamble Ca chetsei$_i$ [ri$_i$] [[pfecyua tsisu$_j$ syelo] qqhoafye] yeli$_j$ yai. //
-\gla ca chetsei$_i$ ri$_i$ [[pfecyua tsisu$_j$ syelo] qqhoa @ -fye] yeli$_j$ yai //
-\glb \scap{PRS} \scapp{3S}{TOP}$_i$ \scapp{RFL}{NOM}$_i$ [[flower.\scapp{NOM}{PL} \scapp{REL}{ACC}$_j$ please] \scap{CMP} -\scap{ADJ}] boy.\scap{NOM}$_j$ be //
+\glpreamble ca chetsei$_i$ (ri$_i$) pfecyua tsisu$_j$ syelo qqhoafye yeli$_j$ yai.//
+\gla ca chetsei$_i$ [ri$_i$] [[pfecyua tsisu$_j$ syelo] qqhoa @ -fye] yeli$_j$ yai //
+\glb \scap{PRS} \scaptwo{3S}{TOP}$_i$ \scaptwo{RFL}{NOM}$_i$ [[flower.\scaptwo{NOM}{PL} \scaptwo{REL}{ACC}$_j$ please] \scap{CMP} -\scap{ADJ}] boy.\scap{NOM}$_j$ be //
 \glft ``He is the boy who likes flowers.'' //
 \endgl \xe
 
 Nouns within the relative clause can be topicalized, just as with nouns within other subordinate clauses:
 
 \ex[lingstyle=QuCheanya] \begingl
-\glpreamble Pfecyuaceya$_i$ che [[ria$_i$ tsisu$_j$ syelo] qqhoafye] yeli$_j$ yai. //
+\glpreamble pfecyuaceya$_i$ che ria$_i$ tsisu$_j$ syelo qqhoafye yeli$_j$ yai.//
 \gla pfecyua$_i$ @ -c @ -eya che [[ria$_i$ tsisu$_j$ syelo] qqhoa @ -fye] yeli$_j$ yai. //
-\glb flower$_i$ -\scap{PRS} -\scapp{TOP}{PL} \scapp{3S}{NOM} [[\scappp{RFL}{NOM}{PL}$_i$ \scapp{REL}{ACC}$_j$ please] \scap{CMP} -\scap{ADJ}] boy.\scap{NOM}$_j$ be //
+\glb flower$_i$ -\scap{PRS} -\scaptwo{TOP}{PL} \scaptwo{3S}{NOM} [[\scapthree{RFL}{NOM}{PL}$_i$ \scaptwo{REL}{ACC}$_j$ please] \scap{CMP} -\scap{ADJ}] boy.\scap{NOM}$_j$ be //
 \glft ``He is the boy who likes the flowers.'' //
 \endgl \xe
 
-Subordinate and relative clauses may contain \textbf{c\"a}, \textbf{sei}, \textbf{r\"a} and/or the evidentiality particles, but not \textbf{tyua} or \textbf{rui}.
+Subordinate and relative clauses may contain {\quch cA}, {\quch sei}, {\quch rA} and/or the evidentiality particles, but not {\quch tyua} or {\quch rui}.
 
 \section{Special Vocabulary Notes}
 \subsection{Numbers, Dates, and Times}
@@ -480,533 +566,539 @@ Subordinate and relative clauses may contain \textbf{c\"a}, \textbf{sei}, \textb
 
 The number system is a morpheme-for-morpheme map of the tranditional counting system that you use now, and many Cheanya languages also continue to use this system in the future, although some of the more standard ones eventually shift more fully to base 10.  However, we consider base 6 and base 12 to be indispensable for some fields of mathematics, so they are retained in QuCheanya.  For the sake of future readers of this document, we will describe the system fully here.
 
-The numbers from 1 to 12 each have their own unique roots, which are \textbf{yu} (1), \textbf{syene} (2), \textbf{choi} (3), \textbf{pfona} (4), \textbf{tal\"a} (5), \textbf{mai} (6), \textbf{roate} (7), \textbf{leya} (8), \textbf{qh\"alya} (9), \textbf{suano} (10), \textbf{cchiso} (11), and \textbf{fyeir\"a} (12).  After this, numbers are mainly in base 10, with numbers between 10 and 20 being \textbf{suano-choi}, \textbf{suano-pfona}, etc. and 20, 30, 40, etc. using just the first syllable of \textbf{suano}, as \textbf{syenesua} (20), \textbf{choisua} (30), \textbf{pfonasua} (40), etc.  100 is then \textbf{choasuano}, using the augmentative \textbf{choa}, and 1000 is \textbf{chochoasuano}, with the reduplicated augmentative.  However, numbers that are multiples of 6 are not in the usual base 10 format, but instead in either base 12 and base 6 (if they are multiples of 12) or just base 6.  So 18 is not \textbf{*suano-leya}, it is \textbf{choi mai}, or ``three six''.  24 could be either \textbf{syene fyeir\"a}, ``two twelve'', or \textbf{pfona mai}, ``four six''.  36 is either \textbf{choi fyeir\"a} ``three twelve'' or \textbf{choamai}, 100$_6$, analogous to \textbf{choasuano} (100$_{10}$), and 144 is likewise \textbf{choafyeir\"a}.  After 100, \textbf{fu}, ``and'' is used to add the rest of the number, so \textbf{choasuano fu yu} is 101.  When it comes to the multiples of 12 and 6, a shortened form is often used; while 42 is \textbf{choamai fu mai} and 78 is \textbf{syene choamai fu mai} as one might expect, 48 is \textbf{choamai syene} rather than the full form \textbf{choamai fu syene mai} (although it could also be \textbf{pfona fyeir\"a} as well).  In general if the number is something like 110$_6$ or 210$_{12}$ it would be \textbf{choamai fu mai} or \textbf{syene choafyeir\"a fu fyeir\"a}, but 120$_6$, 230$_{12}$ would be \textbf{choamai syene}, \textbf{syene choafyeir\"a choi}, etc., without \textbf{fu} or the repetition of \textbf{mai} or \textbf{fyeir\"a}.  For numbers after 100 (in base 10), if the number is 100 more than a multiple of 6 or 12, that part of the number is still in base 6 or 12, e.g. 118 is not \textbf{*choasuano fu suano-leya} but \textbf{choasuano fu choi mai}.  Actual multiples of 6 and 12 continue to be in base 6 and/or 12, e.g. 108 is \textbf{qh\"alya fyeir\"a} or \textbf{choi choamai}.  As numbers get larger, however, it becomes more common for a base 10 name to be used for multiples of 6 in common counting.
+The numbers from 1 to 12 each have their own unique roots, which are {\quch yu} (1), {\quch syene} (2), {\quch choi} (3), {\quch pfona} (4), {\quch talA} (5), {\quch mai} (6), {\quch roate} (7), {\quch leya} (8), {\quch qhAlya} (9), {\quch suano} (10), {\quch cchiso} (11), and {\quch fyeirA} (12), with 0 being {\quch rAra}, the same as the word for ``none''.  After this, numbers are mainly in base 10, with numbers between 10 and 20 being {\quch suanochoi}, {\quch suanopfona}, etc. and 20, 30, 40, etc. using just the first syllable of {\quch suano}, as {\quch syenesua} (20), {\quch choisua} (30), {\quch pfonasua} (40), etc.  100 is then {\quch choasuano}, using the augmentative {\quch choa}, and 1000 is {\quch chochoasuano}, with the reduplicated augmentative.  However, numbers that are multiples of 6 are not in the usual base 10 format, but instead in either base 12 and base 6 (if they are multiples of 12) or just base 6.  So 18 is not *{\quch suanoleya}, it is {\quch choi mai}, or ``three six''.  When writing with numerals, this may be written either in base 10 as {\quch d1d8} or in base 6 as {\quch x3x}, but it would be read as {\quch choi mai} either way.  24 can be either {\quch syene fyeirA}, ``two twelve'', or {\quch pfona mai}, ``four six'', and can be written as {\quch d2d4}, {\quch D2D}, or {\quch x4x}, depending on the case.  36 is either {\quch choi fyeirA} ``three twelve'' ({\quch D3D}) or {\quch choamai} ({\quch x1xx}), analogous to {\quch choasuano} ({\quch d1dd}), and 144 is likewise {\quch choafyeirA} ({\quch D1DD}).  After 100, {\quch fu}, ``and'' is used to add the rest of the number, so {\quch choasuano fu yu} is 101.  When it comes to the multiples of 12 and 6, a shortened form is often used; while 42 is {\quch choamai fu mai} and 78 is {\quch syene choamai fu mai} as one might expect, 48 is {\quch choamai syene} rather than the full form {\quch choamai fu syene mai} (although it could also be {\quch pfona fyeirA} using base 12 as well).  In general if the number is something like 110$_6$ or 210$_{12}$ it would be {\quch choamai fu mai} or {\quch syene choafyeirA fu fyeirA}, but 120$_6$, 230$_{12}$ would be {\quch choamai syene}, {\quch syene choafyeirA choi}, etc., without {\quch fu} or the repetition of {\quch mai} or {\quch fyeirA}.  For numbers after 100 (in base 10), if the number is 100 more than a multiple of 6 or 12, that part of the number is still in base 6 or 12, e.g. 118 is not *{\quch choasuano fu suanoleya} but {\quch choasuano fu choi mai}.  Actual multiples of 6 and 12 continue to be in base 6 and/or 12, e.g. 108 is {\quch qhAlya fyeirA} or {\quch choi choamai}.  As numbers get larger, however, it becomes more common for a base 10 name to be used for multiples of 6 in common counting.
 
-In some contexts, only base 6 or only base 12 is used.  For example, as you will see in section \ref{time}, base 6 is used to talk about seconds within in a minute, and base 12 is used to talk about minutes within an hour.  In addition, angles of a circle are exclusively talked about in base 12, with a circle having \textbf{syene choafyeir\"a} (200$_{12}$) degrees in total, which is 288, and most commonly-used angles are multiples of 12 degrees.  As a result, in geometry and trigonometry and related fields, base 12 is often used exclusively.  Although the clippings described above (\textbf{choamai syene}, \textbf{choafyeir\"a choi}, etc.) are still used for those multiples of 6 and 12, in those specific contexts base 6 or 12 will also be used for numbers that are not multiples of 6, such as \textbf{choafyeir\"a fu yu} (for 145) or \textbf{choafyeir\"a fu syene fyeir\"a-choi} (for 171) would be used instead of the usual base 10 numbers (\textbf{choasuano fu pfonasua-tal\"a} or \textbf{choasuano fu roatesua-yu}).
+In some contexts, only base 6 or only base 12 is used.  For example, as you will see in section \ref{time}, base 6 is used to talk about seconds within in a minute, and base 12 is used to talk about minutes within an hour.  In addition, angles of a circle are exclusively talked about in base 12, with a circle having {\quch syene choafyeirA} (200$_{12}$) degrees in total, which is 288, and most commonly-used angles are multiples of 12 degrees.  As a result, in geometry and trigonometry and related fields, base 12 is often used exclusively.  Although the clippings described above ({\quch choamai syene}, {\quch choafyeirA choi}, etc.) are still used for those multiples of 6 and 12, in those specific contexts base 6 or 12 will also be used for numbers that are not multiples of 6, such as {\quch choafyeirA fu yu} ({\quch D1DD1}) (for 145) or {\quch choafyeirA fu syene fyeirA choi} ({\quch D1D2D3}) (for 171) would be used instead of the usual base 10 numbers ({\quch choasuano fu pfonasua talA} or {\quch choasuano fu roatesua yu}).
 
-The mechanism of prefixing a number with \textbf{choa-} to form its square and with \textbf{chochoa-} to form its cube are productive, although not generally used in counting outside of the three major bases.  For example, in a mathematics context, ``three squared'' would be said as \textbf{choachoi} and ``three cubed'' as \textbf{chochoachoi}, even though those are not the way that one would say ``nine'' or ``twenty-seven'' in ordinary counting contexts.
+The mechanism of prefixing a number with {\quch choa} to form its square and with {\quch chochoa} to form its cube are productive, although not generally used in counting outside of the three major bases.  For example, in a mathematics context, ``three squared'' would be said as {\quch choachoi} and ``three cubed'' as {\quch chochoachoi}, even though those are not the way that one would say ``nine'' or ``twenty-seven'' in ordinary counting contexts.
 
 \subsubsection{Time of Day}
 \label{time}
 
 As in your time, the day is traditionally divided into three sets of 6 hours.  In future times, the traditional 18-hour sundial is converted into an 18-hour mechanical clock, a device that shows the passing of the time the way a sundial does, but without the need for any sunlight.  For a time period of about 100 or 150 years or so, it is common in NoraCheanya to have mechanical clocks that mark 30 hours and go in the opposite direction (that is, rightwards across the top of the face and leftwards across the bottom, the opposite of how the sundial moves) because the mechanical clocks were at that time still new and were exclusively being imported from T'arse, where they measure time very differently.  However, they are eventually replaced with native Cheanya clocks that measure time the proper way, and we have no desire to use our language to keep time the T'arsi way.  For the future benefit of our sisters living in the time of the T'arsi clocks, we describe the Cheanya timekeeping system here.
 
-As previously mentioned, the day is divided into three sets of 6 hours.  The first set is called \textbf{q\"atyafye qhaitsea}, or ``working hours'', often abbreviated to \textbf{Q\"aQhai}, with the beginning of the hour that is designated as 1 one hour after sunrise on the equinox, and ending at the end of hour 6 in the late afternoon.  The second set is called \textbf{suap\nobreak fifye qhaitsea}, ``leisure hours'', abbreviated to \textbf{SuaQhai}, in which hour 1 begins two hours before sunset on the equinox and hour 6 ends four hours after sunset on the equinox.  The remaining hours, from four hours after sunset to an hour after the next dawn, are \textbf{fosorofye qhaitsea}, ``sleeping hours'', or \textbf{FoQhai}.  To tell the time, one would say e.g. \textbf{choi Q\"aQhai}, the third hour of the working hours, three hours after dawn, or \textbf{syene SuaQhai}, the second hour of the leisure time, which is the time of dusk on the equinox.  Each hour has 144 minutes, which are counted exclusively in base 12, and follow the hour connected by \textbf{fu}, e.g. \textbf{choi fu syene fyeir\"a pfona Q\"aQhai}, three hours and twenty-eight (24$_{12}$) minutes after sunrise.  With the mechanical clocks, it is even possible to speak of seconds within a minute, of which there are 36 per minute, these being said in base 6, again following the minutes after \textbf{fu}.  So: \textbf{choi fu syene fyeir\"a pfona fu tal\"a mai syene Q\"aQhai}, three hours and twenty-eight minutes and thirty-two (52$_6$) seconds after sunrise.
+As previously mentioned, the day is divided into three sets of 6 hours.  The first set is called {\quch qAtyafye qhaitsea}, or ``working hours'', often abbreviated to {\quch qAqhai}, with the beginning of the hour that is designated as 1 one hour after sunrise on the equinox, and ending at the end of hour 6 in the late afternoon.  The second set is called {\quch suapfifye qhaitsea}, ``leisure hours'', abbreviated to {\quch suaqhai}, in which hour 1 begins two hours before sunset on the equinox and hour 6 ends four hours after sunset on the equinox.  The remaining hours, from four hours after sunset to an hour after the next dawn, are {\quch fosorofye qhaitsea}, ``sleeping hours'', or {\quch foqhai}.  To tell the time, one would say e.g. {\quch choi qAqhai}, the third hour of the working hours, three hours after dawn, or {\quch syene suaqhai}, the second hour of the leisure time, which is the time of dusk on the equinox.  Each hour has 144 minutes, which are counted exclusively in base 12, and follow the hour connected by {\quch fu}, e.g. {\quch choi fu syene fyeirA pfona qAqhai}, three hours and twenty-eight (24$_{12}$) minutes after sunrise.  With the mechanical clocks, it is even possible to speak of seconds within a minute, of which there are 36 per minute, these being said in base 6, again following the minutes after {\quch fu}.  So: {\quch choi fu syene fyeirA pfona fu talA mai syene qAqhai}, three hours and twenty-eight minutes and thirty-two (52$_6$) seconds after sunrise.  When written out with numbers, they use the number separation mark {\quch :} to separate hours and minutes and seconds, so that time would be written as {\quch x3:D2D4:x5x2}.
 
 \subsubsection{Dates and Monthly Public Holidays}
 
-The nine months of the year do not have their descriptive names from the natural Cheanya languages transcribed or translated into QuCheanya, instead we merely say \textbf{3 Yeari}, the third month, \textbf{7 Yeari}, the seventh month, etc.  \textbf{Yeari} is indeed also the name of the larger moon that cycles once a month, upon which the months are based (the smaller one that cycles thrice a year is called \textbf{Nyufeisy\"a}, the little sister).  Within each month, the weeks are called \textbf{Soine} and are again numbered, so \textbf{4 Yeari, 3 Soine}, the third week of the fourth month.  This is followed by a number for the day of the week, and preceded by the year, so the date given for the publication of this book, \textbf{198, 5 Yeari, 4 Soine 2} is the second day of the fourth week of the fifth month of the year 198.
+The nine months of the year do not have their descriptive names from the natural Cheanya languages transcribed or translated into QuCheanya, instead we merely say {\quch d3 yeari}, the third month, {\quch d7 yeari}, the seventh month, etc.  {\quch yeari} is indeed also the name of the larger moon that cycles once a month, upon which the months are based (the smaller one that cycles thrice a year is called {\quch nyufeisyA}, the little sister).  Within each month, the weeks are called {\quch soine} and are again numbered, so {\quch d4 yeari, d3 soine}, the third week of the fourth month.  This is followed by a number for the day of the week, and preceded by the year, so the date given for the publication of this book, {\quch d1d9d8, d5 yeari, d4 soine d2} is the second day of the fourth week of the fifth month of the year 198.  This can also be abbreviated with the number separation mark to {\quch d1d9d8:d5:d4:d2}.
 
 The monthly public holidays are still in flux in your time, according to the idiosyncrasies of the individual temples and towns.  So we shall establish here what they are going forward, and what words we use to refer to them:
 
-The middle two days of weeks 1, 2, 4, and 5 of each month (that is, the six-day weeks) have the \textbf{Q\"aQhai} hours reserved for prayer, self-reflection, and general learning.  It is not mandatory to do this in the temple (or at all), but the temple is to remain open to the public during these times for any who wish to pray or seek the wisdom of the priestesses.  The priestesses may give a sermon or read a fable or share research with those in attendance as is deemed appropriate, or they may leave the people to pray on their own, but they must be available to answer questions and give guidance and material help to all who ask.  These days are called \textbf{Nyoacelya Lyuya}, ``days of wisdom'' or ``days of knowledge'', as the purpose is to give the people a time to acquire some of the wisdom of the temple for themselves, should they choose to.  Of course, the secret knowledge of the operation of the Mirror and the mechanics of time travel must not be given out to the public at any point, but there is still much other knowledge that the temples can provide.
+The middle two days of weeks 1, 2, 4, and 5 of each month (that is, the six-day weeks) have the {\quch qAqhai} hours reserved for prayer, self-reflection, and general learning.  It is not mandatory to do this in the temple (or at all), but the temple is to remain open to the public during these times for any who wish to pray or seek the wisdom of the priestesses.  The priestesses may give a sermon or read a fable or share research with those in attendance as is deemed appropriate, or they may leave the people to pray on their own, but they must be available to answer questions and give guidance and material help to all who ask.  These days are called {\quch nyoacelya lyuya}, ``days of wisdom'' or ``days of knowledge'', as the purpose is to give the people a time to acquire some of the wisdom of the temple for themselves, should they choose to.  Of course, the secret knowledge of the operation of the Mirror and the mechanics of time travel must not be given out to the public at any point, but there is still much other knowledge that the temples can provide.
 
-The middle two days of the third week of the month that correspond to the full phase of Yeari were in darker times a time to pray and sacrifice to soulwrights, and maintaining these as a religious holiday only asks for unwanted soulwright beliefs in inequality and predestination to infect popular worship of Sapfita.  Accordingly, these should be promoted as days of secular celebration and drinking, which should hopefully disrupt any popular soulwright worship which occurs on these days.  In later centuries, this is not such an issue - by most accounts soulwright worship is completely gone as of 1700 and the soulwrights persist only in ghost stories and vulgar sayings and oaths in the local languages, which are completely harmless.  In our time, the temples must arrange the celebrations themselves, but this quickly becomes unnecessary as the parties begin to arrange themselves. These days are called \textbf{Yearilye Ciria} for the usual two days that are a celebration of Yeari, and \textbf{Nyufeisy\"alye Ciria} for the extra day of celebration for the full phase of the smaller moon \textbf{Nyufeisy\"a} that occurs in the third and sixth months, and in the ninth month every five years.  Nyufeisy\"a of course becomes full in the ninth month every year, but it must share its celebration with Yeari four out of five years for the proper alignment of the calendar.
+The middle two days of the third week of the month that correspond to the full phase of Yeari were in darker times a time to pray and sacrifice to soulwrights, and maintaining these as a religious holiday only asks for unwanted soulwright beliefs in inequality and predestination to infect popular worship of Sapfita.  Accordingly, these should be promoted as days of secular celebration and drinking, which should hopefully disrupt any popular soulwright worship which occurs on these days.  In later centuries, this is not such an issue - by most accounts soulwright worship is completely gone as of 1700 and the soulwrights persist only in ghost stories and vulgar sayings and oaths in the local languages, which are completely harmless.  In our time, the temples must arrange the celebrations themselves, but this quickly becomes unnecessary as the parties begin to arrange themselves. These days are called {\quch yearilye ciria} for the usual two days that are a celebration of Yeari, and {\quch nyufeisyAlye ciria} for the extra day of celebration for the full phase of the smaller moon {\quch nyufeisyA} that occurs in the third and sixth months, and in the ninth month every five years.  Nyufeisy\"a of course becomes full in the ninth month every year, but it must share its celebration with Yeari four out of five years for the proper alignment of the calendar.
 
 \subsection{Postpositions}
 \label{postpositions}
 
-Postpositions serve two functions in QuCheanya: to head postpositional phrases that modify verbs or nouns, and to attach to verbs as prefixes to create new verbs.  In postpositional phrases, some postpositions take noun phrases in the locative case, and other take noun phrases in the oblique case.  In the table below is a list of postpositions, the cases they take, and how they are used to modify verbs.
+Postpositions serve two functions in QuCheanya: to head postpositional phrases that modify verbs or nouns, and to attach to verbs as prefixes to create new verbs.  In postpositional phrases, some postpositions take noun phrases in the locative case, and other take noun phrases in the oblique case.  In Table~\ref{table:postpositions} is a list of postpositions, the cases they take, and how they are used to modify verbs.
 
-\begin{table}[htb!]
+\begin{table}[h!]
+\caption{Postpositions}
+\label{table:postpositions}
 \begin{tabular}{|l|p{1.5in}|p{1in}|p{2in}|}
 \hline
 Postposition & Meaning & Case & Verbal Modification \\ \hline
-\textbf{mea} & ``to'', ``towards'' & Locative & Indicates motion towards the speaker (e.g. \textbf{meaf\"a}, ``come'') \\ \hline
-\textbf{rui} & ``from'', ``away from'' & Locative & Indicates motion away from the speaker (e.g. \textbf{ruif\"a} ``go (away)'') \\ \hline
-\textbf{pai} & ``up'', ``over'', ``above'' & Locative & Indicates motion upwards (e.g. \textbf{paif\"a}, ``rise'') \\ \hline
-\textbf{chu} & ``down'', ``under'' & Locative & Indicates motion downwards (e.g. \textbf{chuf\"a}, ``fall'') \\ \hline
-\textbf{cyo} & ``out'', ``outside'' or ``around'' & Locative (``out(side)''), Oblique (``around'') & Can indicate motion towards the outside, or can be used to make verbs ``bigger'', as in \textbf{cyoquyu}, ``shout'' \\ \hline
-\textbf{yia} & ``inside'', ``within'' & Locative & Indicated motion inside, motion backwards, or motion away from third parties \\ \hline
-\textbf{lei} & ``with'', ``together with'' or ``among'', ``beside'', ``next to'' & Oblique & Adds meaning of ``together'' for plural subjects only \\ \hline
-\textbf{tsea} & ``without'', ``lacking'', ``excluding'' & Oblique & Indicates ``by onesself'' \\ \hline
-\textbf{cche} & ``about'', ``regarding'' & Oblique & Makes verbs ``smaller'' or otherwise weakens them, e.g. \textbf{cchequyu}, ``whisper'' \\ \hline
-\textbf{soa} & ``behind'', ``in back of'', ``after'' (temporally and sequentially) & Locative & Forms verbs with underhanded connotations: \textbf{soaquyu}, ``gossip'' \\ \hline
-\textbf{tyui} & ``in front of'', ``before'' (temporally and sequentially) & Locative & Opposite effect of \textbf{soa}: \textbf{tyuiquyu}, ``speak honestly'' \\ \hline
+{\quch mea} & ``to'', ``towards'' & Locative & Indicates motion towards the speaker (e.g. {\quch meafA}, ``come'') \\ \hline
+{\quch rui} & ``from'', ``away from'' & Locative & Indicates motion away from the speaker (e.g. {\quch ruifA} ``go (away)'') \\ \hline
+{\quch pai} & ``up'', ``over'', ``above'' & Locative & Indicates motion upwards (e.g. {\quch paifA}, ``rise'') \\ \hline
+{\quch chu} & ``down'', ``under'' & Locative & Indicates motion downwards (e.g. {\quch chufA}, ``fall'') \\ \hline
+{\quch cyo} & ``out'', ``outside'' or ``around'' & Locative (``out(side)''), Oblique (``around'') & Can indicate motion towards the outside, or can be used to make verbs ``bigger'', as in {\quch cyoquyu}, ``shout'' \\ \hline
+{\quch yia} & ``inside'', ``within'' & Locative & Indicated motion inside, motion backwards, or motion away from third parties \\ \hline
+{\quch lei} & ``with'', ``together with'' or ``among'', ``beside'', ``next to'' & Oblique & Adds meaning of ``together'' for plural subjects only \\ \hline
+{\quch tsea} & ``without'', ``lacking'', ``excluding'' & Oblique & Indicates ``by onesself'' \\ \hline
+{\quch cche} & ``about'', ``regarding'' & Oblique & Makes verbs ``smaller'' or otherwise weakens them, e.g. {\quch cchequyu}, ``whisper'' \\ \hline
+{\quch soa} & ``behind'', ``in back of'', ``after'' (temporally and sequentially) & Locative & Forms verbs with underhanded connotations: {\quch soaquyu}, ``gossip'' \\ \hline
+{\quch tyui} & ``in front of'', ``before'' (temporally and sequentially) & Locative & Opposite effect of {\quch soa}: {\quch tyuiquyu}, ``speak honestly'' \\ \hline
 \end{tabular}
 \end{table}
 
 \subsection{Adjectives of Time and Place, and Demonstratives}
 
-Many adjectives of time and place are made up of an adjective base, which is \textbf{ra} for adjectives of time, and \textbf{le} for adjectives of place, and a prefix that either indicates a distance, or is a quantifier.  The distance prefixes are \textbf{ti-} for ``close'', and \textbf{so-} for ``far'', and these can be reduplicated where appropriate to mean ``very close'' or ``very far''.  Quantifiers that can appear as part of these adjectives include \textbf{nulo}, ``all'', \textbf{siane}, ``some'', or \textbf{r\"ara}, ``none''.  The full table of possibilities is below:
+Many adjectives of time and place are made up of an adjective base, which is {\quch ra} for adjectives of time, and {\quch le} for adjectives of place, and a prefix that either indicates a distance, or is a quantifier.  The distance prefixes are {\quch ti} for ``close'', and {\quch so} for ``far'', and these can be reduplicated where appropriate to mean ``very close'' or ``very far''.  Quantifiers that can appear as part of these adjectives include {\quch nulo}, ``all'', {\quch siane}, ``some'', or {\quch rAra}, ``none''.  All possible combinations are shown in Table~\ref{table:adjectives}.
 
-\begin{table}[htb!]
+\begin{table}[h!]
+\caption{Adjectives of Time and Place}
+\label{table:adjectives}
 \begin{tabular}{|l|l l l l l|}
 \hline
-Base & \textbf{ti-} & \textbf{so-} & \textbf{nulo} & \textbf{siane} & \textbf{r\"ara} \\
+Base & {\quch ti} & {\quch so} & {\quch nulo} & {\quch siane} & {\quch rAra} \\
 \hline
-\textbf{ra} & (\textbf{ti})\textbf{tira} & (\textbf{so})\textbf{sora} & \textbf{nulora}, & \textbf{sianera}, & \textbf{r\"arara} \\
+{\quch ra} & {\quch (ti)tira} & {\quch (so)sora} & {\quch nulora}, & {\quch sianera}, & {\quch rArara} \\
 & (see below) & (see below) & ``always'' & ``sometimes'' & ``never'' \\
 \hline
-\textbf{le} & (\textbf{ti})\textbf{tile}& (\textbf{so})\textbf{sole} & \textbf{nulole} & \textbf{sianele} & \textbf{r\"arale} \\
+{\quch le} & {\quch (ti)tile}& {\quch (so)sole} & {\quch nulole} & {\quch sianele} & {\quch rArale} \\
 & ``(right) here'' & ``(over) there'' & ``everywhere'' & ``somewhere'' & ``nowhere'' \\
 \hline
 \end{tabular}
 \end{table}
 
-The meanings of \textbf{tira} and \textbf{sora} (and their reduplicated forms) depend on the tense.  In present tense, \textbf{sora} is not used and \textbf{tira} means ``now''; in past tense, \textbf{sora} means ``long ago'', and \textbf{tira} means ``recent''; in future tense, \textbf{sora} means ``a long time from now'' and \textbf{tira} means ``soon''.  The reduplicated form \textbf{titira} is only used with the present tense and means ``right now'', while \textbf{sosora} can mean ``a very long time ago'' or ``very far in the future'' depending on the tense.  If \textbf{tira} or \textbf{sora} modify a verb, the relevant tense is the tense of the topic.  In sentences with \textbf{tyua}, the relevant tense is always the present if they modify the verb as opposed to a noun.
+The meanings of {\quch tira} and {\quch sora} (and their reduplicated forms) depend on the tense.  In present tense, {\quch sora} is not used and {\quch tira} means ``now''; in past tense, {\quch sora} means ``long ago'', and {\quch tira} means ``recent''; in future tense, {\quch sora} means ``a long time from now'' and {\quch tira} means ``soon''.  The reduplicated form {\quch titira} is only used with the present tense and means ``right now'', while {\quch sosora} can mean ``a very long time ago'' or ``very far in the future'' depending on the tense.  If {\quch tira} or {\quch sora} modify a verb, the relevant tense is the tense of the topic.  In sentences with {\quch tyua}, the relevant tense is always the present if they modify the verb as opposed to a noun.
 
-The prefixes \textbf{ti-} and \textbf{so-} can also be attached directly to the \textbf{-fye} suffix to form ``this'' (\textbf{tifye}) and ``that'' (\textbf{sofye}) when used as modifiers.  Reduplicated \textbf{sosofye} can be used to refer to more distant things, and \textbf{titifye} to emphasize ``this right here''.
+The prefixes {\quch ti} and {\quch so} can also be attached directly to the {\quch fye} suffix to form ``this'' ({\quch tifye}) and ``that'' ({\quch sofye}) when used as modifiers.  Reduplicated {\quch sosofye} can be used to refer to more distant things, and {\quch titifye} to emphasize ``this right here''.
 
-This same set of prefixes can also be applied to the noun bases \textbf{tsai} and \textbf{nea} to form nominal demonstratives, as follows:
+This same set of prefixes can also be applied to the noun bases {\quch tsai} and {\quch nea} to form nominal demonstratives, as shown in Table~\ref{table:specialnouns}.
 
-\begin{table}[htb!]
+\begin{table}[h!]
+\caption{Special Nouns Made from {\quch tsai} and {\quch nea}}
+\label{table:specialnouns}
 \begin{tabular}{|l|l l l l l|}
 \hline
-Base & \textbf{ti-} & \textbf{so-} & \textbf{nulo} & \textbf{siane} & \textbf{r\"ara} \\
+Base & {\quch ti} & {\quch so} & {\quch nulo} & {\quch siane} & {\quch rAra} \\
 \hline
-\textbf{tsai} & (\textbf{ti})\textbf{titsai} & (\textbf{so})\textbf{sotsai} & \textbf{nulotsai} & \textbf{sianetsai} & \textbf{r\"aratsai} \\
+{\quch tsai} & {\quch (ti)titsai} & {\quch (so)sotsai} & {\quch nulotsai} & {\quch sianetsai} & {\quch rAratsai} \\
 & ``this (thing)'' & ``that (thing)'' & ``everything'' & ``something'' & ``nothing'' \\
 \hline
-\textbf{nea} & (\textbf{ti})\textbf{tinea} & (\textbf{so})\textbf{sonea} & \textbf{nulonea} & \textbf{sianenea} & \textbf{r\"aranea} \\
+{\quch nea} & {\quch (ti)tinea} & {\quch (so)sonea} & {\quch nulonea} & {\quch sianenea} & {\quch rAranea} \\
 & ``this (person)'' & ``that (person)'' & ``everyone'' & ``someone'' & ``no one'' \\
 \hline
 \end{tabular}
 \end{table}
 
-The words (\textbf{ti})\textbf{titsai}, (\textbf{so})\textbf{sotsai}, (\textbf{ti})\textbf{tinea} and (\textbf{so})\textbf{sonea} are sometimes used in place of the third person pronoun \textbf{che} when there are multiple entities being referred to in the third person in the same sentence and it thus may be difficult to tell which pronoun refers to which thing or person.  The distance aspect implied by \textbf{ti-} and \textbf{so-} or their reduplicated forms can refer to physical distance, or to relative relatedness to the topic or action of the sentence.  This essentially adds potentially eight more third person pronouns to aid in disambiguation.
+The words {\quch (ti)titsai}, {\quch (so)sotsai}, {\quch (ti)tinea} and {\quch (so)sonea} are sometimes used in place of the third person pronoun {\quch che} when there are multiple entities being referred to in the third person in the same sentence and it thus may be difficult to tell which pronoun refers to which thing or person.  The distance aspect implied by {\quch ti} and {\quch so} or their reduplicated forms can refer to physical distance, or to relative relatedness to the topic or action of the sentence.  This essentially adds potentially eight more third person pronouns to aid in disambiguation.
 
 \newpage
 
 \part{Dictionary}
 \setlength{\parindent}{0cm}
 
-\subsubsection*{P}
+\subsubsection*{{\quch p}}
 
-\entry{Pai}{Postposition}{Up, or above. Affixes to verbs of motion to indication motion upwards.}
+\entry{pai}{Postposition}{Up, or above. Affixes to verbs of motion to indication motion upwards.}
 
-\entry{Paityapa}{Verb}{Jump up, or upwards. \textbf{pai} + \textbf{tyapa}.}
+\entry{paityapa}{Verb}{Jump up, or upwards. {\quch pai} + {\quch tyapa}.}
 
-\entry{Paif\"a}{Verb}{Rise, go/come up. \textbf{pai} + \textbf{f\"a}.}
+\entry{paifA}{Verb}{Rise, go/come up. {\quch pai} + {\quch fA}.}
 
-\entry{Poica}{Noun}{Ball, sphere.}
+\entry{poica}{Noun}{Ball, sphere.}
 
-\entry{Puch\"a}{Adjective}{Dilute (of gasses, liquids, or colors).}
+\entry{puchA}{Adjective}{Dilute (of gasses, liquids, or colors).}
 
-\subsubsection*{T}
+\subsubsection*{{\quch py}}
 
-\entry{T\"arasa}{Noun}{T'arse.}
+\entry{pyechA}{Verb}{Begin, start. Takes either noun referring to an action or a clause headed by {\quch qqhoa} as its subject.}
 
-\entry{Te}{Particle}{Uncertain evidentiality particle.}
+\entry{pyea}{Noun}{Global tomorrow. Can be reduplicated into {\quch pipyea}, ``the day after tomorrow''. Only used if the global tomorrow and the relative tomorrow are different.}
 
-\entry{Ter\"a}{Particle}{Negative uncertain evidentiality particle.}
+\subsubsection*{{\quch f}}
 
-\entry{Tityu}{Adjective}{Again.  This looks like a partial reduplication of \textbf{tyu}, but \textbf{tyu} does not actually exist as a word in the language.}
+\entry{fA}{Verb}{Go, or move in a direction, generally.}
 
-\entry{Ti-}{Affix}{Affix meaning ``near'' which attaches to \textbf{le}, \textbf{ra} and demonstrative words.}
+\entry{feisyA}{Noun}{Sister.}
 
-\entry{Titsai}{Noun}{This thing. \textbf{ti-} + \textbf{tsai}. Can be reduplicated to \textbf{tititsai}.}
+\entry{fea}{Pronoun}{Second person plural pronoun.}
 
-\entry{Tifye}{Adjective}{This. \textbf{ti-} + \textbf{-fye}.}
+\entry{fiqA}{Noun}{Non-human animal.}
 
-\entry{Tinea}{Noun}{This person. \textbf{ti-} + \textbf{nea}. Can be reduplicated to \textbf{titinea}.}
+\entry{firelA}{Noun}{Vrel.}
 
-\entry{Tile}{Adjective}{Here. \textbf{ti-} + \textbf{le}.  Reduplicated form \textbf{titile} means ``right here''.}
+\entry{foso}{Verb}{Sleep.}
 
-\entry{Tira}{Adjective}{Near, temporally, \textbf{ti-} + \textbf{ra}. Depending on the tense of the nouns, can mean ``soon'', ``recent'', or ``now''. Reduplicated \textbf{titira} means ``right now'' in present tense.}
+\entry{foqhai}{Noun}{Sleeping hours, shortened from {\quch fosorofye qhaitsea}.}
 
-\entry{Tal\"a}{Number}{Five.}
+\entry{foase}{Adjective}{Slow.}
 
-\subsubsection*{C}
+\entry{fu}{Conjunction}{And.}
 
-\entry{C\"a}{Particle}{Perfective marker.}
+\entry{fuqhe}{Noun}{Table.}
 
-\entry{Ceyai}{Verb}{Become (with adjective or noun phrase complement).}
+\subsubsection*{{\quch fy}}
 
-\entry{Cea}{Third person plural pronoun.}
+\entry{fye}{Affix}{Suffixed to a noun to turn it into an adjective.}
 
-\entry{Ci}{Verb}{Look at, see.  More agentive counterpart to \textbf{qera}.}
+\entry{fyeirA}{Number}{Twelve.}
 
-\entry{Ciria}{Noun}{Celebration, or holiday.}
+\entry{fyoanyo}{Verb}{Hope, wish for. Takes a clause headed with {\quch qqhoasui} as its direct object.}
 
-\entry{Coatye}{Verb}{Write by hand.}
+\subsubsection*{{\quch pf}}
 
-\subsubsection*{Q}
+\entry{pfaire}{Verb}{Give.}
 
-\entry{Q\"aQhai}{Noun}{Working hours, short for \textbf{q\"atyafye qhaitsea}.}
+\entry{pfe}{Pronoun}{Second person singular pronoun.}
 
-\entry{Q\"atya}{Noun}{Work, labor.}
+\entry{pfecyua}{Noun}{Flower.}
 
-\entry{Q\"atyayu}{Verb}{To work. \textbf{q\"atya} + \textbf{-yu}.}
+\entry{pfona}{Number}{Four.}
 
-\entry{Q\"aro}{Noun}{Relative yesterday, that is, the most recent 18-hour period the speaker has experienced, which is not necessarily the same as the most recent 18-hour period in the global timeline.  Can be reduplicated into \textbf{q\"aq\"aro}, ``the day before yesterday''.}
+\subsubsection*{{\quch m}}
 
-\entry{Qera}{Verb}{Notice.  Less agentive counterpart to \textbf{ci}.}
+\entry{mai}{Number}{Six.}
 
-\entry{Qu}{Noun}{Language, or dialect.}
+\entry{me}{Affix}{Suffix indicating that a word is a proper title, can also be affixed to names to mean ``Mr. X'' or ``Mrs. X''}
 
-\entry{Quyu}{Verb}{Speak, or say. \textbf{qu} + \textbf{yu}.}
+\entry{mea}{Postposition}{To, towards. Affixes to verbs of motion to indicate motion towards the speaker.}
 
-\subsubsection*{F}
+\entry{meafA}{Verb}{Come.}
 
-\entry{F\"a}{Verb}{Go, or move in a direction, generally.}
+\entry{mo}{Affix}{Suffixes to a number to ``N times''.}
 
-\entry{Feisy\"a}{Noun}{Sister.}
+\entry{mufoi}{Verb}{Eat.}
 
-\entry{Fea}{Pronoun}{Second person plural pronoun.}
+\entry{mua}{Pronoun}{First person plural pronoun.}
 
-\entry{Fiq\"a}{Noun}{Non-human animal.}
+\subsubsection*{{\quch t}}
 
-\entry{Firel\"a}{Noun}{Vrel.}
+\entry{tArasa}{Noun}{T'arse.}
 
-\entry{Foso}{Verb}{Sleep.}
+\entry{te}{Particle}{Uncertain evidentiality particle.}
 
-\entry{FoQhai}{Noun}{Sleeping hours, shortened from \textbf{fosorofye qhaitsea}.}
+\entry{terA}{Particle}{Negative uncertain evidentiality particle.}
 
-\entry{Foase}{Adjective}{Slow.}
+\entry{tityu}{Adjective}{Again.  This looks like a partial reduplication of {\quch tyu}, but {\quch tyu} does not actually exist as a word in the language.}
 
-\entry{Fu}{Conjunction}{And.}
+\entry{ti}{Affix}{Prefix meaning ``near'' which attaches to {\quch le}, {\quch ra} and demonstrative words.}
 
-\entry{Fuqhe}{Noun}{Table.}
+\entry{titsai}{Noun}{This thing. {\quch ti} + {\quch tsai}. Can be reduplicated to {\quch tititsai}.}
 
-\subsubsection*{S}
+\entry{tifye}{Adjective}{This. {\quch ti} + {\quch fye}.}
 
-\entry{Sepui}{Adjective}{Wild, untamed, natural (as opposed to crafted, or cultivated).}
+\entry{tinea}{Noun}{This person. {\quch ti} + {\quch nea}. Can be reduplicated to {\quch titinea}.}
 
-\entry{Sei}{Particle}{Habitual aspect marker.}
+\entry{tile}{Adjective}{Here. {\quch ti} + {\quch le}.  Reduplicated form {\quch titile} means ``right here''.}
 
-\entry{Sia}{Pronoun}{Plural relative pronoun.}
+\entry{tira}{Adjective}{Near, temporally, {\quch ti} + {\quch ra}. Depending on the tense of the nouns, can mean ``soon'', ``recent'', or ``now''. Reduplicated {\quch titira} means ``right now'' in present tense.}
 
-\entry{Siane}{Quantifier}{Some. Partial reduplication \textbf{sisiane} means ``many''.}
+\entry{talA}{Number}{Five.}
 
-\entry{Sianetsai}{Noun}{Something. \textbf{siane} + \textbf{tsai}.}
+\subsubsection*{{\quch ty}}
 
-\entry{Sianenea}{Noun}{Someone. \textbf{siane} + \textbf{nea}.}
+\entry{tyapa}{Verb}{Hop, jump.}
 
-\entry{Sianele}{Adjective}{Somewhere, located in some place, or some places. \textbf{siane} + \textbf{le}.}
+\entry{tyorei}{Noun}{Store, shop.}
 
-\entry{Sianera}{Adjective}{Some time, or sometimes. \textbf{siane} + \textbf{ra}.}
+\entry{tyui}{Postposition}{In front of, or before. Attaches to verbs to add a connotation of forthrightness or honesty.}
 
-\entry{So-}{Affix}{Affix meaning ``far away'' that affixes onto \textbf{le}, \textbf{ra}, and demonstratives.}
+\entry{tyua}{Particle}{Imperative/hortative/jussive marker.}
 
-\entry{Sotsai}{Noun}{That thing. \textbf{so-} + \textbf{tsai}. Can be reduplicated to \textbf{sosot\nobreak sai}.}
+\subsubsection*{{\quch s}}
 
-\entry{Sofye}{Adjective}{That. \textbf{so-} + \textbf{-fye}.}
+\entry{sepui}{Adjective}{Wild, untamed, natural (as opposed to crafted, or cultivated).}
 
-\entry{Sonea}{Noun}{That person. \textbf{so-} + \textbf{nea}. Can be reduplicated to \textbf{sosonea}.}
+\entry{sei}{Particle}{Habitual aspect marker.}
 
-\entry{Sole}{Adjective}{Far away, in a far away place, ``there''. \textbf{so-} + \textbf{le}. Can be partially reduplicated into \textbf{sosole}.}
+\entry{sia}{Pronoun}{Plural relative pronoun.}
 
-\entry{Sora}{Adjective}{Far away temporally, can mean a long time in the past or a long time in the future depending on the tense of the noun. Not used with present tense. \textbf{so-} + \textbf{ra}. Can be reduplicated into \textbf{sosora}.}
+\entry{siane}{Quantifier}{Some. Partial reduplication {\quch sisiane} means ``many''.}
 
-\entry{Solye}{Noun}{Rain.}
+\entry{sianetsai}{Noun}{Something. {\quch siane} + {\quch tsai}.}
 
-\entry{Soye}{Noun}{Style of food.}
+\entry{sianenea}{Noun}{Someone. {\quch siane} + {\quch nea}.}
 
-\entry{Soine}{Noun}{Week.}
+\entry{sianele}{Adjective}{Somewhere, located in some place, or some places. {\quch siane} + {\quch le}.}
 
-\entry{Soa}{Postposition}{Behind, in back of, or after. Attaches to verbs to add underhanded connotations.}
+\entry{sianera}{Adjective}{Some time, or sometimes. {\quch siane} + {\quch ra}.}
 
-\entry{Susua}{Verb}{Roll.}
+\entry{so}{Affix}{Prefix meaning ``far away'' that affixes onto {\quch le}, {\quch ra}, and demonstratives.}
 
-\entry{Suyu}{Adjective}{Often, frequently.}
+\entry{sotsai}{Noun}{That thing. {\quch so} + {\quch tsai}. Can be reduplicated to {\quch sosotsai}.}
 
-\entry{SuaQhai}{Noun}{Leisure hours, shortened from \textbf{suapfifye qhaitsea}.}
+\entry{sofye}{Adjective}{That. {\quch so} + {\quch fye}.}
 
-\entry{Suapfi}{Noun}{Leisure, or play.}
+\entry{sonea}{Noun}{That person. {\quch so} + {\quch nea}. Can be reduplicated to {\quch sosonea}.}
 
-\entry{Suapfiyu}{Verb}{To play.}
+\entry{sole}{Adjective}{Far away, in a far away place, ``there''. {\quch so} + {\quch le}. Can be partially reduplicated into {\quch sosole}.}
 
-\entry{Suano}{Number}{Ten.}
+\entry{sora}{Adjective}{Far away temporally, can mean a long time in the past or a long time in the future depending on the tense of the noun. Not used with present tense. {\quch so} + {\quch ra}. Can be reduplicated into {\quch sosora}.}
 
-\subsubsection*{CH}
+\entry{solye}{Noun}{Rain.}
 
-\entry{Che}{Pronoun}{Third person singular pronoun.}
+\entry{soye}{Noun}{Style of food.}
 
-\entry{Chelyi}{Noun}{Mist, fog.}
+\entry{soine}{Noun}{Week.}
 
-\entry{Cheanya}{Noun}{Person, people, or the Cheanya as an enthnic or linguistic group.}
+\entry{soa}{Postposition}{Behind, in back of, or after. Attaches to verbs to add underhanded connotations.}
 
-\entry{Choi}{Number}{Three.}
+\entry{susua}{Verb}{Roll.}
 
-\entry{Choa-}{Affix}{Augmentative. Used to form large numbers: \textbf{choamai} = 36 (6x6), \textbf{choasuano} = 100 (10x10), \textbf{choafyeira} = 144 (12x12).}
+\entry{suyu}{Adjective}{Often, frequently.}
 
-\entry{Chu}{Postposition}{Down, or below. Affixes to verbs of motion to indicate motion downwards.}
+\entry{suaqhai}{Noun}{Leisure hours, shortened from {\quch suapfifye qhaitsea}.}
 
-\entry{Chutyapa}{Verb}{Jump down, or downwards. \textbf{chu} + \textbf{tyapa}.}
+\entry{suapfi}{Noun}{Leisure, or play.}
 
-\entry{Chuf\"a}{Verb}{Descend, fall, go/come down. \textbf{chu} + \textbf{f\"a}.}
+\entry{suapfiyu}{Verb}{To play.}
 
-\subsubsection*{QH}
+\entry{suano}{Number}{Ten.}
 
-\entry{Qh\"alya}{Number}{Nine.}
+\subsubsection*{{\quch sy}}
 
-\entry{Qhaitse}{Noun}{Hour.}
+\entry{syene}{Number}{Two.}
 
-\entry{Qheara}{Adjective}{Beautiful.}
+\entry{syelo}{Verb}{Please. Used to mean ``like'' except that the liker is the object and the liked thing is the subject.}
 
-\entry{Qhoi}{Verb}{Stop. Takes either a noun describing an action as a subject, or a complement clause headed by \textbf{qqhoa}.}
+\entry{syea}{Adverb}{Enough. Reduplicated {\quch sisyea} means ``too much''.}
 
-\entry{Qhuso}{Adjective}{Neat (the opposite of ``messy''), precise, accurate.}
+\entry{syearA}{Adverb}{Not enough. {\quch syea} + {\quch rA}.}
 
-\subsubsection*{PF}
+\entry{syipfi}{Noun}{Baby.}
 
-\entry{Pfaire}{Verb}{Give.}
+\subsubsection*{{\quch ts}}
 
-\entry{Pfe}{Pronoun}{Second person singular pronoun.}
+\entry{tsai}{Noun}{Thing, stuff. Used with {\quch ti}, {\quch so}, and quantifiers, used to form agent nominalizations of verbs, and compounds to form the names of the elements.}
 
-\entry{Pfecyua}{Noun}{Flower.}
+\entry{tsea}{Postposition}{Without, lacking, excluding. Attaches to verbs to indicate ``by onesself''.}
 
-\entry{Pfona}{Number}{Four.}
+\entry{tsi}{Pronoun}{Singular relative pronoun.}
 
-\subsubsection*{TS}
+\entry{tsime}{Verb}{Shine, glow, or emit light.}
 
-\entry{Tsai}{Noun}{Thing, stuff. Used with \textbf{ti-}, \textbf{so-}, and quantifiers, used to form agent nominalizations of verbs, and compounds to form the names of the elements.}
+\entry{tsomo}{Adverb}{Comparative word used to form comparative adjectives, roughly ``more''.  Partial reduplication {\quch tsotsomo} is the superlative ``most''.}
 
-\entry{Tsea}{Postposition}{Without, lacking, excluding. Attaches to verbs to indicate ``by onesself''.}
+\entry{tsoa}{Noun}{Relative tomorrow, that is, the next 18-hour period the speaker will experience, which is not necessarily the next 18-hour period in the global timeline. Can be reduplicated to {\quch tsotsoa}, ``the day after tomorrow''.}
 
-\entry{Tsi}{Pronoun}{Singular relative pronoun.}
+\subsubsection*{{\quch n}}
 
-\entry{Tsime}{Verb}{Shine, glow, or emit light.}
+\entry{nea}{Noun}{Person. Used to form compounds indicating professions, agent nominalizations of verbs, and also attaches to {\quch ti}, {\quch so} and the quantifiers.}
 
-\entry{Tsomo}{Adverb}{Comparative word used to form comparative adjectives, roughly ``more''.  Partial reduplication \textbf{tsotsomo} is the superlative ``most''.}
+\entry{neasapfita}{Noun}{Priestess. {\quch nea} + {\quch sapfita}.}
 
-\entry{Tsoa}{Noun}{Relative tomorrow, that is, the next 18-hour period the speaker will experience, which is not necessarily the next 18-hour period in the global timeline. Can be reduplicated to \textbf{tsotsoa}, ``the day after tomorrow''.}
+\entry{nitsi}{Verb}{Walk.}
 
-\subsubsection*{CCH}
+\entry{nora}{Noun}{Country.}
 
-\entry{Cche}{Postposition}{About, regarding. Attaches to verbs to make them smaller, or weaker.}
+\entry{noi}{Pronoun}{First person singular pronoun.}
 
-\entry{Cchiso}{Number}{Eleven.}
+\entry{nulo}{Quantifier}{All, all of, the whole of something.}
 
-\entry{Cchiy\"a}{Adjective}{Intense; could mean ``bright'', ``loud'', ``very hot'', ``very cold'', etc. depending on what it modified. Sometimes accompanied by other adjectives for clarification.}
+\entry{nulotsai}{Noun}{Everything. {\quch nulo} + {\quch tsai}.}
 
-\entry{-Ccho}{Affix}{Nominalizer for adjectives.}
+\entry{nulonea}{Noun}{Everyone. {\quch nulo} + {\quch nea}.}
 
-\subsubsection*{QQH}
+\entry{nulole}{Adjective}{Everywhere, in every place. {\quch nulo} + {\quch le}.}
 
-\entry{Qqhea}{Noun}{The past, in a global, rather than relative, sense.}
+\entry{nulora}{Adjective}{Every time, or always. {\quch nulo} + {\quch ra}.}
 
-\entry{Qqhoa}{Particle}{Complementizer. Can be analyzed as a nominalizer for clauses. Can take case endings and other nominal morphology other than tense and number.}
+\subsubsection*{{\quch l}}
 
-\subsubsection*{PY}
+\entry{lAnye}{Noun}{Book.}
 
-\entry{Pyech\"a}{Verb}{Begin, start. Takes either noun referring to an action or a clause headed by \textbf{qqhoa} as its subject.}
+\entry{le}{Adjective}{Base for adjectives indicating physical place, can be used with {\quch ti}, {\quch so} and quantifiers.}
 
-\entry{Pyea}{Noun}{Global tomorrow. Can be reduplicated into \textbf{pipyea}, ``the day after tomorrow''. Only used if the global tomorrow and the relative tomorrow are different.}
+\entry{leya}{Number}{Eight.}
 
-\subsubsection*{TY}
+\entry{lei}{Postposition}{With, or together with. Can be affixed to verbs with a plural subject NP to indicate doing something together.}
 
-\entry{Tyapa}{Verb}{Hop, jump.}
+\entry{lu}{Particle}{Probably evidentiality particle.}
 
-\entry{Tyorei}{Noun}{Store, shop.}
+\entry{lurA}{Particle}{Evidentiality particle meaning ``probably not''.}
 
-\entry{Tyui}{Postposition}{In front of, or before. Attaches to verbs to add a connotation of forthrightness or honesty.}
+\subsubsection*{{\quch r}}
 
-\entry{Tyua}{Particle}{Imperative/hortative/jussive marker.}
+\entry{rA}{Particle}{Negation particle; not.}
 
-\subsubsection*{CY}
+\entry{rAra}{Quantifier}{None, no, none of.}
 
-\entry{Cyaisa}{Adjective}{Early.}
+\entry{rAratsai}{Noun}{Nothing. {\quch rAra} + {\quch tsai}.}
 
-\entry{Cyo}{Postposition}{Out, or around.  Often affixes to verbs to mean ``bigger'' actions.}
+\entry{rAranea}{Noun}{No one. {\quch rAra} + {\quch nea}.}
 
-\entry{Cyoci}{Verb}{Look out, or look around.}
+\entry{rArale}{Adjective}{Nowhere, in no place. {\quch rAra} + {\quch le}.}
 
-\entry{Cyoquyu}{Verb}{Yell, or shout.}
+\entry{rArara}{Adjective}{Never, at no time. {\quch rAra} + {\quch ra}.}
 
-\subsubsection*{FY}
+\entry{ri}{Pronoun}{Singular topic-reflexive pronoun.}
 
-\entry{-Fye}{Affix}{Affixed to a noun to turn it into an adjective.}
+\entry{ria}{Pronoun}{Plural topic-reflexive pronoun.}
 
-\entry{Fyeir\"a}{Number}{Twelve.}
+\entry{ro}{Affix}{Action nominalizer for verbs.}
 
-\entry{Fyoanyo}{Verb}{Hope, wish for. Takes a clause headed with \textbf{qqhoasui} as its direct object.}
+\entry{roate}{Number}{Seven.}
 
-\subsubsection*{SY}
+\entry{rui}{Particle}{Future relevance marker.}
 
-\entry{Syene}{Number}{Two.}
+\entry{rui}{Postposition}{From, or away. Can be affixed to verbs of motion to indicate motion away from the speaker.}
 
-\entry{Syelo}{Verb}{Please. Used to mean ``like'' except that the liker is the object and the liked thing is the subject.}
+\entry{ruifA}{Verb}{Go, go away. {\quch rui} + {\quch fA}.}
 
-\entry{Syea}{Adverb}{Enough. Reduplicated \textbf{sisyea} means ``too much''.}
+\entry{ra}{Adjective}{Adjective base for adjectives indicating temporal place or location in time, can be used with {\quch ti}, {\quch so}, or quantifiers.}
 
-\entry{Syear\"a}{Adverb}{Not enough. \textbf{syea} + \textbf{r\"a}.}
+\entry{rapui}{Verb}{Ought, should, must; a requirement enforced by a third party. Takes a clause headed by {\quch qqhoa} as its subject.}
 
-\entry{Syipfi}{Noun}{Baby.}
+\subsubsection*{{\quch c}}
 
-\subsubsection*{CHY}
+\entry{cA}{Particle}{Perfective marker.}
 
-\entry{Chyairo}{Verb}{Grow, of plants specifically.}
+\entry{ceyai}{Verb}{Become (with adjective or noun phrase complement).}
 
-\entry{Chyetea}{Verb}{Arrive.}
+\entry{cea}{Third person plural pronoun.}
 
-\entry{Chyure}{Noun}{Global yesterday. Can be reduplicated to \textbf{chichyure}, ``the day before yesterday''. Only used if the global yesterday is different than the relative yesterday.}
+\entry{ci}{Verb}{Look at, see.  More agentive counterpart to {\quch qera}.}
 
-\subsubsection*{M}
+\entry{ciria}{Noun}{Celebration, or holiday.}
 
-\entry{Mai}{Number}{Six.}
+\entry{coatye}{Verb}{Write by hand.}
 
-\entry{-Me}{Affix}{Affix indicating that a word is a proper title, can also be affixed to names to mean ``Mr. X'' or ``Mrs. X''}
+\subsubsection*{{\quch cy}}
 
-\entry{Mea}{Postposition}{To, towards. Affixes to verbs of motion to indicate motion towards the speaker.}
+\entry{cyaisa}{Adjective}{Early.}
 
-\entry{Meaf\"a}{Verb}{Come.}
+\entry{cyo}{Postposition}{Out, or around.  Often affixes to verbs to mean ``bigger'' actions.}
 
-\entry{-Mo}{Affix}{Affixes to a number to ``N times''.}
+\entry{cyoci}{Verb}{Look out, or look around.}
 
-\entry{Mufoi}{Verb}{Eat.}
+\entry{cyoquyu}{Verb}{Yell, or shout.}
 
-\entry{Mua}{Pronoun}{First person plural pronoun.}
+\subsubsection*{{\quch ch}}
 
-\subsubsection*{N}
+\entry{che}{Pronoun}{Third person singular pronoun.}
 
-\entry{Nea}{Noun}{Person. Used to form compounds indicating professions, agent nominalizations of verbs, and also attaches to \textbf{ti-}, \textbf{so-} and the quantifiers.}
+\entry{chelyi}{Noun}{Mist, fog.}
 
-\entry{NeaSapfita}{Noun}{Priestess. \textbf{nea} + \textbf{Sapfita}.}
+\entry{cheanya}{Noun}{Person, people, or the Cheanya as an enthnic or linguistic group.}
 
-\entry{Nitsi}{Verb}{Walk.}
+\entry{choi}{Number}{Three.}
 
-\entry{Nora}{Noun}{Country.}
+\entry{choa}{Affix}{Augmentative. Used to form large numbers: \mbox{{\quch choamai} = 36 (6x6)}, {\quch choasuano} = 100 (10x10), {\quch choafyeirA} = 144 (12x12).}
 
-\entry{Noi}{Pronoun}{First person singular pronoun.}
+\entry{chu}{Postposition}{Down, or below. Affixes to verbs of motion to indicate motion downwards.}
 
-\entry{Nulo}{Quantifier}{All, all of, the whole of something.}
+\entry{chutyapa}{Verb}{Jump down, or downwards. {\quch chu} + {\quch tyapa}.}
 
-\entry{Nulotsai}{Noun}{Everything. \textbf{nulo} + \textbf{tsai}.}
+\entry{chufA}{Verb}{Descend, fall, go/come down. {\quch chu} + {\quch fA}.}
 
-\entry{Nulonea}{Noun}{Everyone. \textbf{nulo} + \textbf{nea}.}
+\subsubsection*{{\quch chy}}
 
-\entry{Nulole}{Adjective}{Everywhere, in every place. \textbf{nulo} + \textbf{le}.}
+\entry{chyairo}{Verb}{Grow, of plants specifically.}
 
-\entry{Nulora}{Adjective}{Every time, or always. \textbf{nulo} + \textbf{ra}.}
+\entry{chyetea}{Verb}{Arrive.}
 
-\subsubsection*{NY}
+\entry{chyure}{Noun}{Global yesterday. Can be reduplicated to {\quch chichyure}, ``the day before yesterday''. Only used if the global yesterday is different than the relative yesterday.}
 
-\entry{Ny\"area}{Verb}{Need; a requirement enforced by onesself. Takes either a noun or a clause headed by \textbf{qqhoasui} as a direct object.}
+\subsubsection*{{\quch cch}}
 
-\entry{Nyoace}{Noun}{Fact, or piece of information. When plural it means ``knowledge'' or ``information''.}
+\entry{cche}{Postposition}{About, regarding. Attaches to verbs to make them smaller, or weaker.}
 
-\entry{Nyoacelya Lyuya}{Noun}{``Days of Knowledge'', from \textbf{nyoace} and \textbf{lyui}, the middle two days of every week but the third of each month.}
+\entry{cchiso}{Number}{Eleven.}
 
-\entry{Nyu-}{Affix}{Diminutive affix, affixes to nouns, often used to form words for baby animals. Can be partially reduplicated to \textbf{ninyu-}.}
+\entry{cchiyA}{Adjective}{Intense; could mean ``bright'', ``loud'', ``very hot'', ``very cold'', etc. depending on what it modified. Sometimes accompanied by other adjectives for clarification.}
 
-\entry{Nyufeisy\"a}{Noun}{The name of the smaller moon.  \textbf{nyu-} + \textbf{feisy\"a}, literally the ``little sister''.}
+\entry{ccho}{Affix}{Nominalizer for adjectives.}
 
-\entry{Nyufeisy\"alye Ciria}{Noun}{The extra middle day of the month in the third, sixth, and ninth months that is used for celebrating the smaller moon.}
+\subsubsection*{{\quch q}}
 
-\subsubsection*{L}
+\entry{qAqhai}{Noun}{Working hours, short for {\quch qAtyafye qhaitsea}.}
 
-\entry{L\"anye}{Noun}{Book.}
+\entry{qAtya}{Noun}{Work, labor.}
 
-\entry{Le}{Adjective}{Base for adjectives indicating physical place, can be used with \textbf{ti-}, \textbf{so-} and quantifiers.}
+\entry{qAtyayu}{Verb}{To work. {\quch qAtya} + {\quch yu}.}
 
-\entry{Leya}{Number}{Eight.}
+\entry{qAro}{Noun}{Relative yesterday, that is, the most recent 18-hour period the speaker has experienced, which is not necessarily the same as the most recent 18-hour period in the global timeline.  Can be reduplicated into {\quch qAqAro}, ``the day before yesterday''.}
 
-\entry{Lei}{Postposition}{With, or together with. Can be affixed to verbs with a plural subject NP to indicate doing something together.}
+\entry{qera}{Verb}{Notice.  Less agentive counterpart to {\quch ci}.}
 
-\entry{Lu}{Particle}{Probably evidentiality particle.}
+\entry{qu}{Noun}{Language, or dialect.}
 
-\entry{Lur\"a}{Particle}{Evidentiality particle meaning ``probably not''.}
+\entry{quyu}{Verb}{Speak, or say. {\quch qu} + {\quch yu}.}
 
-\subsubsection*{LY}
+\subsubsection*{{\quch qh}}
 
-\entry{Lyeina}{Adjective}{Happy.}
+\entry{qhAlya}{Number}{Nine.}
 
-\entry{Lyoa}{Noun}{The sun.}
+\entry{qhaitse}{Noun}{Hour.}
 
-\entry{Lyui}{Noun}{Day, period of daylight.}
+\entry{qheara}{Adjective}{Beautiful.}
 
-\subsubsection*{R}
+\entry{qhoi}{Verb}{Stop. Takes either a noun describing an action as a subject, or a complement clause headed by {\quch qqhoa}.}
 
-\entry{R\"a}{Particle}{Negation particle; not.}
+\entry{qhuso}{Adjective}{Neat (the opposite of ``messy''), precise, accurate.}
 
-\entry{R\"ara}{Quantifier}{None, no, none of.}
+\subsubsection*{{\quch qqh}}
 
-\entry{R\"aratsai}{Noun}{Nothing. \textbf{r\"ara} + \textbf{tsai}.}
+\entry{qqhea}{Noun}{The past, in a global, rather than relative, sense.}
 
-\entry{R\"aranea}{Noun}{No one. \textbf{r\"ara} + \textbf{nea}.}
+\entry{qqhoa}{Particle}{Complementizer. Can be analyzed as a nominalizer for clauses. Can take case endings and other nominal morphology other than tense and number.}
 
-\entry{R\"arale}{Adjective}{Nowhere, in no place. \textbf{r\"ara} + \textbf{le}.}
+\subsubsection*{{\quch ny}}
 
-\entry{R\"arara}{Adjective}{Never, at no time. \textbf{r\"ara} + \textbf{ra}.}
+\entry{nyArea}{Verb}{Need; a requirement enforced by onesself. Takes either a noun or a clause headed by {\quch qqhoasui} as a direct object.}
 
-\entry{Ri}{Pronoun}{Singular topic-reflexive pronoun.}
+\entry{nyoace}{Noun}{Fact, or piece of information. When plural it means ``knowledge'' or ``information''.}
 
-\entry{Ria}{Pronoun}{Plural topic-reflexive pronoun.}
+\entry{nyoacelya lyuya}{Noun}{``Days of Knowledge'', from {\quch nyoace} and {\quch lyui}, the middle two days of every week but the third of each month.}
 
-\entry{-Ro}{Affix}{Action nominalizer for verbs.}
+\entry{nyu}{Affix}{Diminutive prefixfix, affixes to nouns, often used to form words for baby animals. Can be partially reduplicated to {\quch ninyu}.}
 
-\entry{Roate}{Number}{Seven.}
+\entry{nyufeisyA}{Noun}{The name of the smaller moon.  {\quch nyu} + {\quch feisyA}, literally the ``little sister''.}
 
-\entry{Rui}{Particle}{Future relevance marker.}
+\entry{nyufeisyAalye ciria}{Noun}{The extra middle day of the month in the third, sixth, and ninth months that is used for celebrating the smaller moon.}
 
-\entry{Rui}{Postposition}{From, or away. Can be affixed to verbs of motion to indicate motion away from the speaker.}
+\subsubsection*{{\quch ly}}
 
-\entry{Ruif\"a}{Verb}{Go, go away. \textbf{rui} + \textbf{f\"a}.}
+\entry{lyeina}{Adjective}{Happy.}
 
-\entry{Ra}{Adjective}{Adjective base for adjectives indicating temporal place or location in time, can be used with \textbf{ti-}, \textbf{so-}, or quantifiers.}
+\entry{lyoa}{Noun}{The sun.}
 
-\entry{Rapui}{Verb}{Ought, should, must; a requirement enforced by a third party. Takes a clause headed by \textbf{qqhoa} as its subject.}
+\entry{lyui}{Noun}{Day, period of daylight.}
 
-\subsubsection*{Y}
+\subsubsection*{{\quch y}}
 
-\entry{Yai}{Verb}{Be, or exist. The most basic copula. \textbf{yai sei} means ``lives in/at''.}
+\entry{yai}{Verb}{Be, or exist. The most basic copula. {\quch yai sei} means ``lives in/at''.}
 
-\entry{Yeqqhi}{Noun}{Cat.}
+\entry{yeqqhi}{Noun}{Cat.}
 
-\entry{Yeli}{Noun}{Boy.}
+\entry{yeli}{Noun}{Boy.}
 
-\entry{Yeari}{Noun}{The name of the larger moon, or simply ``month''.}
+\entry{yeari}{Noun}{The name of the larger moon, or simply ``month''.}
 
-\entry{Yearilye Ciria}{Noun}{The midmonth full moon celebration.}
+\entry{yearilye ciria}{Noun}{The midmonth full moon celebration.}
 
-\entry{Yia}{Postposition}{Inside, within. Attaches to verbs to mean motion backwards, or away from third parties.}
+\entry{yia}{Postposition}{Inside, within. Attaches to verbs to mean motion backwards, or away from third parties.}
 
-\entry{Yu}{Number}{One.}
+\entry{yu}{Number}{One.}
 
-\entry{-Yu}{Affix}{Derivational affix that turns nouns into verbs, roughly meaning ``do'', or ``happen''.}
+\entry{yu}{Affix}{Derivational suffix that turns nouns into verbs, roughly meaning ``do'', or ``happen''.}
 
-\entry{Yu}{Verb}{Unbound verbal form of \textbf{-yu}, only used for weather expressions that would otherwise create a subjectless sentence, all other cases use the affix.}
+\entry{yu}{Verb}{Unbound verbal form of {\quch yu}, only used for weather expressions that would otherwise create a subjectless sentence, all other cases use the affix.}
 
 \newpage
 
 \part{Example Sentences}
 
 \ex[lingstyle=QuCheanya] \begingl
-\glpreamble Lyoacei tsime sei. //
+\glpreamble lyoacei tsime sei.//
 \gla lyoa @ -c @ -ei tsime sei //
 \glb sun -\scap{PRS} -\scap{TOP} shine \scap{HAB} //
 \glft ``The sun shines.'' //
 \endgl \xe
 
 \ex[lingstyle=QuCheanya] \begingl
-\glpreamble Lyoacei tsime. //
+\glpreamble lyoacei tsime.//
 \gla lyoa @ -c @ -ei tsime //
 \glb sun -\scap{PRS} -\scap{TOP} shine //
 \glft ``The sun is shining.'' //
 \endgl \xe
 
 \ex[lingstyle=QuCheanya] \begingl
-\glpreamble Lyoaqei tsime sei. //
+\glpreamble lyoaqei tsime sei.//
 \gla lyoa @ -q @ -ei tsime sei  //
 \glb sun -\scap{PST} -\scap{TOP} shine \scap{HAB} //
 \glft ``The sun shone.'' //
 \endgl \xe
 
 \ex[lingstyle=QuCheanya] \begingl
-\glpreamble Lyoapei tsime sei. //
+\glpreamble lyoapei tsime sei.//
 \gla lyoa @ -p @ -ei tsime sei //
 \glb sun -\scap{FUT} -\scap{TOP} shine \scap{HAB} //
 \glft ``The sun will shine.'' //
 \endgl \xe
 
 \ex[lingstyle=QuCheanya] \begingl
-\glpreamble Lyoatsei tsime sei. //
+\glpreamble lyoatsei tsime sei.//
 \gla lyoa @ -ts @ -ei tsime sei //
 \glb sun -\scap{SDW} -\scap{TOP} shine \scap{HAB} //
 \glft ``The sun shines in the other timeline.'' //
 \endgl \xe
 
 \ex[lingstyle=QuCheanya] \begingl
-\glpreamble Lyoaqei tsime rui. //
+\glpreamble lyoaqei tsime rui.//
 \gla lyoa @ -q @ -ei tsime rui //
 \glb sun -\scap{PST} -\scap{TOP} shine \scap{FTRL} //
 \glft ``The sun has been shining.'' //
 \endgl \xe
 
 \ex[lingstyle=QuCheanya] \begingl
-\glpreamble Lyoacei tityu tsime. //
+\glpreamble lyoacei tityu tsime.//
 \gla lyoa @ -c @ -ei tityu tsime //
 \glb sun -\scap{PRS} -\scap{TOP} again shine //
 \glft ``The sun is shining again.'' //
@@ -1014,72 +1106,72 @@ The words (\textbf{ti})\textbf{titsai}, (\textbf{so})\textbf{sotsai}, (\textbf{t
 
 \pex[lingstyle=QuCheanya] 
 \a \begingl
-\glpreamble Lyoapei tsoanu tsime sei. //
+\glpreamble lyoapei tsoanu tsime sei.//
 \gla lyoa @ -p @ -ei tsoa @ -nu tsime sei //
 \glb sun -\scap{FUT} -\scap{TOP} tomorrow -\scap{LOC} shine \scap{HAB} //
 \glft ``The sun will shine tomorrow.'' //
 \endgl 
 \a \begingl
-\glpreamble Tsoapei lyoa rinu tsime sei. //
+\glpreamble tsoapei lyoa rinu tsime sei.//
 \gla tsoa$_i$ @ -p @ -ei lyoa rinu$_i$ tsime sei //
-\glb tomorrow -\scap{FUT} -\scap{TOP} sun.\scap{NOM} \scapp{RFL}{LOC} shine \scap{HAB} //
+\glb tomorrow -\scap{FUT} -\scap{TOP} sun.\scap{NOM} \scaptwo{RFL}{LOC} shine \scap{HAB} //
 \glft ``Tomorrow, the sun will shine.'' //
 \endgl
 \xe
 
-Notes: \textbf{tsoa}, ``tomorrow'' is a noun and thus can theoretically be marked with an arbitrary tense, however, nouns like ``tomorrow'', ``yesterday'', ``today'', etc. that denote relative points in time are considered inherently tensed and only need to be marked as such if they are topicalized, but not if they differ from the topic noun in tense.  \textbf{tsoa} can, of course, be marked for a non-future tense, e.g. \textbf{tsoaca} or \textbf{tsoacei}, but this is only used in contexts where the contradictory meaning conveys something humorous or poetic.
+Notes: {\quch tsoa}, ``tomorrow'' is a noun and thus can theoretically be marked with an arbitrary tense, however, nouns like ``tomorrow'', ``yesterday'', ``today'', etc. that denote relative points in time are considered inherently tensed and only need to be marked as such if they are topicalized, but not if they differ from the topic noun in tense.  {\quch tsoa} can, of course, be marked for a non-future tense, e.g. {\quch tsoaca} or {\quch tsoacei}, but this is only used in contexts where the contradictory meaning conveys something humorous or poetic.
 
 \ex[lingstyle=QuCheanya] \begingl
-\glpreamble Lyoacei cchiy\"a tsime sei. //
+\glpreamble lyoacei cchiyA tsime sei.//
 \gla lyoa @ -c @ -ei cchiy\"a tsime sei //
 \glb sun -\scap{PRS} -\scap{TOP} intense shine \scap{HAB} //
 \glft ``The sun shines brightly.'' //
 \endgl \xe
 
 \ex[lingstyle=QuCheanya] \begingl
-\glpreamble Cchiy\"a lyoacei tsime sei. //
+\glpreamble cchiyA lyoacei tsime sei.//
 \gla cchiy\"a lyoa @ -c @ -ei tsime sei //
 \glb intense sun -\scap{PRS} -\scap{TOP} shine \scap{HAB} //
 \glft ``The bright sun shines.'' //
 \endgl \xe
 
 \ex[lingstyle=QuCheanya] \begingl
-\glpreamble Lyoacei tira paif\"a. //
+\glpreamble lyoacei tira paifA.//
 \gla lyoa @ -c @ -ei ti- @ ra pai- @ f\"a //
 \glb sun -\scap{PRS} -\scap{TOP} near- time up- go //
 \glft ``The sun is rising now.'' //
 \endgl \xe
 
 \ex[lingstyle=QuCheanya] \begingl
-\glpreamble Nulo cheanyaqeya cyoquyu c\"a. //
+\glpreamble nulo cheanyaqeya cyoquyu cA.//
 \gla nulo cheanya @ -q @ -eya cyo- @ qu @ -yu c\"a //
-\glb all people -\scap{PST} -\scapp{TOP}{PL} out- language -do \scap{PRF} //
+\glb all people -\scap{PST} -\scaptwo{TOP}{PL} out- language -do \scap{PRF} //
 \glft ``All the people shouted.'' //
 \endgl \xe
 
 \ex[lingstyle=QuCheanya] \begingl
-\glpreamble Siane cheanyaqeya cyoquyu c\"a. //
+\glpreamble siane cheanyaqeya cyoquyu cA.//
 \gla siane cheanya @ -q @ -eya cyo- @ qu @ -yu c\"a //
-\glb some people -\scap{PST} -\scapp{TOP}{PL} out- language -do \scap{PRF} //
+\glb some people -\scap{PST} -\scaptwo{TOP}{PL} out- language -do \scap{PRF} //
 \glft ``Some [of the] people shouted.'' //
 \endgl \xe
 
 \ex[lingstyle=QuCheanya] \begingl
-\glpreamble Sisiane cheanyaqeya syenemo cyoquyu c\"a. //
+\glpreamble sisiane cheanyaqeya syenemo cyoquyu cA.//
 \gla si- @ siane cheanya @ -q @ -eya syene @ -mo cyo- @ qu @ -yu c\"a //
-\glb \scap{RDP}- some people -\scap{PST} -\scapp{TOP}{PL} two- times out- language -do \scap{PRF} //
+\glb \scap{RDP}- some people -\scap{PST} -\scaptwo{TOP}{PL} two- times out- language -do \scap{PRF} //
 \glft ``Many [of the] people shouted twice.'' //
 \endgl \xe
 
 \ex[lingstyle=QuCheanya] \begingl
-\glpreamble Lyeina cheanyaceya suyu cyoquyu c\"a. //
+\glpreamble lyeina cheanyaceya suyu cyoquyu cA.//
 \gla lyeina cheanya @ -q @ -eya suyu cyo- @ qu @ -yu c\"a //
-\glb happy people -\scap{PRS} -\scapp{TOP}{PL} often out- language -do \scap{HAB} //
+\glb happy people -\scap{PRS} -\scaptwo{TOP}{PL} often out- language -do \scap{HAB} //
 \glft ``Happy people often shout.'' //
 \endgl \xe
 
 \ex[lingstyle=QuCheanya] \begingl
-\glpreamble Nyuyeqqhiqei paityapa c\"a. //
+\glpreamble nyuyeqqhiqei paityapa cA.//
 \gla nyu- @ yeqqhi @ -q @ -ei pai- @ tyapa c\"a //
 \glb \scap{DIM}- cat -\scap{PST} -\scap{TOP} up- jump \scap{PRF} //
 \glft ``The kitten jumped up.'' //
@@ -1087,34 +1179,34 @@ Notes: \textbf{tsoa}, ``tomorrow'' is a noun and thus can theoretically be marke
 
 \pex[lingstyle=QuCheanya] 
 \a \begingl
-\glpreamble Nyuyeqqhiqei fuqhenu mea paityapa c\"a. //
+\glpreamble nyuyeqqhiqei fuqhenu mea paityapa cA.//
 \gla nyu- @ yeqqhi @ -q @ -ei fuqhe @ -nu mea pai- @ tyapa c\"a //
 \glb \scap{DIM}- cat -\scap{PST} -\scap{TOP} table -\scap{LOC} to up- jump \scap{PRF} //
 \glft ``The kitten jumped onto the table.'' //
 \endgl
 \a \begingl
-\glpreamble Fuqheqei nyuyeqqhi rinu mea paityapa c\"a. //
+\glpreamble fuqheqei nyuyeqqhi rinu mea paityapa cA.//
 \gla fuqhe$_i$ @ -q @ -ei nyu- @ yeqqhi rinu$_i$ mea pai- @ tyapa c\"a //
-\glb table -\scap{PST} -\scap{TOP} \scap{DIM}- cat.\scap{NOM} \scapp{RFL}{LOC} to up- jump \scap{PRF} //
+\glb table -\scap{PST} -\scap{TOP} \scap{DIM}- cat.\scap{NOM} \scaptwo{RFL}{LOC} to up- jump \scap{PRF} //
 \glft ``As for the table, the kitten jumped onto it.'' //
 \endgl \xe
 
 \ex[lingstyle=QuCheanya] \begingl
-\glpreamble Nolye ninyuyeqqhiqei ruinitsi c\"a. //
+\glpreamble nolye ninyuyeqqhiqei ruinitsi cA.//
 \gla nolye ni- @ nyu- @ yeqqhi @ -q @ -ei rui- @ nitsi c\"a //
 \glb \scap{1S.GENA} \scap{RDP}- \scap{DIM}- cat -\scap{PST} -\scap{TOP} away- walk \scap{PRF} //
 \glft ``My little kitten walked away.'' //
 \endgl \xe
 
 \ex[lingstyle=QuCheanya] \begingl
-\glpreamble Solyecei yu. //
+\glpreamble solyecei yu.//
 \gla solye @ -c @ -ei yu //
 \glb rain -\scap{PRS} -\scap{TOP} happen //
 \glft ``It's raining.'' //
 \endgl \xe
 
 \ex[lingstyle=QuCheanya] \begingl
-\glpreamble Solyeqei chuf\"a c\"a. //
+\glpreamble solyeqei chufA cA.//
 \gla solye @ -q @ -ei chu- @ f\"a c\"a //
 \glb rain -\scap{PST} -\scap{TOP} down- go \scap{PRF} //
 \glft ``The rain came down.'' //
@@ -1122,7 +1214,7 @@ Notes: \textbf{tsoa}, ``tomorrow'' is a noun and thus can theoretically be marke
 
 \ex[lingstyle=QuCheanya] 
 \begingl
-\glpreamble Nyuyeqqhicei solyenu suapfiyu. //
+\glpreamble nyuyeqqhicei solyenu suapfiyu.//
 \gla nyu- @ yeqqhi @ -c @ -e solye @ -nu suapfi @ -yu //
 \glb \scap{DIM}- cat -\scap{PRS} -\scap{TOP} rain -\scap{LOC} play -do //
 \glft ``The kitten is playing in the rain.'' //
@@ -1130,14 +1222,14 @@ Notes: \textbf{tsoa}, ``tomorrow'' is a noun and thus can theoretically be marke
 \xe
 
 \ex[lingstyle=QuCheanya] \begingl
-\glpreamble Solyeqei qhoi c\"a rui. //
+\glpreamble solyeqei qhoi cA rui.//
 \gla solye @ -q @ -ei qhoi c\"a rui //
 \glb rain -\scap{PST} -\scap{TOP} stop \scap{PRF} \scap{FTRL} //
 \glft ``The rain has stopped.'' //
 \endgl \xe
 
 \ex[lingstyle=QuCheanya] \begingl
-\glpreamble Solyepei tira qhoi c\"a rui. //
+\glpreamble solyepei tira qhoi cA rui.//
 \gla solye @ -p @ -ei ti- @ ra qhoi c\"a rui //
 \glb rain -\scap{FUT} -\scap{TOP} near- time stop \scap{PRF} \scap{FTRL} //
 \glft ``Soon the rain will stop.'' //
@@ -1145,121 +1237,121 @@ Notes: \textbf{tsoa}, ``tomorrow'' is a noun and thus can theoretically be marke
 
 \pex[lingstyle=QuCheanya] 
 \a \begingl
-\glpreamble Ca nonei solyepa tira qhoi qqhoasui fyoanyo. //
+\glpreamble ca nonei solyepa tira qhoi qqhoasui fyoanyo.//
 \gla ca nonei solye @ -pa @ -$\varnothing$ ti- @ ra qhoi qqhoa @ -sui fyoanyo //
-\glb \scap{PRS} \scapp{1S}{TOP} rain -\scap{FUT} -\scap{NOM} near- time stop \scap{CMP} -\scap{ACC} hope //
+\glb \scap{PRS} \scaptwo{1S}{TOP} rain -\scap{FUT} -\scap{NOM} near- time stop \scap{CMP} -\scap{ACC} hope //
 \glft ``I hope the rain stops soon.'' //
 \endgl
 \a \begingl
-\glpreamble Solyepei$_i$ ca noi ri$_i$ tira qhoi qqhoasui fyoanyo. //
+\glpreamble solyepei$_i$ ca noi ri$_i$ tira qhoi qqhoasui fyoanyo.//
 \gla solye$_i$ @ -p @ -ei ca noi ri$_i$ ti- @ ra qhoi qqhoa @ -sui fyoanyo //
-\glb rain$_i$ -\scap{FUT} -\scap{TOP} \scap{PRS} \scapp{1S}{NOM} \scapp{RFL}{NOM}$_i$ near- time stop \scap{CMP} -\scap{ACC} hope //
+\glb rain$_i$ -\scap{FUT} -\scap{TOP} \scap{PRS} \scaptwo{1S}{NOM} \scaptwo{RFL}{NOM}$_i$ near- time stop \scap{CMP} -\scap{ACC} hope //
 \glft ``As for the rain, I hope it stops soon.'' //
 \endgl \xe
 
 \pex[lingstyle=QuCheanya,tag=animals] 
 \a<a> \begingl
-\glpreamble Soracchoqei$_i$ sepui fiqa rinu$_i$ tile yai sei. //
+\glpreamble soracchoqei$_i$ sepui fiqa rinu$_i$ tile yai sei.//
 \gla so- @ ra @ -ccho$_i$ @ -q @ -ei sepui fiqa rinu$_i$ ti- @ le yai sei //
-\glb far- time -\scap{N}$_i$ -\scap{PST} -\scap{TOP} wild animal.\scapp{NOM}{PL} \scapp{RFL}{LOC}$_i$ near- place exist \scap{HAB} //
+\glb far- time -\scap{N}$_i$ -\scap{PST} -\scap{TOP} wild animal.\scaptwo{NOM}{PL} \scaptwo{RFL}{LOC}$_i$ near- place exist \scap{HAB} //
 \glft ``Long ago, wild animals lived here.'' //
 \endgl 
 \a<b> \begingl
-\glpreamble Soracchoqei$_i$ tile sepui fiqa rinu$_i$ yai sei. //
+\glpreamble soracchoqei$_i$ tile sepui fiqa rinu$_i$ yai sei.//
 \gla so- @ ra @ -ccho$_i$ @ -q @ -ei ti- @ le sepui fiqa rinu$_i$ yai sei //
-\glb far- time -\scap{N}$_i$ -\scap{PST} -\scap{TOP} near- place wild animal.\scapp{NOM}{PL} \scapp{RFL}{LOC}$_i$ exist \scap{HAB} //
+\glb far- time -\scap{N}$_i$ -\scap{PST} -\scap{TOP} near- place wild animal.\scaptwo{NOM}{PL} \scaptwo{RFL}{LOC}$_i$ exist \scap{HAB} //
 \glft ``Long ago, there existed wild animals that lived here.'' //
 \endgl
 \a<c> \begingl
-\glpreamble Sora sepui fiq\"aqeya tile yai sei. //
+\glpreamble sora sepui fiqAqeya tile yai sei.//
 \gla so- @ ra sepui fiq\"a @ -q @ -eya ti- @ le yai sei //
-\glb far- time wild animal -\scap{PST} -\scapp{TOP}{PL} near- place exist \scap{HAB} //
+\glb far- time wild animal -\scap{PST} -\scaptwo{TOP}{PL} near- place exist \scap{HAB} //
 \glft ``Wild animals from long ago lived here.'' //
 \endgl
 \a<d> \begingl
-\glpreamble Tile sepui fiq\"aqeya sora yai sei. //
+\glpreamble tile sepui fiqAqeya sora yai sei.//
 \gla ti- @ le sepui fiq\"a @ -q @ -eya so- @ ra yai sei //
-\glb near- place wild animal -\scap{PST} -\scapp{TOP}{PL} far- time exist \scap{HAB} //
+\glb near- place wild animal -\scap{PST} -\scaptwo{TOP}{PL} far- time exist \scap{HAB} //
 \glft ``Wild animals that were here lived long ago.'' //
 \endgl
 \xe
 
-The adjectives \textbf{tile} and \textbf{sora} can modify either the noun, or be the complement of \textbf{yai}, with slightly modified meanings.  \textbf{Sora} can also be nominalized with \textbf{-ccho} and topicalized as in (\getfullref{animals.a}) and (\getfullref{animals.b}), but then it must be referenced in the sentence with the topic-reflexive pronoun in the locative case. It would be preferred to use (\getfullref{animals.c}) or (\getfullref{animals.d}).
+The adjectives {\quch tile} and {\quch sora} can modify either the noun, or be the complement of {\quch yai}, with slightly modified meanings.  {\quch sora} can also be nominalized with {\quch ccho} and topicalized as in (\getfullref{animals.a}) and (\getfullref{animals.b}), but then it must be referenced in the sentence with the topic-reflexive pronoun in the locative case. It would be preferred to use (\getfullref{animals.c}) or (\getfullref{animals.d}).
 
 \ex[lingstyle=QuCheanya] \begingl
-\glpreamble Qa chetsei foase cyoci c\"a. //
+\glpreamble qa chetsei foase cyoci cA.//
 \gla qa chetsei foase cyo- @ ci c\"a //
-\glb \scap{PST} \scapp{3S}{TOP} slow out- look \scap{PRF} //
+\glb \scap{PST} \scaptwo{3S}{TOP} slow out- look \scap{PRF} //
 \glft ``Slowly s/he looked around.'' //
 \endgl \xe
 
 \pex[lingstyle=QuCheanya] 
 \a \begingl
-\glpreamble Pfe ruif\"a tyua! //
+\glpreamble pfe ruifA tyua.//
 \gla pfe rui- @ f\"a tyua //
-\glb \scapp{2S}{NOM} away- go \scap{IMP} //
+\glb \scaptwo{2S}{NOM} away- go \scap{IMP} //
 \glft ``Go away!'' //
 \endgl 
 \a \begingl
-\glpreamble Fea ruif\"a tyua! //
+\glpreamble fea ruifA tyua.//
 \gla fea rui- @ f\"a tyua //
-\glb \scapp{2P}{NOM} away- go \scap{IMP} //
+\glb \scaptwo{2P}{NOM} away- go \scap{IMP} //
 \glft ``Go away!'' [plural] //
 \endgl
 \xe
 
 \ex[lingstyle=QuCheanya] \begingl
-\glpreamble Mua f\"a tyua! //
+\glpreamble mua fA tyua.//
 \gla mua f\"a tyua //
-\glb \scapp{1P}{NOM} go \scap{IMP} //
+\glb \scaptwo{1P}{NOM} go \scap{IMP} //
 \glft ``Let's go!'' //
 \endgl \xe
 
 \ex[lingstyle=QuCheanya] \begingl
-\glpreamble Ca pfei f\"a qqhoa rapui. //
+\glpreamble ca pfei fA qqhoa rapui.//
 \gla ca pfei f\"a qqhoa rapui //
-\glb \scap{PRS} \scapp{2S}{TOP} go \scapp{CMP}{NOM} ought //
+\glb \scap{PRS} \scaptwo{2S}{TOP} go \scaptwo{CMP}{NOM} ought //
 \glft ``You should/ought to go.'' //
 \endgl \xe
 
 \ex[lingstyle=QuCheanya] \begingl
-\glpreamble Pa nonei lyeina f\"a c\"a. //
+\glpreamble pa nonei lyeina fA cA.//
 \gla pa nonei lyeina f\"a c\"a //
-\glb \scap{FUT} \scapp{1S}{TOP} happy go \scap{PRF} //
+\glb \scap{FUT} \scaptwo{1S}{TOP} happy go \scap{PRF} //
 \glft ``I will be happy to go.''/``I will go happily.'' //
 \endgl \xe
 
 \ex[lingstyle=QuCheanya] \begingl
-\glpreamble Pa chetsei tira chyetea c\"a rui. //
+\glpreamble pa chetsei tira chyetea cA rui.//
 \gla pa chetsei ti- @ ra chyetea c\"a rui //
-\glb \scap{FUT} \scapp{3S}{TOP} near- time arrive \scap{PRF} \scap{FTRL} //
+\glb \scap{FUT} \scaptwo{3S}{TOP} near- time arrive \scap{PRF} \scap{FTRL} //
 \glft ``S/he will arrive soon.'' //
 \endgl \xe
 
 \pex[lingstyle=QuCheanya] 
 \a \begingl
-\glpreamble Syipfilye poicaqei ruisusua c\"a rui. //
+\glpreamble syipfilye poicaqei ruisusua cA rui.//
 \gla syipfi @ -lye poica @ -q @ -ei rui- @ susua c\"a rui //
 \glb baby -\scap{GENA} ball -\scap{PST} -\scap{TOP} away- roll \scap{PRF} \scap{FTRL} //
 \glft ``The baby's ball has rolled away.'' //
 \endgl
 \a \begingl
-\glpreamble Syipfiqei$_i$ relye$_i$ poica ruisusua c\"a rui. //
+\glpreamble syipfiqei$_i$ relye$_i$ poica ruisusua cA rui.//
 \gla syipfi$_i$ @ -q @ -ei relye$_i$ poica rui- @ susua c\"a rui //
-\glb baby$_i$ -\scap{PST} -\scap{TOP} \scapp{RFL}{GENA}$_i$ ball.\scap{NOM} away- roll \scap{PRF} \scap{FTRL} //
+\glb baby$_i$ -\scap{PST} -\scap{TOP} \scaptwo{RFL}{GENA}$_i$ ball.\scap{NOM} away- roll \scap{PRF} \scap{FTRL} //
 \glft ``The baby's ball has rolled away.'' //
 \endgl
 \xe
 
 \ex[lingstyle=QuCheanya] \begingl
-\glpreamble Syene yeliceya leiq\"atyayu. //
+\glpreamble syene yeliceya leiqAtyayu.//
 \gla syene yeli @ -c @ -eya lei- @ q\"atya @ -yu //
-\glb two boy -\scap{PRS} -\scapp{TOP}{PL} with- work -do //
+\glb two boy -\scap{PRS} -\scaptwo{TOP}{PL} with- work -do //
 \glft ``Two boys are working together.'' //
 \endgl \xe
 
 \ex[lingstyle=QuCheanya] \begingl
-\glpreamble Tifye chelyipei puch\"a ceyai lu. //
+\glpreamble tifye chelyipei puchA ceyai lu.//
 \gla ti @ -fye chelyi @ -p @ -ei puch\"a ceyai lu //
 \glb near -\scap{ADJ} mist -\scap{FUT} -\scap{TOP} dilute become \scap{PRB} //
 \glft ``This mist will probably clear away.'' //
@@ -1267,39 +1359,39 @@ The adjectives \textbf{tile} and \textbf{sora} can modify either the noun, or be
 
 \pex[lingstyle=QuCheanya,tag=flowers] 
 \a<a> \begingl
-\glpreamble Qheara pfecyuaceya nulole chyairo. //
+\glpreamble qheara pfecyuaceya nulole chyairo.//
 \gla qheara pfecyua @ -c @ -eya nulo- @ le chyairo //
-\glb beautiful flower -\scap{PRS} -\scapp{TOP}{PL} all- place grow //
+\glb beautiful flower -\scap{PRS} -\scaptwo{TOP}{PL} all- place grow //
 \glft ``Lovely flowers are growing everywhere.'' //
 \endgl
 \a \begingl
-\glpreamble Nulole qheara pfecyuaceya chyairo. //
+\glpreamble nulole qheara pfecyuaceya chyairo.//
 \gla nulo- @ le qheara pfecyua @ -c @ -eya chyairo //
-\glb all- place beautiful flower -\scap{PRS} -\scapp{TOP}{PL} grow //
+\glb all- place beautiful flower -\scap{PRS} -\scaptwo{TOP}{PL} grow //
 \glft ``The lovely flowers that are everywhere are growing.'' //
 \endgl
 \xe
 
-Similarly to (\getref{animals}), \textbf{nulole} can modify either the noun or the verb, but (\getfullref{flowers.a}) would be preferred due to more evenly distributed adjectives.
+Similarly to (\getref{animals}), {\quch nulole} can modify either the noun or the verb, but (\getfullref{flowers.a}) would be preferred due to more evenly distributed adjectives.
 
 \ex[lingstyle=QuCheanya] \begingl
-\glpreamble Ca munea tsomo foase mufoi qqhoa rapui. //
+\glpreamble ca munea tsomo foase mufoi qqhoa rapui.//
 \gla ca munea tsomo foase mufoi qqhoa rapui //
-\glb \scap{PRS} \scapp{1P}{TOP} more slow eat \scapp{CMP}{NOM} ought //
+\glb \scap{PRS} \scaptwo{1P}{TOP} more slow eat \scaptwo{CMP}{NOM} ought //
 \glft ``We should eat more slowly.'' //
 \endgl \xe
 
 \ex[lingstyle=QuCheanya] \begingl
-\glpreamble Qa pfei sisyea tira meaf\"a rui. //
+\glpreamble qa pfei sisyea tira meafA rui.//
 \gla qa pfei si- @ syea ti- @ ra mea- @ f\"a rui //
-\glb \scap{PST} \scapp{2S}{TOP} \scap{RDP}- enough near- time to- go \scap{FTRL} //
+\glb \scap{PST} \scaptwo{2S}{TOP} \scap{RDP}- enough near- time to- go \scap{FTRL} //
 \glft ``You have come too soon.'' //
 \endgl \xe
 
 \ex[lingstyle=QuCheanya] \begingl
-\glpreamble Pa pfei tsomo qhuso coatye qqhoa rapui. //
+\glpreamble pa pfei tsomo qhuso coatye qqhoa rapui.//
 \gla pa pfei tsomo qhuso coatye qqhoa rapui //
-\glb \scap{FUT} \scapp{2S}{TOP} more neat write \scapp{CMP}{NOM} ought //
+\glb \scap{FUT} \scaptwo{2S}{TOP} more neat write \scaptwo{CMP}{NOM} ought //
 \glft ``You should/must write more neatly.'' //
 \endgl \xe
 \end{document}
